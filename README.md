@@ -1,6 +1,6 @@
 # adopt
 
-A new Flutter project.
+Kelompok
 
 ## Getting Started
 
