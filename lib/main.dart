@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         //membuat route
-        //chjccgcvjvk
         '/': (context) => SplashPage(),
 
       },
