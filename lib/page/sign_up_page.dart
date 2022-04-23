@@ -8,7 +8,6 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     Widget header() {
       return Container(
         margin: EdgeInsets.only(top: 30),

@@ -176,6 +176,8 @@ class SignInPage extends StatelessWidget {
 
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: backgroundColor1,
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: defaultMargin),
