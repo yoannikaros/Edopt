@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../theme.dart';
+
+//Sedang Mencari Referensi
+
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -136,7 +138,7 @@ class SignInPage extends StatelessWidget {
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushNamed(context, '/main');
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
