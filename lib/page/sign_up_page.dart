@@ -232,14 +232,14 @@ class SignUpPage extends StatelessWidget {
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushNamed(context, '/main');
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12))),
           child: Text(
-            'sign in',
+            'Sign Up',
             style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: medium),
           ),
         ),
