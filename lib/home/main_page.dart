@@ -38,8 +38,8 @@ class _MainPageState extends State<MainPage> {
                 icon: Container(
                   margin: EdgeInsets.only(top: 15, bottom: 5),
                   child: Image.asset(
-                    'aset/icon_home.png',
-                    width: 21,
+                    'aset/icon_cari.png',
+                    width: 25,
                     color: currentIndex == 0 ? primaryColor : Color(0xff808191),
                   ),
                 ),
@@ -51,8 +51,8 @@ class _MainPageState extends State<MainPage> {
                 icon: Container(
                   margin: EdgeInsets.only(top: 15, bottom: 5),
                   child: Image.asset(
-                    'aset/icon_profile.png',
-                    width: 18,
+                    'aset/icon_anak.png',
+                    width: 25,
                     color: currentIndex == 1
                         ? primaryColor
                         : Color(0xff808191), //Ganti warna saat di klik
@@ -84,10 +84,10 @@ class _MainPageState extends State<MainPage> {
     Widget body() {
       switch (currentIndex) {
         case 0:
-          return HomePage();
+          return CariPage();
           break;
         case 1:
-          return CariPage();
+          return PantiPage();
           break;
         case 2:
           return AkunPage();
@@ -99,7 +99,6 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
         backgroundColor: Colors.white, //warna background
-        //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //button keranjang berada ditengah
         bottomNavigationBar: customBottomNav(), //navigasi bawah
         body: body());
   }
