@@ -176,7 +176,6 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor1,
