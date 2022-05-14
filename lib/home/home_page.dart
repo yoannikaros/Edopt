@@ -43,53 +43,6 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget categories() {
-      return Container(
-        margin: EdgeInsets.only(top: defaultMargin),
-        child: Row(
-          children: [
-            SizedBox(
-              width: defaultMargin,
-            ),
-
-            //Satu
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              margin: EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: primaryColor,
-              ),
-              child: Text(
-                'All Shoes',
-                style:
-                primaryTextStyle.copyWith(fontSize: 13, fontWeight: medium),
-              ),
-            ),
-
-            //DUA
-
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              margin: EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                    color: subtitleColor
-                ),
-                color: transparentColor,
-              ),
-              child: Text(
-                'Running',
-                style:
-                subtitleTextStyle.copyWith(fontSize: 13, fontWeight: medium),
-              ),
-            ),
-
-          ],
-        ),
-      );
-    }
 
     return ListView(
       children: [
