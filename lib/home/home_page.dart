@@ -1,3 +1,4 @@
+import 'package:adopt/cardwidget/newscard.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -43,6 +45,40 @@ class HomePage extends StatelessWidget {
       );
     }
 
+
+    Widget NewsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+            top: defaultMargin, left: defaultMargin, right: defaultMargin),
+        child: Text(
+          'Popular News',
+          style: primaryTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+        ),
+      );
+    }
+
+    Widget PopularNews() {
+      return Container(
+        margin: EdgeInsets.only(top: 14),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(
+                width: defaultMargin,
+              ),
+              Row(
+                children: [
+                  NewsCard(),
+                  NewsCard(),
+                  NewsCard(),
+                ],
+              )
+            ],
+          ),
+        ),
+      );
+    }
 
     return ListView(
       children: [
