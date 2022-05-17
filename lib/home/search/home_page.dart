@@ -69,9 +69,24 @@ class HomePage extends StatelessWidget {
       return Container(
         margin: EdgeInsets.only(
             top: defaultMargin, left: defaultMargin, right: defaultMargin),
-        child: Text(
-          'Popular News',
-          style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+        child: Row(
+          children: [
+            Text(
+              'Artikel terbaru',
+              style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+            ),
+            SizedBox(width: 103 ,),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, '/list-news');
+              },
+              child: Text(
+                'Lainnya',
+                style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
+              ),
+            ),
+
+          ],
         ),
       );
     }

@@ -18,7 +18,7 @@ class NewsCard extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: (){
-              Navigator.pushNamed(context, '/search');
+              Navigator.pushNamed(context, '/detailberita');
             },
             child: Image.asset(
               'aset/icon_artikel.png',

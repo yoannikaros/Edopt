@@ -18,18 +18,22 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     Widget customBottomNav() {
       return ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+       // borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
         child: BottomAppBar(
+
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
+
             currentIndex: currentIndex,
             onTap: (value) {
               setState(() {
                 currentIndex = value;
               });
             },
-            backgroundColor: backgroundColor1,
+
+            backgroundColor: backgroundColor6,
             type: BottomNavigationBarType.fixed,
+
             items: [
 
               //membuat icon di navigasi

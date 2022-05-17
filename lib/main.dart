@@ -1,6 +1,8 @@
 import 'package:adopt/auth/forgetPW/change.dart';
 import 'package:adopt/auth/forgetPW/input_recovery.dart';
 import 'package:adopt/home/akun/akun_page.dart';
+import 'package:adopt/home/artikel/detail_artitkel.dart';
+import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/landing/first_landing.dart';
 import 'package:adopt/home/search/home_page.dart';
 import 'package:adopt/home/main_page.dart';
@@ -35,12 +37,16 @@ class MyApp extends StatelessWidget {
         '/input-recovery':(context) => InputRecovery(),
         '/ganti-pw':(context) => gantiPw(),
 
-        //Menu Home
+        //Main Page
         '/main': (context) => MainPage(),
-        '/home': (context) => HomePage(),
+
+        //Artikel
+        '/list-news': (context) => ListNews(),
+        '/detailberita': (context) => DetailNews(),
 
         //Menu Search
         '/search': (context) => ListAnak(),
+        '/HomePage': (context) => HomePage(),
 
         //Menu Akun
         '/profile': (context) => AkunPage(),
