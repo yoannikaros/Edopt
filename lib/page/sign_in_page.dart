@@ -35,20 +35,12 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget emailInput() {
+    Widget nomorInput() {
       return Container(
         margin: EdgeInsets.only(top: 70),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Email address',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: medium,
-                )),
-            SizedBox(
-              height: 12,
-            ),
             Container(
               height: 50,
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -70,56 +62,7 @@ class SignInPage extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Emailnya', hintStyle: subtitleTextStyle),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      );
-    }
-
-    Widget passwordInput() {
-      return Container(
-
-        margin: EdgeInsets.only(top: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Password',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: medium,
-                )),
-            SizedBox(
-              height: 12,
-            ),
-            Container(
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                  color: backgroundColor2,
-                  borderRadius: BorderRadius.circular(12)),
-              child: Center(
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'aset/icon_password.png',
-                      width: 17,
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    Expanded(
-                      child: TextFormField(
-                        obscureText: true,
-                        style: primaryTextStyle,
-                        decoration: InputDecoration.collapsed(
-                            hintText: 'Passwordnya',
-                            hintStyle: subtitleTextStyle),
+                            hintText: 'Nomor Telepon', hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -159,7 +102,7 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Ngga punya alun ?',
+              'Ngga punya akun ?',
               style: subtitleTextStyle.copyWith(fontSize: 12),
             ),
             GestureDetector(
@@ -187,7 +130,7 @@ class SignInPage extends StatelessWidget {
             children: [
               //route
               header(),
-              emailInput(),
+              nomorInput(),
               //passwordInput(),
               signInButton(),
               Spacer(),

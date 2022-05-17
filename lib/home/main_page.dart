@@ -84,7 +84,7 @@ class _MainPageState extends State<MainPage> {
     Widget body() {
       switch (currentIndex) {
         case 0:
-          return CariPage();
+          return HomePage();
           break;
         case 1:
           return PantiPage();

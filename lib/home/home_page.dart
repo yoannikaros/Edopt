@@ -8,7 +8,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -22,7 +21,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     'Hello, Yoan',
-                    style: primaryTextStyle.copyWith(
+                    style: blackTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
                   Text(
@@ -45,6 +44,26 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget CariButton() {
+      return Container(
+        height: 50,
+        width: double.infinity,
+        margin: EdgeInsets.all(30),
+        child: TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/search');
+          },
+          style: TextButton.styleFrom(
+              backgroundColor: primaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(47))),
+          child: Text(
+            'CARI ANAK',
+            style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+          ),
+        ),
+      );
+    }
 
     Widget NewsTitle() {
       return Container(
@@ -52,7 +71,7 @@ class HomePage extends StatelessWidget {
             top: defaultMargin, left: defaultMargin, right: defaultMargin),
         child: Text(
           'Popular News',
-          style: primaryTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+          style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
         ),
       );
     }
@@ -81,9 +100,7 @@ class HomePage extends StatelessWidget {
     }
 
     return ListView(
-      children: [
-        header(),
-      ],
+      children: [header(), CariButton(), NewsTitle(), PopularNews()],
     );
   }
 }
