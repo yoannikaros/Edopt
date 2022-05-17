@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme.dart';
 
-class SendMail extends StatelessWidget {
-  const SendMail({Key? key}) : super(key: key);
-
+class InputRecovery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -17,7 +15,7 @@ class SendMail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Lupa kata sandi ?',
+                  'Cek Handphone Anda',
                   style: primaryTextStyle.copyWith(
                     fontSize: 24,
                     fontWeight: semiBold,
@@ -29,7 +27,7 @@ class SendMail extends StatelessWidget {
               height: 2,
             ),
             Text(
-              'Masukkan email yang terhubung dengan akun anda lalu ikuti langkah selanjutnya',
+              'Kami telah mengirim kode unik ke nomor handphone anda, masukkan kode tersebut dibawah',
               style: subtitleTextStyle,
             ),
           ],
@@ -39,33 +37,101 @@ class SendMail extends StatelessWidget {
 
     Widget nomorInput() {
       return Container(
-        margin: EdgeInsets.only(top: 34),
-        child: Column(
+        margin: EdgeInsets.only(top: 20),
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.only(left: 12),
+              height: 69,
+              width: 69,
               decoration: BoxDecoration(
                   color: backgroundColor2,
                   borderRadius: BorderRadius.circular(12)),
               child: Center(
                 child: Row(
                   children: [
-                    Image.asset(
-                      'aset/icon_email.png',
-                      width: 17,
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
                     Expanded(
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Email',
-                            hintStyle: subtitleTextStyle),
+                            hintText: '', hintStyle: subtitleTextStyle),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 11,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 12),
+              height: 69,
+              width: 69,
+              decoration: BoxDecoration(
+                  color: backgroundColor2,
+                  borderRadius: BorderRadius.circular(12)),
+              child: Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        style: primaryTextStyle,
+                        decoration: InputDecoration.collapsed(
+                            hintText: '', hintStyle: subtitleTextStyle),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 11,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 12),
+              height: 69,
+              width: 69,
+              decoration: BoxDecoration(
+                  color: backgroundColor2,
+                  borderRadius: BorderRadius.circular(12)),
+              child: Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        style: primaryTextStyle,
+                        decoration: InputDecoration.collapsed(
+                            hintText: '', hintStyle: subtitleTextStyle),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 11,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 12),
+              height: 69,
+              width: 69,
+              decoration: BoxDecoration(
+                  color: backgroundColor2,
+                  borderRadius: BorderRadius.circular(12)),
+              child: Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        style: primaryTextStyle,
+                        decoration: InputDecoration.collapsed(
+                            hintText: '', hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -90,7 +156,7 @@ class SendMail extends StatelessWidget {
               height: 46,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/input-recovery');
+                  Navigator.pushNamed(context, '/ganti-pw');
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: primaryColor,
@@ -123,7 +189,6 @@ class SendMail extends StatelessWidget {
               //passwordInput(),
               nextButoom(),
               //Spacer(),
-
             ],
           ),
         ),

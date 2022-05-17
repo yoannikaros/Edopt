@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme.dart';
 
-class SendMail extends StatelessWidget {
-  const SendMail({Key? key}) : super(key: key);
+class gantiPw extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class SendMail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Lupa kata sandi ?',
+                  'UBAH KATA SANDI',
                   style: primaryTextStyle.copyWith(
                     fontSize: 24,
                     fontWeight: semiBold,
@@ -25,13 +24,7 @@ class SendMail extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 2,
-            ),
-            Text(
-              'Masukkan email yang terhubung dengan akun anda lalu ikuti langkah selanjutnya',
-              style: subtitleTextStyle,
-            ),
+
           ],
         ),
       );
@@ -64,7 +57,7 @@ class SendMail extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Email',
+                            hintText: 'Kata Sandi',
                             hintStyle: subtitleTextStyle),
                       ),
                     ),
@@ -90,14 +83,14 @@ class SendMail extends StatelessWidget {
               height: 46,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/input-recovery');
+                  Navigator.pushNamed(context, '/sign-in');
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(28))),
                 child: Text(
-                  'SELANJUTNYA',
+                  'UBAH KATA SANDI',
                   style: primaryTextStyle.copyWith(
                       fontSize: 16, fontWeight: medium),
                 ),

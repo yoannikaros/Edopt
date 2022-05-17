@@ -1,3 +1,5 @@
+import 'package:adopt/auth/forgetPW/change.dart';
+import 'package:adopt/auth/forgetPW/input_recovery.dart';
 import 'package:adopt/home/akun/akun_page.dart';
 import 'package:adopt/home/landing/first_landing.dart';
 import 'package:adopt/home/search/home_page.dart';
@@ -26,8 +28,12 @@ class MyApp extends StatelessWidget {
 
         //Auth
         '/sign-in':(context) => SignInPage(),
-        '/forget':(context) => SendMail(),
         '/sign-up': (context) => SignUpPage(),
+
+        //Recovery
+        '/forget':(context) => SendMail(),
+        '/input-recovery':(context) => InputRecovery(),
+        '/ganti-pw':(context) => gantiPw(),
 
         //Menu Home
         '/main': (context) => MainPage(),
