@@ -16,11 +16,16 @@ class NewsCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            'aset/icon_artikel.png',
-            width: 289,
-            height: 134,
-            fit: BoxFit.cover,
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, '/search');
+            },
+            child: Image.asset(
+              'aset/icon_artikel.png',
+              width: 289,
+              height: 134,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),

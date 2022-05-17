@@ -1,6 +1,6 @@
-import 'package:adopt/home/akun_page.dart';
-import 'package:adopt/home/home_page.dart';
-import 'package:adopt/home/panti_page.dart';
+import 'package:adopt/home/akun/akun_page.dart';
+import 'package:adopt/home/search/home_page.dart';
+import 'package:adopt/home/panti/panti_page.dart';
 import 'package:adopt/theme.dart';
 import 'package:flutter/material.dart';
 

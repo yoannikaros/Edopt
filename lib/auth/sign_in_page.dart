@@ -34,14 +34,14 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget Gmail(){
+    Widget Gmail() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 48,
             width: 318,
-           margin: EdgeInsets.only(top: 30),
+            margin: EdgeInsets.only(top: 30),
             child: TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/main');
@@ -62,11 +62,10 @@ class SignInPage extends StatelessWidget {
 
     Widget nomorInput() {
       return Container(
-margin: EdgeInsets.only(top: 10),
+        margin: EdgeInsets.only(top: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Container(
               height: 50,
               margin: EdgeInsets.only(top: 20),
@@ -122,9 +121,7 @@ margin: EdgeInsets.only(top: 10),
                         borderRadius: BorderRadius.circular(28))),
                 child: Text(
                   'DAFTAR',
-                  style: primaryku.copyWith(
-                      fontSize: 16,
-                      fontWeight: medium),
+                  style: primaryku.copyWith(fontSize: 16, fontWeight: medium),
                 ),
               ),
             ),
@@ -190,7 +187,7 @@ margin: EdgeInsets.only(top: 10),
             children: [
               //route
               header(),
-            //  Gmail(),
+              //  Gmail(),
               nomorInput(),
               //passwordInput(),
               signInButton(),

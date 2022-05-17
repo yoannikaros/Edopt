@@ -1,7 +1,7 @@
 import 'package:adopt/cardwidget/newscard.dart';
 import 'package:flutter/material.dart';
 
-import '../theme.dart';
+import '../../theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
