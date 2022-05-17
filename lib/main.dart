@@ -4,6 +4,7 @@ import 'package:adopt/home/akun/akun_page.dart';
 import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/landing/first_landing.dart';
+import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/home_page.dart';
 import 'package:adopt/home/main_page.dart';
 import 'package:adopt/auth/forgetPW/sendmail.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
 
         //Menu Search
         '/search': (context) => ListAnak(),
+        '/detail-anak': (context) => DetailAnak(),
         '/HomePage': (context) => HomePage(),
 
         //Menu Akun

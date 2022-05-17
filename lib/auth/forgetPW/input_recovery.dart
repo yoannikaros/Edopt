@@ -53,7 +53,8 @@ class InputRecovery extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        maxLength: 1,
+                        keyboardType: TextInputType.number,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: '', hintStyle: subtitleTextStyle),
@@ -63,9 +64,11 @@ class InputRecovery extends StatelessWidget {
                 ),
               ),
             ),
+
             SizedBox(
               width: 11,
             ),
+
             Container(
               padding: EdgeInsets.only(left: 12),
               height: 69,
@@ -78,7 +81,8 @@ class InputRecovery extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        maxLength: 1,
+                        keyboardType: TextInputType.number,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: '', hintStyle: subtitleTextStyle),
@@ -88,9 +92,11 @@ class InputRecovery extends StatelessWidget {
                 ),
               ),
             ),
+
             SizedBox(
               width: 11,
             ),
+
             Container(
               padding: EdgeInsets.only(left: 12),
               height: 69,
@@ -103,7 +109,8 @@ class InputRecovery extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        maxLength: 1,
+                        keyboardType: TextInputType.number,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: '', hintStyle: subtitleTextStyle),
@@ -113,9 +120,13 @@ class InputRecovery extends StatelessWidget {
                 ),
               ),
             ),
+
+
             SizedBox(
               width: 11,
             ),
+
+
             Container(
               padding: EdgeInsets.only(left: 12),
               height: 69,
@@ -128,10 +139,10 @@ class InputRecovery extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        maxLength: 1,
+                        keyboardType: TextInputType.number,
                         style: primaryTextStyle,
-                        decoration: InputDecoration.collapsed(
-                            hintText: '', hintStyle: subtitleTextStyle),
+                        decoration: InputDecoration.collapsed(hintText: '', hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],

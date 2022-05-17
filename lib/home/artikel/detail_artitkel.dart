@@ -6,7 +6,12 @@ class DetailNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Detail news"),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Detail news"),
+        ],
+      ),
     );
   }
 }
