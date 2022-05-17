@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../theme.dart';
 
-//Sedang Mencari Referensi
+import '../../theme.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+class SendMail extends StatelessWidget {
+  const SendMail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +140,7 @@ class SignInPage extends StatelessWidget {
               child: Text(
                 ' Pulihkan',
                 style:
-                    purpleTextStyle.copyWith(fontSize: 12, fontWeight: medium),
+                purpleTextStyle.copyWith(fontSize: 12, fontWeight: medium),
               ),
             )
           ],
@@ -171,4 +170,5 @@ class SignInPage extends StatelessWidget {
       ),
     );
   }
+
 }
