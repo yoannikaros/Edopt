@@ -188,7 +188,7 @@ class SignInPage extends StatelessWidget {
               //route
               header(),
               emailInput(),
-              passwordInput(),
+              //passwordInput(),
               signInButton(),
               Spacer(),
               footer(),
