@@ -11,20 +11,25 @@ class SendMail extends StatelessWidget {
       return Container(
         margin: EdgeInsets.only(top: 30),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Login',
-              style: primaryTextStyle.copyWith(
-                fontSize: 24,
-                fontWeight: semiBold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Lupa kata sandi ?',
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 24,
+                    fontWeight: semiBold,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 2,
             ),
             Text(
-              'Sialakan Login Terlebih dahulu',
+              'Masukkan email yang terhubung dengan akun anda lalu ikuti langkah selanjutnya',
               style: subtitleTextStyle,
             ),
           ],
@@ -34,7 +39,7 @@ class SendMail extends StatelessWidget {
 
     Widget nomorInput() {
       return Container(
-        margin: EdgeInsets.only(top: 70),
+        margin: EdgeInsets.only(top: 34),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -59,7 +64,7 @@ class SendMail extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Nomor Telepon',
+                            hintText: 'Email',
                             hintStyle: subtitleTextStyle),
                       ),
                     ),
@@ -72,15 +77,16 @@ class SendMail extends StatelessWidget {
       );
     }
 
-    Widget signInButton() {
+    Widget nextButoom() {
       return Container(
         height: 50,
         width: double.infinity,
         margin: EdgeInsets.only(top: 30),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 150,
+              width: 320,
               height: 46,
               child: TextButton(
                 onPressed: () {
@@ -91,58 +97,12 @@ class SendMail extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(28))),
                 child: Text(
-                  'DAFTAR',
+                  'SELANJUTNYA',
                   style: primaryTextStyle.copyWith(
                       fontSize: 16, fontWeight: medium),
                 ),
               ),
             ),
-            SizedBox(
-              width: 21,
-            ),
-            Container(
-              width: 150,
-              height: 46,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/main');
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28))),
-                child: Text(
-                  'MASUK',
-                  style: primaryTextStyle.copyWith(
-                      fontSize: 16, fontWeight: medium),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
-    Widget footer() {
-      return Container(
-        margin: EdgeInsets.only(top: 12),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Saya lupa kata sandi ?',
-              style: subtitleTextStyle.copyWith(fontSize: 12),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/sign-up');
-              },
-              child: Text(
-                ' Pulihkan',
-                style:
-                purpleTextStyle.copyWith(fontSize: 12, fontWeight: medium),
-              ),
-            )
           ],
         ),
       );
@@ -161,14 +121,13 @@ class SendMail extends StatelessWidget {
               header(),
               nomorInput(),
               //passwordInput(),
-              signInButton(),
+              nextButoom(),
               //Spacer(),
-              footer(),
+
             ],
           ),
         ),
       ),
     );
   }
-
 }

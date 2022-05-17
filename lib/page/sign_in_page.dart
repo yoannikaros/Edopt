@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
@@ -33,14 +34,42 @@ class SignInPage extends StatelessWidget {
       );
     }
 
+    Widget Gmail(){
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 48,
+            width: 318,
+           margin: EdgeInsets.only(top: 30),
+            child: TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/main');
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: backgroundColor6,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28))),
+              child: Text(
+                'Masuk dengan google',
+                style: primaryku.copyWith(fontSize: 16, fontWeight: medium),
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
     Widget nomorInput() {
       return Container(
-        margin: EdgeInsets.only(top: 70),
+margin: EdgeInsets.only(top: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             Container(
               height: 50,
+              margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                   color: backgroundColor2,
@@ -88,13 +117,14 @@ class SignInPage extends StatelessWidget {
                   Navigator.pushNamed(context, '/sign-up');
                 },
                 style: TextButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: backgroundColor6,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(28))),
                 child: Text(
                   'DAFTAR',
-                  style: primaryTextStyle.copyWith(
-                      fontSize: 16, fontWeight: medium),
+                  style: primaryku.copyWith(
+                      fontSize: 16,
+                      fontWeight: medium),
                 ),
               ),
             ),
@@ -136,7 +166,7 @@ class SignInPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/sign-up');
+                Navigator.pushNamed(context, '/forget');
               },
               child: Text(
                 ' Pulihkan',
@@ -160,6 +190,7 @@ class SignInPage extends StatelessWidget {
             children: [
               //route
               header(),
+            //  Gmail(),
               nomorInput(),
               //passwordInput(),
               signInButton(),
