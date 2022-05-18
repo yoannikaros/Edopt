@@ -84,9 +84,14 @@ class AkunPage extends StatelessWidget {
 
             Container(
               margin: EdgeInsets.only(left: 30,bottom: 14),
-              child: Text(
-                'Preferensi Akun',
-                style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w400),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/detail-akun');
+                },
+                child: Text(
+                  'Preferensi Akun',
+                  style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w400),
+                ),
               ),
             ),
 

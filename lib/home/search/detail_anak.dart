@@ -15,7 +15,7 @@ class DetailAnak extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/main');
+                Navigator.pop(context);
               },
               child: Image.asset('aset/icon_kembali.png', width: 25),
             ),

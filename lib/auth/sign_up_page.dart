@@ -165,7 +165,7 @@ class SignUpPage extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Emailnya', hintStyle: subtitleTextStyle),
+                            hintText: 'Masukan Email', hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -212,7 +212,7 @@ class SignUpPage extends StatelessWidget {
                         obscureText: true,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Passwordnya',
+                            hintText: 'Masukan Password',
                             hintStyle: subtitleTextStyle),
                       ),
                     ),

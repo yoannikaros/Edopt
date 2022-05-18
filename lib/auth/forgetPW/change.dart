@@ -46,7 +46,7 @@ class gantiPw extends StatelessWidget {
                 child: Row(
                   children: [
                     Image.asset(
-                      'aset/icon_email.png',
+                      'aset/icon_password.png',
                       width: 17,
                     ),
                     SizedBox(
@@ -54,7 +54,7 @@ class gantiPw extends StatelessWidget {
                     ),
                     Expanded(
                       child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        obscureText: true,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: 'Kata Sandi',

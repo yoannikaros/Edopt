@@ -77,7 +77,7 @@ class SignInPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Image.asset(
-                      'aset/icon_email.png',
+                      'aset/icon_telepon.png',
                       width: 17,
                     ),
                     SizedBox(

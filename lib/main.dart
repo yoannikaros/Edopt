@@ -1,6 +1,7 @@
 import 'package:adopt/auth/forgetPW/change.dart';
 import 'package:adopt/auth/forgetPW/input_recovery.dart';
 import 'package:adopt/home/akun/akun_page.dart';
+import 'package:adopt/home/akun/detail_akun.dart';
 import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/landing/first_landing.dart';
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
 
         //Menu Akun
         '/profile': (context) => AkunPage(),
+        '/detail-akun': (context) => DetailAkun(),
+
       },
     );
   }

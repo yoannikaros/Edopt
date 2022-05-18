@@ -31,13 +31,18 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: 54,
-              height: 54,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: AssetImage('aset/image_profile.png'))),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, '/detail-akun');
+              },
+              child: Container(
+                width: 54,
+                height: 54,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('aset/image_profile.png'))),
+              ),
             ),
           ],
         ),
