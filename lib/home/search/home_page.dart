@@ -62,9 +62,24 @@ class HomePage extends StatelessWidget {
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(47))),
-          child: Text(
-            'CARI ANAK',
-            style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Image.asset(
+                  'aset/icon_search.png',
+                  width: 24,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 80,right: 112),
+                child: Text(
+                  'CARI ANAK',
+                  style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                ),
+              ),
+
+            ],
           ),
         ),
       );
@@ -80,7 +95,7 @@ class HomePage extends StatelessWidget {
               'Artikel terbaru',
               style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
             ),
-            SizedBox(width: 103 ,),
+            SizedBox(width: 90 ,),
             GestureDetector(
               onTap: (){
                 Navigator.pushNamed(context, '/list-news');
@@ -89,8 +104,20 @@ class HomePage extends StatelessWidget {
                 'Lainnya',
                 style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
               ),
+
             ),
 
+            SizedBox(width: 10 ,),
+
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, '/list-news');
+              },
+              child: Image.asset(
+                'aset/icon_panahkananbiru.png',
+                width: 23,
+              ),
+            ),
           ],
         ),
       );
