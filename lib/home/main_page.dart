@@ -1,4 +1,5 @@
 import 'package:adopt/home/akun/akun_page.dart';
+import 'package:adopt/home/history/history_page.dart';
 import 'package:adopt/home/search/home_page.dart';
 import 'package:adopt/home/panti/panti_page.dart';
 import 'package:adopt/theme.dart';
@@ -17,83 +18,93 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     Widget customBottomNav() {
-      return ClipRRect(
-       // borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
-        child: BottomAppBar(
+      return Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+              offset: Offset(0.0,10.0)
+            )
+          ]
+        ),
+        child: ClipRRect(
+         // borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
+          child: BottomAppBar(
 
-          clipBehavior: Clip.antiAlias,
-          child: BottomNavigationBar(
+            clipBehavior: Clip.antiAlias,
+            child: BottomNavigationBar(
 
-            currentIndex: currentIndex,
-            onTap: (value) {
-              setState(() {
-                currentIndex = value;
-              });
-            },
+              currentIndex: currentIndex,
+              onTap: (value) {
+                setState(() {
+                  currentIndex = value;
+                });
+              },
+              backgroundColor: Colors.white,
+              type: BottomNavigationBarType.fixed,
 
-            backgroundColor: backgroundColor6,
-            type: BottomNavigationBarType.fixed,
+              items: [
 
-            items: [
-
-              //membuat icon di navigasi
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 15, bottom: 5),
-                  child: Image.asset(
-                    'aset/icon_cari.png',
-                    width: 25,
-                    color: currentIndex == 0 ? primaryColor : Color(0xff808191),
+                //membuat icon di navigasi
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 15, bottom: 5),
+                    child: Image.asset(
+                      'aset/icon_cari.png',
+                      width: 25,
+                      color: currentIndex == 0 ? primaryColor : Color(0xff808191),
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
 
 
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 15, bottom: 5),
-                  child: Image.asset(
-                    'aset/icon_anak.png',
-                    width: 25,
-                    color: currentIndex == 1
-                        ? primaryColor
-                        : Color(0xff808191), //Ganti warna saat di klik
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 15, bottom: 5),
+                    child: Image.asset(
+                      'aset/icon_anak.png',
+                      width: 25,
+                      color: currentIndex == 1
+                          ? primaryColor
+                          : Color(0xff808191), //Ganti warna saat di klik
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
 
 
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 15, bottom: 5),
-                  child: Image.asset(
-                    'aset/icon_riwayar.png',
-                    width: 25,
-                    color: currentIndex == 2
-                        ? primaryColor
-                        : Color(0xff808191), //Ganti warna saat di klik
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 15, bottom: 5),
+                    child: Image.asset(
+                      'aset/icon_riwayar.png',
+                      width: 25,
+                      color: currentIndex == 2
+                          ? primaryColor
+                          : Color(0xff808191), //Ganti warna saat di klik
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
 
-              //membuat icon di navigasi
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 15, bottom: 5),
-                  child: Image.asset(
-                    'aset/icon_profile.png',
-                    width: 18,
-                    color: currentIndex == 3
-                        ? primaryColor
-                        : Color(0xff808191), //Ganti warna saat di klik
+                //membuat icon di navigasi
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 15, bottom: 5),
+                    child: Image.asset(
+                      'aset/icon_profile.png',
+                      width: 18,
+                      color: currentIndex == 3
+                          ? primaryColor
+                          : Color(0xff808191), //Ganti warna saat di klik
+                    ),
                   ),
+                  label: '',
                 ),
-                label: '',
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
@@ -108,7 +119,7 @@ class _MainPageState extends State<MainPage> {
           return PantiPage();
           break;
         case 2:
-          return PantiPage();
+          return RiwayatPage();
           break;
         case 3:
           return AkunPage();

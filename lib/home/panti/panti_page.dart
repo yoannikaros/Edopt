@@ -7,7 +7,7 @@ class PantiPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-          'Panti'
+          'ini halaman panti'
       ),
     );
   }
