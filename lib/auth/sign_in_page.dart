@@ -158,17 +158,18 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Saya lupa kata sandi ?',
+              'Saya lupa kata sandi',
               style: subtitleTextStyle.copyWith(fontSize: 12),
             ),
+            SizedBox(width: 10,),
+
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/forget');
               },
-              child: Text(
-                ' Pulihkan',
-                style:
-                    purpleTextStyle.copyWith(fontSize: 12, fontWeight: medium),
+              child: Image.asset(
+                'aset/icon_panahkanan.png',
+                width: 17,
               ),
             )
           ],

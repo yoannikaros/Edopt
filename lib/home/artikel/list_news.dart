@@ -13,7 +13,7 @@ class ListNews extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('List News'),
+            Text('List News',style: primaryku.copyWith(fontSize: 16, fontWeight: medium),),
           ],
         ),
       );
