@@ -8,9 +8,26 @@ class DetailHistory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget header() {
+      return Container(
+        margin: EdgeInsets.only(top: 40,left: 40),
+        child: Row(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset('aset/icon_kembali.png', width: 25),
+            ),
+          ],
+        ),
+      );
+    }
+
     Widget detail1(){
       return Container(
-        margin: EdgeInsets.only(left: 30,top: 20),
+        margin: EdgeInsets.only(left: 40,top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,7 +49,7 @@ class DetailHistory extends StatelessWidget {
 
           child: Container(
             padding: EdgeInsets.all(20),
-            margin: EdgeInsets.only(left: 20),
+            //margin: EdgeInsets.only(left: 60),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -72,8 +89,9 @@ class DetailHistory extends StatelessWidget {
       backgroundColor: Colors.white,
       body: ListView(
         children: [
+          header(),
           detail1(),
-          CardDetail()
+          CardDetail(),
         ],
       ),
     );
