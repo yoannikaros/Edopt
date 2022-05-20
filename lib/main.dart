@@ -4,6 +4,7 @@ import 'package:adopt/home/akun/akun_page.dart';
 import 'package:adopt/home/akun/detail_akun.dart';
 import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
+import 'package:adopt/home/history/detail_history.dart';
 import 'package:adopt/home/history/history_page.dart';
 import 'package:adopt/home/landing/first_landing.dart';
 import 'package:adopt/home/panti/detail_panti.dart';
@@ -60,10 +61,10 @@ class MyApp extends StatelessWidget {
         '/detail-akun': (context) => DetailAkun(),
 
         //Menu Panti
-        '/detail-panti': (context) => DetailPanti()
+        '/detail-panti': (context) => DetailPanti(),
 
         //Menu history
-       // '/history': (context) => RiwayatPage(),
+        '/detail-hsitory': (context) => DetailHistory(),
 
       },
     );

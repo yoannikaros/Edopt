@@ -1,3 +1,4 @@
+import 'package:adopt/cardwidget/daftarkunjungan_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme.dart';
@@ -17,6 +18,18 @@ class ListPanti extends StatelessWidget {
       );
     }
 
+    Widget CardDaftar() {
+      return Container(
+        margin: EdgeInsets.only(top: 10),
+        child: Column(
+          children: [
+DaftarKunjungan()
+
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor1,
@@ -27,6 +40,7 @@ class ListPanti extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               header(),
+              CardDaftar()
             ],
           ),
         ),

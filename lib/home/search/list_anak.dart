@@ -82,9 +82,12 @@ class _ListAnakState extends State<ListAnak> {
 
     Widget ListAnaknya(){
       return Container(
+        margin: EdgeInsets.only(top: 10),
           child: Column(
             children: [
-             ListAnakCard()
+             ListAnakCard(),
+              ListAnakCard(),
+              ListAnakCard()
             ],
           ),
       );
