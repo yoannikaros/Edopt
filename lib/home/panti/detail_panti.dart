@@ -139,7 +139,7 @@ class DetailPanti extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 30,
                 ),
                 Text(
                   'CIREBON',
@@ -156,7 +156,7 @@ class DetailPanti extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 37,
+                  width: 47,
                 ),
                 Text(
                   'JAWA BARAT',
@@ -173,7 +173,7 @@ class DetailPanti extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 17,
+                  width: 27,
                 ),
                 Text(
                   'LEMAHABANG',
@@ -190,7 +190,7 @@ class DetailPanti extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 42,
+                  width: 52,
                 ),
                 Text(
                   'Jl. Patimura No. 5 Bondowoso',
@@ -200,6 +200,35 @@ class DetailPanti extends StatelessWidget {
               ],
             )
           ],
+        ),
+      );
+    }
+
+    Widget ButtomLokasi() {
+      return Container(
+        height: 50,
+        width: double.infinity,
+        margin: EdgeInsets.all(30),
+        child: TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/');
+          },
+          style: TextButton.styleFrom(
+              backgroundColor: primaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(47))),
+          child: Row(
+            children: [
+
+              Container(
+                margin: EdgeInsets.only(left: 84),
+                child: Text(
+                  'CEK LOKASI',
+                  style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -218,7 +247,8 @@ class DetailPanti extends StatelessWidget {
               namayayasan(),
               Detailatas(),
               juduldetail(),
-              Detailyayasan()
+              Detailyayasan(),
+              ButtomLokasi()
             ],
           ),
         ),
