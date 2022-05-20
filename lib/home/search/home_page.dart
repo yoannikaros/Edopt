@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
         margin: EdgeInsets.all(30),
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/detail-anak');
+            Navigator.pushNamed(context, '/search');
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,

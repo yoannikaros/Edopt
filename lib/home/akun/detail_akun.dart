@@ -2,16 +2,14 @@ import 'package:adopt/theme.dart';
 import 'package:flutter/material.dart';
 
 class DetailAkun extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
-    Widget header(){
+    Widget header() {
       return Container(
         child: Row(
           children: [
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
@@ -22,9 +20,8 @@ class DetailAkun extends StatelessWidget {
                 ),
               ),
             ),
-
             Container(
-              margin: EdgeInsets.only(left: 90,top: 30),
+              margin: EdgeInsets.only(left: 90, top: 30),
               width: 87,
               height: 87,
               decoration: BoxDecoration(
@@ -36,9 +33,10 @@ class DetailAkun extends StatelessWidget {
         ),
       );
     }
+
     Widget NameInput() {
       return Container(
-        margin: EdgeInsets.only(top: 20,left: 20,right: 20),
+        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -71,7 +69,8 @@ class DetailAkun extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Masukan Nama', hintStyle: subtitleTextStyle),
+                            hintText: 'Masukan Nama',
+                            hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -83,10 +82,9 @@ class DetailAkun extends StatelessWidget {
       );
     }
 
-
     Widget emailInput() {
       return Container(
-        margin: EdgeInsets.only(top: 20,left: 20,right: 20),
+        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -119,7 +117,8 @@ class DetailAkun extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Masukan Email', hintStyle: subtitleTextStyle),
+                            hintText: 'Masukan Email',
+                            hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -133,7 +132,7 @@ class DetailAkun extends StatelessWidget {
 
     Widget PhoneInput() {
       return Container(
-        margin: EdgeInsets.only(top: 20,left: 20,right: 20),
+        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -166,7 +165,8 @@ class DetailAkun extends StatelessWidget {
                         keyboardType: TextInputType.emailAddress,
                         style: primaryTextStyle,
                         decoration: InputDecoration.collapsed(
-                            hintText: 'Masukan Nomor Telepon', hintStyle: subtitleTextStyle),
+                            hintText: 'Masukan Nomor Telepon',
+                            hintStyle: subtitleTextStyle),
                       ),
                     ),
                   ],
@@ -178,15 +178,13 @@ class DetailAkun extends StatelessWidget {
       );
     }
 
-
     Widget SimpanButton() {
       return Container(
         height: 45,
         width: 173,
-        margin: EdgeInsets.only(top: 150,left: 85),
+        margin: EdgeInsets.only(top: 150, left: 85),
         child: TextButton(
-          onPressed: () {
-          },
+          onPressed: () {},
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
@@ -213,7 +211,6 @@ class DetailAkun extends StatelessWidget {
               emailInput(),
               PhoneInput(),
               SimpanButton()
-
             ],
           ),
         ),
