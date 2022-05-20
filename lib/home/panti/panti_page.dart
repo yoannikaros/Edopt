@@ -68,9 +68,11 @@ class PantiPage extends StatelessWidget {
 
     Widget CardHasil() {
       return Container(
-        margin: EdgeInsets.only(top: 36),
+        margin: EdgeInsets.only(top: 10),
         child: Column(
-          children: [ResultPantiCard()],
+          children: [
+            ResultPantiCard()
+          ],
         ),
       );
     }

@@ -6,6 +6,7 @@ import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/history/history_page.dart';
 import 'package:adopt/home/landing/first_landing.dart';
+import 'package:adopt/home/panti/detail_panti.dart';
 import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/detail_date.dart';
 import 'package:adopt/home/search/home_page.dart';
@@ -57,6 +58,9 @@ class MyApp extends StatelessWidget {
         //Menu Akun
         '/profile': (context) => AkunPage(),
         '/detail-akun': (context) => DetailAkun(),
+
+        //Menu Panti
+        '/detail-panti': (context) => DetailPanti()
 
         //Menu history
        // '/history': (context) => RiwayatPage(),

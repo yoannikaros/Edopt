@@ -5,6 +5,16 @@ class ResultPantiCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        children: [
+          GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/detail-panti');
+              },
+              child: Text("Percobaan"))
+        ],
+      ),
+    );
   }
 }
