@@ -41,6 +41,8 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/detail-akun');
               },
               child: Container(
+                width: 70,
+                height: 70,
                 child: CircleAvatar(
                   radius: 40,
                   backgroundImage: NetworkImage(user.photoURL!),

@@ -19,10 +19,10 @@ class AkunPage extends StatelessWidget {
             Container(
               width: 87,
               height: 87,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: AssetImage('aset/image_profile.png'))),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: NetworkImage(user.photoURL!),
+              ),
             ),
             SizedBox(
               width: 20,
@@ -133,6 +133,7 @@ class AkunPage extends StatelessWidget {
             ),
 
             Container(
+              margin: EdgeInsets.only(left: 25),
               child: TextButton(onPressed: () {
                 final provider =
               Provider.of<GoogleSignInProvider>(context,listen: false);
