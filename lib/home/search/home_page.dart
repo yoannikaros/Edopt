@@ -23,18 +23,7 @@ class HomePage extends StatelessWidget {
                 //colum dibungkis expanded
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextButton( onPressed: () { final provider =
-                  Provider.of<GoogleSignInProvider>(context,listen: false);
 
-                  provider.logout();
-                  },
-                  child: Text(
-                    'Keluar',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 10, fontWeight: semiBold),
-
-                  ),
-                  ),
                   Text(
                     'Hello,' + user.displayName!,
                     style: blackTextStyle.copyWith(

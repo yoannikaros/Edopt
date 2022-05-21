@@ -1,11 +1,16 @@
 import 'package:adopt/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../auth/provider/google_sign_in.dart';
 
 class AkunPage extends StatelessWidget {
   const AkunPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
       return Container(
         margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
@@ -27,7 +32,7 @@ class AkunPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Yoan Nikaros',
+                  user.displayName!,
                   style: blackTextStyle.copyWith(
                       fontSize: 16, fontWeight: semiBold),
                 ),
@@ -56,7 +61,7 @@ class AkunPage extends StatelessWidget {
                     ),
                     SizedBox(width: 7,),
                     Text(
-                      'yoannikaros@gmail.com',
+                      user.email!,
                       style: subtitleTextStyle.copyWith(fontSize: 13),
                     ),
                   ],
@@ -128,11 +133,19 @@ class AkunPage extends StatelessWidget {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 30,bottom: 11),
-              child: Text(
-                'Keluar',
-                style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+              child: TextButton(onPressed: () {
+                final provider =
+              Provider.of<GoogleSignInProvider>(context,listen: false);
+
+              provider.logout();  },
+
+                child: Text(
+                  'Keluar',style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+                ),
+
               ),
+
+
             ),
           ],
         ),
