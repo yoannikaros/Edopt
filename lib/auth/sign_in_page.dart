@@ -1,5 +1,7 @@
+import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../theme.dart';
 
 //Sedang Mencari Referensi
@@ -42,9 +44,11 @@ class SignInPage extends StatelessWidget {
             height: 48,
             width: 318,
             margin: EdgeInsets.only(top: 30),
-            child: TextButton(
+            child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/main');
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.googleLogin();
               },
               style: TextButton.styleFrom(
                   backgroundColor: backgroundColor6,
@@ -161,8 +165,9 @@ class SignInPage extends StatelessWidget {
               'Saya lupa kata sandi',
               style: subtitleTextStyle.copyWith(fontSize: 12),
             ),
-            SizedBox(width: 10,),
-
+            SizedBox(
+              width: 10,
+            ),
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/forget');
@@ -188,10 +193,10 @@ class SignInPage extends StatelessWidget {
             children: [
               //route
               header(),
-              //  Gmail(),
-              nomorInput(),
+              Gmail(),
+              //nomorInput(),
               //passwordInput(),
-              signInButton(),
+              //signInButton(),
               //Spacer(),
               footer(),
             ],

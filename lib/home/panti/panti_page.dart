@@ -68,11 +68,17 @@ class PantiPage extends StatelessWidget {
 
     Widget CardHasil() {
       return Container(
-        margin: EdgeInsets.only(top: 10),
+        margin: EdgeInsets.only(top: 10,left: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              children: [
+                ResultPantiCard(),
+                ResultPantiCard(),
+              ],
+            )
 
-            ResultPantiCard(),
           ],
         ),
       );

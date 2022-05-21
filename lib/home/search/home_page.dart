@@ -1,5 +1,8 @@
+import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:adopt/cardwidget/newscard.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../theme.dart';
 
@@ -8,6 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -19,29 +23,39 @@ class HomePage extends StatelessWidget {
                 //colum dibungkis expanded
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  TextButton( onPressed: () { final provider =
+                  Provider.of<GoogleSignInProvider>(context,listen: false);
+
+                  provider.logout();
+                  },
+                  child: Text(
+                    'Keluar',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 10, fontWeight: semiBold),
+
+                  ),
+                  ),
                   Text(
-                    'Hello, Yoan',
+                    'Hello,' + user.displayName!,
                     style: blackTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
                   Text(
-                    '@Yoannikaros',
+                    user.email!,
                     style: subtitleTextStyle.copyWith(fontSize: 16),
                   )
                 ],
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, '/detail-akun');
               },
               child: Container(
-                width: 54,
-                height: 54,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage('aset/image_profile.png'))),
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: NetworkImage(user.photoURL!),
+                ),
               ),
             ),
           ],
@@ -72,13 +86,13 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 80,right: 112),
+                margin: EdgeInsets.only(left: 80, right: 112),
                 child: Text(
                   'CARI ANAK',
-                  style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                  style:
+                      primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
                 ),
               ),
-
             ],
           ),
         ),
@@ -93,24 +107,26 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               'Artikel terbaru',
-              style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+              style:
+                  blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
             ),
-            SizedBox(width: 90 ,),
+            SizedBox(
+              width: 90,
+            ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, '/list-news');
               },
               child: Text(
                 'Lainnya',
                 style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
               ),
-
             ),
-
-            SizedBox(width: 10 ,),
-
+            SizedBox(
+              width: 10,
+            ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, '/list-news');
               },
               child: Image.asset(

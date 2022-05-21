@@ -132,6 +132,8 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
         backgroundColor: Colors.white, //warna background
         bottomNavigationBar: customBottomNav(), //navigasi bawah
-        body: body());
+        body: body(),
+
+    );
   }
 }
