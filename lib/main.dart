@@ -8,7 +8,7 @@ import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/history/detail_history.dart';
 import 'package:adopt/home/history/history_page.dart';
-import 'package:adopt/home/landing/first_landing.dart';
+import 'package:adopt/home/landing/landing_page.dart';
 import 'package:adopt/home/panti/detail_panti.dart';
 import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/detail_date.dart';
