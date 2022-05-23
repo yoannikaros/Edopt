@@ -9,6 +9,7 @@ void main() {
   runApp(const LandingPage()); //untuk menjalankan app
 }
 
+//landing page
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 

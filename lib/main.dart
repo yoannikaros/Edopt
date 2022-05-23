@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => AkunPage(),
           '/detail-akun': (context) => DetailAkun(),
 
-          //Menu Panti
+          //Menu Panti asuhan
           '/detail-panti': (context) => DetailPanti(),
 
           //Menu history
