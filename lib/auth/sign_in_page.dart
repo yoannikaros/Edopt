@@ -1,4 +1,5 @@
 import 'package:adopt/auth/provider/google_sign_in.dart';
+import 'package:adopt/cardwidget/login_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -191,14 +192,15 @@ class SignInPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               //route
               header(),
-              Gmail(),
               //nomorInput(),
+              Gmail(),
               //passwordInput(),
               //signInButton(),
               //Spacer(),
-              footer(),
+              //footer(),
             ],
           ),
         ),

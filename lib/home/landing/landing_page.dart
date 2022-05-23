@@ -1,21 +1,23 @@
 import 'dart:ffi';
 
+import 'package:adopt/auth/sign_in_page.dart';
+import 'package:adopt/cardwidget/login_card.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() {
-  runApp(const MyApp()); //untuk menjalankan app
+  runApp(const LandingPage()); //untuk menjalankan app
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class LandingPage extends StatelessWidget {
+  const LandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //menghilangkan banner debug
       title: 'Flutter Demo',
-      theme: ThemeData( 
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -27,13 +29,6 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Home',
-        style: TextStyle(color: Colors.black),)
-      ),
     );
   }
 }
@@ -144,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
         onPressed: () async {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => Home()),
+            MaterialPageRoute(builder: (context) => LoginAkun()),
           );
         }, 
       ) 

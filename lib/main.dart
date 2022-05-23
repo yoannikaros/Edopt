@@ -42,11 +42,10 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
-        home: LoginAkun(),
+
         debugShowCheckedModeBanner: false,
         routes: {
-         //  '/': (context) => SplashPage(),
-         // '/': (context) => landing(),
+          '/landing': (context) => LandingPage(),
 
           //Auth
           '/sign-in':(context) => SignInPage(),
@@ -79,8 +78,8 @@ class MyApp extends StatelessWidget {
 
           //Menu history
           '/detail-hsitory': (context) => DetailHistory(),
-
         },
+        home: LandingPage(),
       ),
     );
   }
