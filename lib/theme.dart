@@ -29,7 +29,7 @@ TextStyle primaryTextStyle = GoogleFonts.poppins(
 );
 
 TextStyle secondaryTextStyle = GoogleFonts.poppins(
-  color: secondaryTextColor,
+  color: secondaryColor,
 );
 
 TextStyle subtitleTextStyle = GoogleFonts.poppins(

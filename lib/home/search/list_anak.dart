@@ -54,6 +54,7 @@ class _ListAnakState extends State<ListAnak> {
           style: blackTextStyle.copyWith(
               fontSize: 16, fontWeight: FontWeight.w600),
         ),
+
       );
     }
 
