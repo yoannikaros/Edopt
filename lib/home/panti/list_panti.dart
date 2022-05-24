@@ -23,7 +23,7 @@ class ListPanti extends StatelessWidget {
         margin: EdgeInsets.only(top: 10),
         child: Column(
           children: [
-DaftarKunjungan()
+          DaftarKunjungan()
 
           ],
         ),

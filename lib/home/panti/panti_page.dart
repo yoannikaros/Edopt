@@ -34,7 +34,7 @@ class PantiPage extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         keyboardType: TextInputType.text,
-                        style: primaryTextStyle,
+                        style: blackTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: 'Cari', hintStyle: subtitleTextStyle),
                       ),

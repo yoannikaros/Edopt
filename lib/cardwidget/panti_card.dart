@@ -13,7 +13,7 @@ class ResultPantiCard extends StatelessWidget {
      },
      child: Card(
 
-       color: Colors.white70,
+       color: Colors.white,
        child: Container(
        width: 180,
          padding: EdgeInsets.all(20),

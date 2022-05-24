@@ -5,6 +5,8 @@ import '../theme.dart';
 class NewsCard extends StatelessWidget {
   const NewsCard({Key? key}) : super(key: key);
 
+//INI LIST BERITA YANG DI HOME PAGE
+
   @override
   Widget build(BuildContext context) {
     return Container(

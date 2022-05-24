@@ -5,6 +5,8 @@ import '../theme.dart';
 class CardNews extends StatelessWidget {
   const CardNews({Key? key}) : super(key: key);
 
+  //iNI LIST BERITA YANG DITULISAN LAINNYA
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +38,7 @@ class CardNews extends StatelessWidget {
                     ),
                     Text(
                       'Icon',
-                      style: secondaryTextStyle.copyWith(
+                      style: primaryTextStyle.copyWith(
                           fontSize: 13, fontWeight: semiBold),
                     ),
                     SizedBox(
@@ -44,7 +46,7 @@ class CardNews extends StatelessWidget {
                     ),
                     Text(
                       '3 hari yang lalu',
-                      style: secondaryTextStyle.copyWith(
+                      style: primaryTextStyle.copyWith(
                           fontSize: 13, fontWeight: semiBold),
                     ),
                   ],
@@ -54,6 +56,7 @@ class CardNews extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   SizedBox(
                   height: 150,
@@ -61,7 +64,7 @@ class CardNews extends StatelessWidget {
                     ,
                     Text(
                       'Judul',
-                      style: secondaryTextStyle.copyWith(
+                      style: primaryTextStyle.copyWith(
                           fontSize: 13, fontWeight: semiBold),
                     ),
                     SizedBox(
@@ -69,7 +72,7 @@ class CardNews extends StatelessWidget {
                     ),
                     Text(
                       'Keterangan',
-                      style: secondaryTextStyle.copyWith(
+                      style: primaryTextStyle.copyWith(
                           fontSize: 13, fontWeight: semiBold),
                     ),
                   ],

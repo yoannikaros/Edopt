@@ -36,12 +36,12 @@ class DetailNews extends StatelessWidget {
                   padding: EdgeInsets.only(left: 30),
                   child: Text(
                     'Dari Edopt, untuk anak Indonesia  ',
-                    style: secondaryTextStyle.copyWith(
+                    style: primaryTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
                 ),
 
-                SizedBox(height: 45,),
+                SizedBox(height: 55,),
 
                 Row(
                   children: [
@@ -51,14 +51,14 @@ class DetailNews extends StatelessWidget {
                 child: Image.asset('aset/icon_pengguna.png', width: 20)),
                     Text(
                       'Dani',
-                      style: secondaryTextStyle.copyWith(
-                          fontSize: 17, fontWeight: FontWeight.w700),
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: FontWeight.w700),
                     ),
-                    SizedBox(width: 155,),
+                    SizedBox(width: 165,),
                     Text(
                       '3 hari yang lalu',
-                      style: secondaryTextStyle.copyWith(
-                          fontSize: 17, fontWeight: FontWeight.w700),
+                      style: primaryTextStyle.copyWith(
+                          fontSize: 14, fontWeight: FontWeight.w700),
                     ),
 
                   ],
