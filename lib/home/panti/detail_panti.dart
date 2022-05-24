@@ -68,17 +68,18 @@ class DetailPanti extends StatelessWidget {
     Widget Detailatas() {
       return Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
 
                 Image.asset(
-                  'aset/icon_jam.png',
-                  width: 17,
+                  'aset/icon_jamabuabu.png',
+                  width: 19,
                 ),
 
                 SizedBox(
-                  width: 12,
+                  width: 10,
                 ),
                 Text(
                   '07:00 - 15:00',
@@ -92,7 +93,7 @@ class DetailPanti extends StatelessWidget {
               children: [
                 Image.asset(
                   'aset/icon_telepon.png',
-                  width: 17,
+                  width: 18,
                 ),
 
                 SizedBox(
@@ -192,10 +193,12 @@ class DetailPanti extends StatelessWidget {
                 SizedBox(
                   width: 52,
                 ),
-                Text(
-                  'Jl. Patimura No. 5 Bondowoso',
-                  style: blackTextStyle.copyWith(
-                      fontSize: 14, fontWeight: FontWeight.w400),
+                Expanded(
+                  child: Text(
+                    'Jl. Patimura No. 5 Bondowoso',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 14, fontWeight: FontWeight.w400),
+                  ),
                 ),
               ],
             )

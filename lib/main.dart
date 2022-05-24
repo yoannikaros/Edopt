@@ -13,7 +13,7 @@ import 'package:adopt/home/landing/toSign.dart';
 import 'package:adopt/home/panti/detail_panti.dart';
 import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/detail_date.dart';
-import 'package:adopt/home/search/home_page.dart';
+import 'package:adopt/home/home_page.dart';
 import 'package:adopt/home/main_page.dart';
 import 'package:adopt/auth/forgetPW/sendmail.dart';
 import 'package:adopt/auth/sign_in_page.dart';

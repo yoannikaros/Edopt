@@ -28,7 +28,7 @@ class DetailNews extends StatelessWidget {
                   },
                   child: Container(
                     margin: EdgeInsets.only(left: 20),
-                      child: Image.asset('aset/icon_kembali.png', width: 25)),
+                      child: Image.asset('aset/icon_arahkiriputih.png', width: 25)),
                 ),
 
                 SizedBox(height: 45,),
@@ -48,7 +48,7 @@ class DetailNews extends StatelessWidget {
 
                     Container(
                 margin: EdgeInsets.only(left: 20),
-                child: Image.asset('aset/icon_pengguna.png', width: 20)),
+                child: Image.asset('aset/icon_user.png', width: 20)),
                     Text(
                       'Dani',
                       style: primaryTextStyle.copyWith(

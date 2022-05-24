@@ -66,6 +66,43 @@ class SignInPage extends StatelessWidget {
       );
     }
 
+    Widget CariButton() {
+      return Container(
+        height: 50,
+        width: double.infinity,
+        margin: EdgeInsets.all(30),
+        child: TextButton(
+          onPressed: () {
+            final provider =
+            Provider.of<GoogleSignInProvider>(context, listen: false);
+            provider.googleLogin();
+          },
+          style: TextButton.styleFrom(
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(47))),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Image.asset(
+                  'aset/icon_google.png',
+                  width: 24,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text(
+                  'Masuk dengan Google',
+                  style:
+                  blackTextStyle.copyWith(fontSize: 15, fontWeight: semiBold),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
     Widget nomorInput() {
       return Container(
         margin: EdgeInsets.only(top: 10),
@@ -197,7 +234,8 @@ class SignInPage extends StatelessWidget {
               //route
               header(),
               //nomorInput(),
-              Gmail(),
+              //Gmail(),
+              CariButton()
               //passwordInput(),
               //signInButton(),
               //Spacer(),

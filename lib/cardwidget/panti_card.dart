@@ -34,7 +34,7 @@ class ResultPantiCard extends StatelessWidget {
                children: [
 
                  Image.asset(
-                   'aset/icon_lokasi.png',
+                   'aset/icon_lokasibiru.png',
                    width: 20,
                  ),
 
@@ -51,7 +51,7 @@ class ResultPantiCard extends StatelessWidget {
                children: [
 
                  Image.asset(
-                   'aset/icon_jam.png',
+                   'aset/icon_jambiru.png',
                    width: 18,
                  ),
 

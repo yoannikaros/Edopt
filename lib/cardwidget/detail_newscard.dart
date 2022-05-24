@@ -30,8 +30,8 @@ class CardNews extends StatelessWidget {
                 child: Row(
                   children: [
                     Image.asset(
-                      'aset/icon_name.png',
-                      width: 10,
+                      'aset/icon_user.png',
+                      width: 15,
                     ),
                     SizedBox(
                       width: 5,
@@ -42,7 +42,7 @@ class CardNews extends StatelessWidget {
                           fontSize: 13, fontWeight: semiBold),
                     ),
                     SizedBox(
-                      width: 140,
+                      width: 120,
                     ),
                     Text(
                       '3 hari yang lalu',
