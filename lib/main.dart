@@ -9,6 +9,7 @@ import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/history/detail_history.dart';
 import 'package:adopt/home/history/history_page.dart';
 import 'package:adopt/home/landing/landing_page.dart';
+import 'package:adopt/home/landing/toSign.dart';
 import 'package:adopt/home/panti/detail_panti.dart';
 import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/detail_date.dart';
@@ -29,7 +30,6 @@ import 'auth/sign_in_page.dart';
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(MyApp());
 }
 
@@ -45,8 +45,8 @@ class MyApp extends StatelessWidget {
 
         debugShowCheckedModeBanner: false,
         routes: {
-          '/landing': (context) => LandingPage(),
 
+          '/landing': (context) => LandingPage(),
           //Auth
           '/sign-in':(context) => SignInPage(),
           '/sign-up': (context) => SignUpPage(),
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
           //Menu history
           '/detail-hsitory': (context) => DetailHistory(),
         },
-        home: LandingPage(),
+        home: LoginAkun(),
       ),
     );
   }

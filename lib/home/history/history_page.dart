@@ -31,11 +31,22 @@ class RiwayatPage extends StatelessWidget {
     Widget DaftarKunjunganku() {
       return Container(
         margin: EdgeInsets.only(top: 10),
-        child: Column(
-          children: [
-DaftarKunjungan(),
-            DaftarKunjungan()
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+              DaftarKunjungan(),
+            ],
+          ),
         ),
       );
     }
@@ -43,18 +54,15 @@ DaftarKunjungan(),
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(),
-              DaftarKunjunganku()
-            ],
-          ),
+      body: Container(
+        margin: EdgeInsets.only(right: 20,left: 20),
+        child: ListView(
+          children: [
+            header(),
+            DaftarKunjunganku()
+          ],
         ),
-      ),
+      )
     );
   }
 }

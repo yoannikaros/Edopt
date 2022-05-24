@@ -83,12 +83,24 @@ class _ListAnakState extends State<ListAnak> {
     Widget ListAnaknya(){
       return Container(
         margin: EdgeInsets.only(top: 10),
-          child: Column(
-            children: [
-             ListAnakCard(),
-              ListAnakCard(),
-              ListAnakCard()
-            ],
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+               ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+                ListAnakCard(),
+              ],
+            ),
           ),
       );
     }
@@ -96,20 +108,17 @@ class _ListAnakState extends State<ListAnak> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(),
-              TitleGnder(),
-              Gender(),
-              TitleUmur(),
-              SlideUmur(),
-              ListAnaknya()
-            ],
-          ),
+      body: Container(
+        margin: EdgeInsets.only(left: 20,right: 20),
+        child: ListView(
+          children: [
+            header(),
+            TitleGnder(),
+            Gender(),
+            TitleUmur(),
+            SlideUmur(),
+            ListAnaknya()
+          ],
         ),
       ),
     );

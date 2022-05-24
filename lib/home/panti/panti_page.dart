@@ -72,11 +72,71 @@ class PantiPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                ResultPantiCard(),
-                ResultPantiCard(),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: SafeArea(
+                child: Column(
+                  children: [
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        ResultPantiCard(),
+                        ResultPantiCard(),
+                      ],
+                    ),
+                  
+                  ],
+                ),
+              ),
             )
 
           ],

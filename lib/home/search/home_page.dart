@@ -142,9 +142,9 @@ class HomePage extends StatelessWidget {
               ),
               Row(
                 children: [
+              NewsCard(),
                   NewsCard(),
-                  NewsCard(),
-                  NewsCard(),
+                  NewsCard()
                 ],
               )
             ],

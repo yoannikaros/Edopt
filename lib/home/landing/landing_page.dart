@@ -2,6 +2,8 @@ import 'dart:ffi';
 
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/cardwidget/login_card.dart';
+import 'package:adopt/home/landing/toSign.dart';
+import 'package:adopt/home/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -65,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 50),
+            const SizedBox(height: 20),
             Text(
               title,
               style: TextStyle(
@@ -74,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 fontWeight: FontWeight.bold
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             Image.asset(
               urlImage,
               fit: BoxFit.cover,
@@ -140,9 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
         onPressed: () async {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => LoginAkun()),
+            MaterialPageRoute(builder: (context) => MainPage()),
           );
-        }, 
+        },
       ) 
       : Container(
         padding: const EdgeInsets.symmetric(horizontal: 170),

@@ -20,7 +20,7 @@ class SignInPage extends StatelessWidget {
           children: [
             Text(
               'Login',
-              style: primaryTextStyle.copyWith(
+              style: blackTextStyle.copyWith(
                 fontSize: 24,
                 fontWeight: semiBold,
               ),
@@ -44,6 +44,7 @@ class SignInPage extends StatelessWidget {
           Container(
             height: 48,
             width: 318,
+            //color: Colors.blue,
             margin: EdgeInsets.only(top: 30),
             child: ElevatedButton(
               onPressed: () {
@@ -52,12 +53,12 @@ class SignInPage extends StatelessWidget {
                 provider.googleLogin();
               },
               style: TextButton.styleFrom(
-                  backgroundColor: backgroundColor6,
+                  backgroundColor: Colors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(28))),
               child: Text(
                 'Masuk dengan google',
-                style: primaryku.copyWith(fontSize: 16, fontWeight: medium),
+                style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: medium),
               ),
             ),
           ),
@@ -171,7 +172,7 @@ class SignInPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/forget');
+                Navigator.pushNamed(context, '/masukk');
               },
               child: Image.asset(
                 'aset/icon_panahkanan.png',
@@ -185,7 +186,7 @@ class SignInPage extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroundColor1,
+      backgroundColor: backgroundColor6,
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: defaultMargin),
