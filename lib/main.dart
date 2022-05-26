@@ -17,6 +17,8 @@ import 'package:adopt/auth/forgetPW/sendmail.dart';
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/auth/sign_up_page.dart';
 import 'package:adopt/home/search/list_anak.dart';
+import 'package:adopt/models/constan.dart';
+import 'package:adopt/models/news/provider/news_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -36,47 +38,51 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => GoogleSignInProvider(),
-      child: MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => NewsProvider())
+      ],
+      child: ChangeNotifierProvider(
+        create: (context) => GoogleSignInProvider(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          routes: {
+            '/landing': (context) => LandingPage(),
+            //Auth
+            '/sign-in':(context) => SignInPage(),
+            '/sign-up': (context) => SignUpPage(),
 
-        debugShowCheckedModeBanner: false,
-        routes: {
+            //Recovery
+            '/forget':(context) => SendMail(),
+            '/input-recovery':(context) => InputRecovery(),
+            '/ganti-pw':(context) => gantiPw(),
 
-          '/landing': (context) => LandingPage(),
-          //Auth
-          '/sign-in':(context) => SignInPage(),
-          '/sign-up': (context) => SignUpPage(),
+            //Main Page
+            '/main': (context) => MainPage(),
 
-          //Recovery
-          '/forget':(context) => SendMail(),
-          '/input-recovery':(context) => InputRecovery(),
-          '/ganti-pw':(context) => gantiPw(),
+            //Artikel
+            '/koneksi-berita': (context) => KoneksiBerita(),
+            '/list-news': (context) => ListNews(),
+            '/detailberita': (context) => DetailNews(),
 
-          //Main Page
-          '/main': (context) => MainPage(),
+            //Menu Search
+            '/search': (context) => ListAnak(),
+            '/detail-anak': (context) => DetailAnak(),
+            '/HomePage': (context) => HomePage(),
+            '/detail_date': (context) => DetailDate(),
 
-          //Artikel
-          '/list-news': (context) => ListNews(),
-          '/detailberita': (context) => DetailNews(),
+            //Menu Akun
+            '/profile': (context) => AkunPage(),
+            '/detail-akun': (context) => DetailAkun(),
 
-          //Menu Search
-          '/search': (context) => ListAnak(),
-          '/detail-anak': (context) => DetailAnak(),
-          '/HomePage': (context) => HomePage(),
-          '/detail_date': (context) => DetailDate(),
+            //Menu Panti asuhan
+            '/detail-panti': (context) => DetailPanti(),
 
-          //Menu Akun
-          '/profile': (context) => AkunPage(),
-          '/detail-akun': (context) => DetailAkun(),
-
-          //Menu Panti asuhan
-          '/detail-panti': (context) => DetailPanti(),
-
-          //Menu history
-          '/detail-hsitory': (context) => DetailHistory(),
-        },
-        home: LoginAkun(),
+            //Menu history
+            '/detail-hsitory': (context) => DetailHistory(),
+          },
+          home: LoginAkun(),
+        ),
       ),
     );
   }

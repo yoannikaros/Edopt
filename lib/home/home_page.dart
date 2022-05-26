@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/news/provider/news_provider.dart';
 import '../theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NewsProvider newsProvider = Provider.of<NewsProvider>(context);
     final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
       return Container(
@@ -141,11 +143,7 @@ class HomePage extends StatelessWidget {
                 width: defaultMargin,
               ),
               Row(
-                children: [
-              NewsCard(),
-                  NewsCard(),
-                  NewsCard()
-                ],
+                children: newsProvider.News.map((news) => NewsCard(news)).toList(),
               )
             ],
           ),

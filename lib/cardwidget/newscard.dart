@@ -1,10 +1,12 @@
+import 'package:adopt/models/news/news_model.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
 class NewsCard extends StatelessWidget {
-  const NewsCard({Key? key}) : super(key: key);
 
+  final NewsModel news;
+  NewsCard(this.news);
 //INI LIST BERITA YANG DI HOME PAGE
 
   @override
@@ -22,7 +24,8 @@ class NewsCard extends StatelessWidget {
         child: Stack(
           children: [
           Image.asset(
-          'aset/icon_artikel.png',
+          // 'aset/icon_artikel.png'
+          news.image_url,
           width: 289,
           height: 134,
           fit: BoxFit.cover,
@@ -31,7 +34,7 @@ class NewsCard extends StatelessWidget {
               margin: EdgeInsets.only(top: 90,left: 10),
               child: Expanded(
                 child: Text(
-                  'Judul Berita',
+                  news.admin_name,
                   style:
                   primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
                 ),

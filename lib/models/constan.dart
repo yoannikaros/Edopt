@@ -1,4 +1,4 @@
-import 'package:adopt/models/news/news_model.dart';
+import 'package:adopt/models/news/official/model.dart';
 import 'package:flutter/material.dart';
 
 class KoneksiBerita extends StatelessWidget {

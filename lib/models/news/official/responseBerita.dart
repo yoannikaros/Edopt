@@ -1,4 +1,5 @@
-import 'package:adopt/models/news/news_model.dart';
+import 'package:adopt/home/artikel/list_news.dart';
+import 'package:adopt/models/news/official/model.dart';
 import 'package:flutter/material.dart';
 
 class KoneksiBerita extends StatelessWidget {
@@ -11,15 +12,17 @@ class KoneksiBerita extends StatelessWidget {
         future: fetchBerita(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Text(snapshot.data!.admin_name);
+            // return Text(snapshot.data!.admin_name);
+            return ListNews();
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
-
           // By default, show a loading spinner.
           return const CircularProgressIndicator();
         },
       ),
+
+
     );
   }
 }
