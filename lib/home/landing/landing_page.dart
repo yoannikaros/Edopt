@@ -2,7 +2,6 @@ import 'dart:ffi';
 
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/cardwidget/login_card.dart';
-import 'package:adopt/home/landing/toSign.dart';
 import 'package:adopt/home/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -19,11 +18,11 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //menghilangkan banner debug
-      title: 'Flutter Demo',
+      title: 'Edopt',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Edopt'),
     );
   }
 }
