@@ -1,11 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
-class NewsCard extends StatelessWidget {
-  const NewsCard({Key? key}) : super(key: key);
+class ArticleCard extends StatelessWidget {
+  final String previewText;
+  final String imageUrl;
 
-//INI LIST BERITA YANG DI HOME PAGE
+  const ArticleCard({
+    Key? key,
+    required this.previewText,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +22,24 @@ class NewsCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6), color: primaryTextColor),
       child: GestureDetector(
-        onTap: (){
+        onTap: () {
           Navigator.pushNamed(context, '/detailberita');
         },
         child: Stack(
           children: [
-          Image.asset(
-          'aset/icon_artikel.png',
-          width: 289,
-          height: 134,
-          fit: BoxFit.cover,
-        ),
+            CachedNetworkImage(
+              imageUrl: imageUrl,
+              width: 289,
+              height: 134,
+              fit: BoxFit.cover,
+            ),
             Container(
-              margin: EdgeInsets.only(top: 90,left: 10),
+              margin: EdgeInsets.only(top: 90, left: 10),
               child: Expanded(
                 child: Text(
-                  'Judul Berita',
+                  previewText,
                   style:
-                  primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                      primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
                 ),
               ),
             ),

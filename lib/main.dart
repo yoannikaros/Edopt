@@ -24,12 +24,11 @@ import 'auth/sign_in_page.dart';
 
 //void main()=>
 
-Future main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -39,19 +38,17 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
-
         debugShowCheckedModeBanner: false,
         routes: {
-
           '/landing': (context) => LandingPage(),
           //Auth
-          '/sign-in':(context) => SignInPage(),
+          '/sign-in': (context) => SignInPage(),
           '/sign-up': (context) => SignUpPage(),
 
           //Recovery
-          '/forget':(context) => SendMail(),
-          '/input-recovery':(context) => InputRecovery(),
-          '/ganti-pw':(context) => gantiPw(),
+          '/forget': (context) => SendMail(),
+          '/input-recovery': (context) => InputRecovery(),
+          '/ganti-pw': (context) => gantiPw(),
 
           //Main Page
           '/main': (context) => MainPage(),
