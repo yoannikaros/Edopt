@@ -1,5 +1,7 @@
 import 'package:adopt/logging.dart';
+import 'package:adopt/models/anak/child_model.dart';
 import 'package:adopt/models/article.dart';
+import 'package:adopt/models/panti/panti_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -17,6 +19,23 @@ abstract class ApiService {
 
   @GET('/api/articles/{id}')
   Future<Article> getArticle(@Path() int id);
+
+
+  //Panti Asuhan
+  @GET('/api/orphanages/')
+  Future<PantiList> getPantiList(
+      {@Query('page') int page = 1, @Query('per_page') int perPage = 10});
+
+  @GET('/api/orphanages/{id}')
+  Future<Panti> getPanti(@Path() int id);
+
+  //anak
+  // @GET('/api/children/')
+  // Future<AnakList> GetAnakList(
+  //     {@Query('page') int page = 1, @Query('per_page') int perPage = 10});
+  //
+  // @GET('/api/children/{id}')
+  // Future<anakModel> getAnak(@Path() int id);
 
   static ApiService create() {
     final dio = Dio();
