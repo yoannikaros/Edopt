@@ -20,7 +20,7 @@ class ArticleCard extends StatelessWidget {
       height: 134,
       margin: EdgeInsets.only(right: defaultMargin),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6), color: primaryTextColor),
+          borderRadius: BorderRadius.circular(30), color: primaryTextColor),
       child: GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, '/detailberita');
