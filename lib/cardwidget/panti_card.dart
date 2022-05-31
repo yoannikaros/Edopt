@@ -3,7 +3,18 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 
 class ResultPantiCard extends StatelessWidget {
-  const ResultPantiCard({Key? key}) : super(key: key);
+  final String name;
+  final String district;
+  final String openingHours;
+  final String closingHours;
+
+  const ResultPantiCard ({
+    Key? key,
+    required this.name,
+    required this.district,
+    required this.openingHours,
+    required this.closingHours,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

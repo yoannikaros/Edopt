@@ -1,45 +1,44 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'panti.g.dart';
+part 'panti_model.g.dart';
 
 @JsonSerializable()
 class Panti {
   final int id;
-  final String? name;
+  final String name;
 
   @JsonKey(name: 'image_url')
-  final String image_url;
+  final String? imageUrl;
 
   @JsonKey(name: 'province')
-  final String province;
+  final String? province;
 
   @JsonKey(name: 'regency')
-  final String regency;
+  final String? regency;
 
   @JsonKey(name: 'district')
   final String district;
 
   @JsonKey(name: 'address')
-  final String address;
+  final String? address;
 
   @JsonKey(name: 'opening_hours')
-  final String opening_hours;
+  final String openingHours;
   @JsonKey(name: 'closing_hours')
-  final String closing_hours;
+  final String closingHours;
 
   Panti(
-      this.id,
-      this.name,
-      this.image_url,
-      this.province,
-      this.regency,
-      this.district,
-      this.address,
-      this.opening_hours,
-      this.closing_hours,
-      );
+    this.id,
+    this.name,
+    this.imageUrl,
+    this.province,
+    this.regency,
+    this.district,
+    this.address,
+    this.openingHours,
+    this.closingHours,
+  );
 
-  factory Panti.fromJson(Map<String, dynamic> json) =>
-      _$PantiFromJson(json);
+  factory Panti.fromJson(Map<String, dynamic> json) => _$PantiFromJson(json);
 
   Map<String, dynamic> toJson() => _$PantiToJson(this);
 }
@@ -71,5 +70,3 @@ class PantiMeta {
 
   Map<String, dynamic> toJson() => _$PantiMetaToJson(this);
 }
-
-//

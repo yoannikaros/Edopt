@@ -14,6 +14,7 @@ class ListNews extends StatefulWidget {
 }
 
 class _ListNewsState extends State<ListNews> {
+  // Ganti ke model mu
   final PagingController<int, Article> _pagingController =
       PagingController(firstPageKey: 1);
 
@@ -29,11 +30,14 @@ class _ListNewsState extends State<ListNews> {
     try {
       final newItems = await ApiService.create().getArticlesList(page: pageKey);
 
+      // final panti = await ApiService.create().getPantiList(pageKey, query, lat, lng)
       final isLastPage = newItems.meta.currentPage == newItems.meta.lastPage;
       if (isLastPage) {
+        // Gati
         _pagingController.appendLastPage(newItems.data);
       } else {
         final nextPageKey = pageKey + 1;
+        // Ganti
         _pagingController.appendPage(newItems.data, nextPageKey);
       }
     } catch (error) {
@@ -83,6 +87,7 @@ class _ListNewsState extends State<ListNews> {
   }
 
   Widget Isi() {
+    // Panti
     return PagedListView<int, Article>.separated(
       shrinkWrap: true,
       primary: false,

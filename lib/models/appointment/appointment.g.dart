@@ -16,7 +16,8 @@ Appointment _$AppointmentFromJson(Map<String, dynamic> json) => Appointment(
       json['longtitude'] as String,
     );
 
-Map<String, dynamic> _$AppointmentToJson(Appointment instance) => <String, dynamic>{
+Map<String, dynamic> _$AppointmentToJson(Appointment instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'time': instance.time,
       'status': instance.status,
@@ -26,7 +27,8 @@ Map<String, dynamic> _$AppointmentToJson(Appointment instance) => <String, dynam
       'longtitude': instance.longtitude,
     };
 
-AppointmentList _$AppointmentListFromJson(Map<String, dynamic> json) => AppointmentList(
+AppointmentList _$AppointmentListFromJson(Map<String, dynamic> json) =>
+    AppointmentList(
       (json['data'] as List<dynamic>)
           .map((e) => Appointment.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -39,7 +41,8 @@ Map<String, dynamic> _$AppointmentListToJson(AppointmentList instance) =>
       'meta': instance.meta,
     };
 
-AppointmentMeta _$AppointmentMetaFromJson(Map<String, dynamic> json) => AppointmentMeta(
+AppointmentMeta _$AppointmentMetaFromJson(Map<String, dynamic> json) =>
+    AppointmentMeta(
       json['current_page'] as int,
       json['last_page'] as int,
     );

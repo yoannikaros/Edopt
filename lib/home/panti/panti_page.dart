@@ -68,7 +68,7 @@ class PantiPage extends StatelessWidget {
 
     Widget CardHasil() {
       return Container(
-        margin: EdgeInsets.only(top: 10,left: 10),
+        margin: EdgeInsets.only(top: 10, left: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -77,68 +77,15 @@ class PantiPage extends StatelessWidget {
               child: SafeArea(
                 child: Column(
                   children: [
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        ResultPantiCard(),
-                        ResultPantiCard(),
-                      ],
-                    ),
-                  
+                    ResultPantiCard(
+                        name: 'tesdf',
+                        district: 'dsfasd',
+                        openingHours: 'dsafds',
+                        closingHours: 'dsfdaf')
                   ],
                 ),
               ),
             )
-
           ],
         ),
       );
