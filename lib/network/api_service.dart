@@ -5,7 +5,6 @@ import 'package:adopt/models/child/child_model.dart';
 import 'package:adopt/models/appointment/appointment.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-
 part 'api_service.g.dart';
 
 var baseUrl = 'http://edopt-dev.herokuapp.com';

@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        home: LoginAkun(),
         routes: {
           '/landing': (context) => LandingPage(),
           //Auth
@@ -73,7 +74,7 @@ class MyApp extends StatelessWidget {
           //Menu history
           '/detail-hsitory': (context) => DetailHistory(),
         },
-        home: LoginAkun(),
+
       ),
     );
   }

@@ -137,16 +137,12 @@ class AkunPage extends StatelessWidget {
               child: TextButton(onPressed: () {
                 final provider =
               Provider.of<GoogleSignInProvider>(context,listen: false);
-
               provider.logout();  },
-
                 child: Text(
                   'Keluar',style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
                 ),
 
               ),
-
-
             ),
           ],
         ),

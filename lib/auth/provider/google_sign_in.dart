@@ -15,7 +15,7 @@ class GoogleSignInProvider extends ChangeNotifier{
 
    final googleAuth = await googleUser.authentication;
    final credential = GoogleAuthProvider.credential(
-    accessToken: googleAuth.accessToken,
+      accessToken: googleAuth.accessToken,
      idToken: googleAuth.idToken
    );
 
@@ -24,8 +24,14 @@ class GoogleSignInProvider extends ChangeNotifier{
   }
 
   Future logout() async {
-    await googleSignIn.disconnect();
-    FirebaseAuth.instance.signOut();
+    // await googleSignIn.disconnect();
+    // FirebaseAuth.instance.signOut();
+
+    await googleSignIn.disconnect().whenComplete(() async {
+      await FirebaseAuth.instance.signOut();
+    });
+
+
   }
 
 }
