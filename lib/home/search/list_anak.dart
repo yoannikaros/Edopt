@@ -46,6 +46,45 @@ class _ListAnakState extends State<ListAnak> {
       );
     }
 
+    Widget Search() {
+      return Container(
+        margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 46,
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                  color: backgroundColor5,
+                  borderRadius: BorderRadius.circular(30)),
+              child: Center(
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'aset/icon_searchpanti.png',
+                      width: 17,
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        style: blackTextStyle,
+                        decoration: InputDecoration.collapsed(
+                            hintText: 'Cari', hintStyle: subtitleTextStyle),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     Widget TitleGnder() {
       return Container(
         margin: EdgeInsets.only(top: 15),
@@ -114,10 +153,11 @@ class _ListAnakState extends State<ListAnak> {
         child: ListView(
           children: [
             header(),
-            TitleGnder(),
-            Gender(),
-            TitleUmur(),
-            SlideUmur(),
+            //TitleGnder(),
+            //Gender(),
+            //TitleUmur(),
+            //SlideUmur(),
+            Search(),
             ListAnaknya()
           ],
         ),

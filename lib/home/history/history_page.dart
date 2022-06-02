@@ -35,16 +35,8 @@ class RiwayatPage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
-              DaftarKunjungan(),
+              // DaftarKunjungan(),
+              // DaftarKunjungan(),
             ],
           ),
         ),

@@ -61,7 +61,9 @@ class _ListPantiState extends State<ListPanti> {
       return Container(
         margin: EdgeInsets.only(top: 10),
         child: Column(
-          children: [DaftarKunjungan()],
+          children: [
+            //DaftarKunjungan()
+          ],
         ),
       );
     }

@@ -23,6 +23,7 @@ class Panti {
 
   @JsonKey(name: 'opening_hours')
   final String openingHours;
+
   @JsonKey(name: 'closing_hours')
   final String closingHours;
 

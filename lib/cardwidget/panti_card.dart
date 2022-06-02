@@ -33,7 +33,7 @@ class ResultPantiCard extends StatelessWidget {
              Row(
                children: [
                  Expanded(
-                   child: Text("Panti Asuhan Majalengka",style: blackTextStyle.copyWith(
+                   child: Text(name, style: blackTextStyle.copyWith(
                        fontSize: 15, fontWeight: FontWeight.w600),),
                  )
                ],
@@ -51,7 +51,7 @@ class ResultPantiCard extends StatelessWidget {
 
                  SizedBox(width: 7,),
 
-                 Text("Cirebon",style: blackTextStyle.copyWith(
+                 Text(district,style: blackTextStyle.copyWith(
                      fontSize: 14, fontWeight: FontWeight.w500),)
 
                ],
@@ -68,8 +68,9 @@ class ResultPantiCard extends StatelessWidget {
 
                  SizedBox(width: 7,),
 
-                 Text("07:00 - 15:00",style: blackTextStyle.copyWith(
-                     fontSize: 14, fontWeight: FontWeight.w500),)
+                 Text(openingHours + closingHours,style: blackTextStyle.copyWith(
+                     fontSize: 14, fontWeight: FontWeight.w500),),
+
 
                ],
              ),
