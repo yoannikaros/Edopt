@@ -2,7 +2,7 @@ import 'package:adopt/logging.dart';
 import 'package:adopt/models/article.dart';
 import 'package:adopt/models/panti/panti_model.dart';
 import 'package:adopt/models/child/child_model.dart';
-import 'package:adopt/models/appointment/appointment.dart';
+import 'package:adopt/models/appointment/appointment_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
@@ -24,7 +24,7 @@ abstract class ApiService {
   Future<Article> getArticle(@Path() int id);
 
   //Panti Asuhan
-  @GET('/api/orphanages/')
+  @GET('/api/orphanages/get')
   Future<PantiList> getPantiList(
     @Query('page') int page,
     @Query('query') String query,
@@ -43,10 +43,7 @@ abstract class ApiService {
   @GET('/api/appointments/{id}')
   Future<Appointment> getAppointment(@Path() int id);
 
-  @POST('/api/appointments')
-
-  //@GET("/tasks/{id}")
-  // Future<childModel> getChild(@Path("id") String id);
+  // @POST('/api/appointments')
 
   static ApiService create() {
     final dio = Dio();

@@ -1,5 +1,5 @@
 import 'package:adopt/cardwidget/daftarkunjungan_card.dart';
-import 'package:adopt/models/appointment/appointment.dart';
+import 'package:adopt/models/appointment/appointment_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -48,6 +48,13 @@ class _RiwayatPageState extends State<RiwayatPage> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
+      body: ListView(
+          primary: true, children: [header(context), Container(child: DaftarKunjunganku())]),
+    );
+  }
 
     Widget header(context) {
       return Container(
@@ -75,27 +82,27 @@ class _RiwayatPageState extends State<RiwayatPage> {
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate(
         itemBuilder: (context, item, index) => DaftarKunjungan(
-          Waktu: item.time,
-          statusKini: item.status,
-          orphanagePanti: item.orphanage,
+          waktunya : item.time,
+          statusnya  : item.status,
+          pantinya: item.orphanage,
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),
     );
     }
 
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      body: Container(
-        margin: EdgeInsets.only(right: 20,left: 20),
-        child: ListView(
-          children: [
-            header(context),
-            Container(child: DaftarKunjunganku(),)
-          ],
-        ),
-      )
-    );
+    // return Scaffold(
+    //   resizeToAvoidBottomInset: false,
+    //   backgroundColor: Colors.white,
+    //   body: Container(
+    //     margin: EdgeInsets.only(right: 20,left: 20),
+    //     child: ListView(
+    //         primary: true, children: [
+    //         header(context),
+    //         Container(child: DaftarKunjunganku(),)
+    //       ],
+    //     ),
+    //   )
+    // );
   }
-}
+

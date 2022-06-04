@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 
 class DaftarKunjungan extends StatelessWidget {
-  final String Waktu;
-  final String statusKini;
-  final String orphanagePanti;
+  final String waktunya;
+  final String statusnya;
+  final String pantinya;
 
-  const DaftarKunjungan({Key? key, required this.Waktu,required this.statusKini, required this.orphanagePanti}) : super(key: key);
+  const DaftarKunjungan({Key? key, required this.waktunya,required this.statusnya
+    , required this.pantinya}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +27,14 @@ class DaftarKunjungan extends StatelessWidget {
                 children: [
 
                   Expanded(
-                    child: Text(orphanagePanti,style: blackTextStyle.copyWith(
+                    child: Text(pantinya,style: blackTextStyle.copyWith(
                         fontSize: 14, fontWeight: FontWeight.w500),),
                   ),
 
 
                   SizedBox(width: 48,),
 
-                  Text(Waktu,style: blackTextStyle.copyWith(
+                  Text(waktunya,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),)
 
                 ],
@@ -41,7 +42,7 @@ class DaftarKunjungan extends StatelessWidget {
 
               Row(
                 children: [
-                  Text(statusKini,style: blackTextStyle.copyWith(
+                  Text(statusnya,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),),
 
 

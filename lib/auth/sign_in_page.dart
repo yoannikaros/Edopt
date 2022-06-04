@@ -1,5 +1,6 @@
 import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:adopt/cardwidget/login_card.dart';
+import 'package:adopt/provider/child_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -68,11 +69,14 @@ class SignInPage extends StatelessWidget {
 
     Widget CariButton() {
       return Container(
+
         height: 50,
         width: double.infinity,
         margin: EdgeInsets.all(30),
         child: TextButton(
-          onPressed: () {
+          onPressed: () async{
+            await Provider.of<ChildProvider>(context, listen: false).getProducts();
+
             final provider =
             Provider.of<GoogleSignInProvider>(context, listen: false);
             provider.googleLogin();

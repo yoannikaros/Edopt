@@ -15,6 +15,11 @@ class _ListAnakState extends State<ListAnak> {
 
   @override
   Widget build(BuildContext context) {
+    //
+    // AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    // UserModel user = authProvider.user;
+    // ChildProvider productProvider = Provider.of<ChildProvider>(context);
+
     Widget header() {
       return Container(
         margin: EdgeInsets.only(top: 21, bottom: 18),
@@ -126,20 +131,11 @@ class _ListAnakState extends State<ListAnak> {
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
-              children: [
-               ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-                ListAnakCard(),
-              ],
+      //          children: productProvider.products
+      //           .map(
+      //           (product) => ProductCard(product),
+      // )
+      //     .toList(),
             ),
           ),
       );

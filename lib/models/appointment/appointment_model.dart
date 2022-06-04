@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'appointment.g.dart';
+part 'appointment_model.g.dart';
 
 @JsonSerializable()
 class Appointment {
@@ -11,22 +11,22 @@ class Appointment {
   @JsonKey(name: 'orphanage')
   final String orphanage;
   @JsonKey(name: 'child')
-  final String child;
+  final String? child;
   @JsonKey(name: 'latitude')
-  final String latitude;
+  final String? latitude;
   @JsonKey(name: 'longtitude')
-  final String longtitude;
+  final String? longtitude;
 
   Appointment(
-    this.id,
-    this.time,
-    this.status,
-    this.orphanage,
-    this.child,
-    this.latitude,
-    this.longtitude,
-    
-  );
+      this.id,
+      this.time,
+      this.status,
+      this.orphanage,
+      this.child,
+      this.latitude,
+      this.longtitude,
+
+      );
 
   factory Appointment.fromJson(Map<String, dynamic> json) =>
       _$AppointmentFromJson(json);

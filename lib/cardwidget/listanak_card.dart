@@ -1,9 +1,13 @@
+import 'package:adopt/models/v2/child_model.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
 class ListAnakCard extends StatelessWidget {
-  const ListAnakCard({Key? key}) : super(key: key);
+  const ListAnakCard(this.child, {Key? key}) : super(key: key);
+
+  final ChildModel child;
+  // listAnakmodel(this.child);
 
   @override
   Widget build(BuildContext context) {
