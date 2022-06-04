@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adopt/cardwidget/listanak_card.dart';
+import 'package:provider/provider.dart';
 
+import '../../provider/child_provider.dart';
 import '../../theme.dart';
 
 class ListAnak extends StatefulWidget {
@@ -15,10 +17,13 @@ class _ListAnakState extends State<ListAnak> {
 
   @override
   Widget build(BuildContext context) {
+    bool isClick = false;
+    TextEditingController childController = TextEditingController(text: '');
+
     //
     // AuthProvider authProvider = Provider.of<AuthProvider>(context);
     // UserModel user = authProvider.user;
-    // ChildProvider productProvider = Provider.of<ChildProvider>(context);
+    ChildProvider productProvider = Provider.of<ChildProvider>(context);
 
     Widget header() {
       return Container(
@@ -66,9 +71,21 @@ class _ListAnakState extends State<ListAnak> {
               child: Center(
                 child: Row(
                   children: [
-                    Image.asset(
-                      'aset/icon_searchpanti.png',
-                      width: 17,
+                    GestureDetector(
+                      onTap: () async {
+
+                        await Provider.of<ChildProvider>(context, listen: false).getChilds(childController.text);
+                        setState(() {Future.delayed(Duration(seconds: 2), () => isClick = true);
+
+                          // isClick = true;
+                        });
+                        // listAnaknya();
+                        // .........(childCOt.....text)
+                      },
+                      child: Image.asset(
+                        'aset/icon_searchpanti.png',
+                        width: 17,
+                      ),
                     ),
                     SizedBox(
                       width: 16,
@@ -76,6 +93,7 @@ class _ListAnakState extends State<ListAnak> {
                     Expanded(
                       child: TextFormField(
                         keyboardType: TextInputType.text,
+                        controller: childController,
                         style: blackTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: 'Cari', hintStyle: subtitleTextStyle),
@@ -125,17 +143,16 @@ class _ListAnakState extends State<ListAnak> {
       );
     }
 
-    Widget ListAnaknya(){
+    Widget listAnaknya(){
       return Container(
         margin: EdgeInsets.only(top: 10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
-      //          children: productProvider.products
-      //           .map(
-      //           (product) => ProductCard(product),
-      // )
-      //     .toList(),
+               children: productProvider.products.map(
+                (child) => ListAnakCard(child),
+      )
+          .toList(),
             ),
           ),
       );
@@ -154,7 +171,7 @@ class _ListAnakState extends State<ListAnak> {
             //TitleUmur(),
             //SlideUmur(),
             Search(),
-            ListAnaknya()
+            isClick ? listAnaknya() : Container(),
           ],
         ),
       ),

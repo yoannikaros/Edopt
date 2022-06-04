@@ -24,7 +24,7 @@ class ListAnakCard extends StatelessWidget {
 
               Row(
                 children: [
-                  Text("Rian Maulana",style: blackTextStyle.copyWith(
+                  Text(child.name!, style: blackTextStyle.copyWith(
                       fontSize: 15, fontWeight: FontWeight.w600),)
                 ],
               ),
@@ -39,7 +39,7 @@ class ListAnakCard extends StatelessWidget {
 
                   SizedBox(width: 7,),
 
-                  Text("Laki-laki",style: blackTextStyle.copyWith(
+                  Text(child.gender!,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),)
 
                 ],
@@ -55,7 +55,7 @@ class ListAnakCard extends StatelessWidget {
 
                   SizedBox(width: 7,),
 
-                  Text("8",style: blackTextStyle.copyWith(
+                  Text(child.age!,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),),
 
                   SizedBox(width: 7,),
@@ -64,7 +64,7 @@ class ListAnakCard extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w500),),
 
                   SizedBox(width: 40,),
-                  Text("Panti Asuhan Sejahtera",style: blackTextStyle.copyWith(
+                  Text(child.orphanage_name!,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),)
 
                 ],

@@ -75,10 +75,9 @@ class SignInPage extends StatelessWidget {
         margin: EdgeInsets.all(30),
         child: TextButton(
           onPressed: () async{
-            await Provider.of<ChildProvider>(context, listen: false).getProducts();
+            // await Provider.of<ChildProvider>(context, listen: false).getProducts(1);
 
-            final provider =
-            Provider.of<GoogleSignInProvider>(context, listen: false);
+            final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
             provider.googleLogin();
           },
           style: TextButton.styleFrom(
