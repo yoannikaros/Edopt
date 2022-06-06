@@ -24,13 +24,11 @@ abstract class ApiService {
   Future<Article> getArticle(@Path() int id);
 
   //Panti Asuhan
-  @GET('/api/orphanages/get')
-  Future<PantiList> getPantiList(
-    @Query('page') int page,
-    @Query('query') String query,
-    @Query('lat') String lat,
-    @Query('lng') String lng,
-  );
+  @GET('/api/orphanages')
+  Future<PantiList> getPantiList({
+    @Query('page') int page = 1,
+    @Query('per_page') int perPage = 10,
+  });
 
   @GET('/api/orphanages/{id}')
   Future<Panti> getPanti(@Path() int id);
@@ -44,6 +42,16 @@ abstract class ApiService {
   Future<Appointment> getAppointment(@Path() int id);
 
   // @POST('/api/appointments')
+
+  //Child
+  @GET('/api/children')
+  Future<ChildList> getChildList({
+    @Query('page') int page = 1,
+    @Query('per_page') int perPage = 10
+  });
+
+  @GET('/api/children/{id}')
+  Future<Panti> getChild(@Path() int id);
 
   static ApiService create() {
     final dio = Dio();

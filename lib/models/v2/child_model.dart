@@ -1,5 +1,3 @@
-
-
 class ChildModel {
   int? id;
   String? name;
@@ -10,11 +8,11 @@ class ChildModel {
 
   ChildModel({
     this.id,
- this.name,
- this.orphanage_name,
+    this.name,
+    this.orphanage_name,
     this.gender,
- this.age,
- this.additional_info,
+    this.age,
+    this.additional_info,
   });
 
   ChildModel.fromJson(Map<String, dynamic> json) {

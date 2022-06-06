@@ -88,7 +88,7 @@ class _RiwayatPageState extends State<RiwayatPage> {
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),
-    );
+      );
     }
 
     // return Scaffold(

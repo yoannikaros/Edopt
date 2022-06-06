@@ -7,14 +7,14 @@ part of 'appointment_model.dart';
 // **************************************************************************
 
 Appointment _$AppointmentFromJson(Map<String, dynamic> json) => Appointment(
-  json['id'] as int,
-  json['time'] as String,
-  json['status'] as String,
-  json['orphanage'] as String,
-  json['child'] as String?,
-  json['latitude'] as String?,
-  json['longtitude'] as String?,
-);
+      json['id'] as int,
+      json['time'] as String,
+      json['status'] as String,
+      json['orphanage'] as String,
+      json['child'] as String?,
+      json['latitude'] as String?,
+      json['longtitude'] as String?,
+    );
 
 Map<String, dynamic> _$AppointmentToJson(Appointment instance) =>
     <String, dynamic>{

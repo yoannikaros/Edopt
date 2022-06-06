@@ -29,8 +29,7 @@ class _PantiPageState extends State<PantiPage> {
 
   Future<void> _fetchPage(int pageKey) async {
     try {
-      final panti = await ApiService.create().getPantiList(
-          pageKey, 'query', '-7.9879114227835215', '113.92077702590909');
+      final panti = await ApiService.create().getPantiList(page: pageKey);
       final isLastPage = panti.meta.currentPage == panti.meta.lastPage;
       if (isLastPage) {
         // Gati
@@ -47,6 +46,7 @@ class _PantiPageState extends State<PantiPage> {
 
   @override
   Widget build(BuildContext contexrt) {
+
     Widget Search() {
       return Container(
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -103,52 +103,87 @@ class _PantiPageState extends State<PantiPage> {
         ),
       );
     }
-    //
-    // Widget CardHasil() {
-    //   return Container(
-    //     margin: EdgeInsets.only(top: 10, left: 10),
-    //     child: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: [
-    //         SingleChildScrollView(
-    //           scrollDirection: Axis.vertical,
-    //           child: SafeArea(
-    //             child: Column(
-    //               children: [
-    //                 ResultPantiCard(
-    //                     name: 'tesdf',
-    //                     district: 'dsfasd',
-    //                     openingHours: 'dsafds',
-    //                     closingHours: 'dsfdaf')
-    //               ],
-    //             ),
-    //           ),
-    //         )
-    //       ],
-    //     ),
-    //   );
-    // }
 
-    Widget Isi() {
-      // Panti
-      //Make Grid View
-      return PagedListView<int, Panti>.separated(
-        shrinkWrap: true,
-        primary: false,
-        pagingController: _pagingController,
-        builderDelegate: PagedChildBuilderDelegate(
-          itemBuilder: (context, item, index) => ResultPantiCard(
-            name: item.name,
-            district: item.district,
-            openingHours: item.openingHours,
-            closingHours: item.closingHours,
-          ),
+    Widget CardHasil() {
+      return Container(
+        margin: EdgeInsets.only(top: 10, left: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: SafeArea(
+                child: Column(
+                  children: [
+                  PagedListView<int, Panti>.separated(
+                  shrinkWrap: true,
+                  primary: false,
+                  pagingController: _pagingController,
+                  builderDelegate: PagedChildBuilderDelegate(
+                    itemBuilder: (context, item, index) => ResultPantiCard(
+                      name: item.name,
+                      district: item.district,
+                      openingHours: item.openingHours,
+                      closingHours: item.closingHours,
+                    ),
+                  ),
+                  separatorBuilder: (context, index) => const SizedBox(height: 8),
+                ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
-        separatorBuilder: (context, index) => const SizedBox(height: 8),
       );
+
+      // return PagedGridView<int, Panti>(
+      //     pagingController: _pagingController,
+      //     builderDelegate: PagedChildBuilderDelegate(
+      //       itemBuilder: (context, item, index) => ResultPantiCard(
+      //         name: item.name,
+      //         district: item.district,
+      //         openingHours: item.openingHours,
+      //         closingHours: item.closingHours,
+      //       ),
+      //     ),
+      //     gridDelegate: gridDelegate);
+
+//       return Container(
+//         margin: EdgeInsets.only(top: 10, left: 10),
+//         child: GridView(
+//           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+//           children: [
+// ListView(
+//   children: [
+//     PagedListView<int, Panti>.separated(
+//       shrinkWrap: true,
+//       primary: false,
+//       pagingController: _pagingController,
+//       builderDelegate: PagedChildBuilderDelegate(
+//         itemBuilder: (context, item, index) => ResultPantiCard(
+//           name: item.name,
+//           district: item.district,
+//           openingHours: item.openingHours,
+//           closingHours: item.closingHours,
+//         ),
+//       ),
+//       separatorBuilder: (context, index) => const SizedBox(height: 8),
+//     )
+//   ],
+// )
+//           ],
+//         ),
+//       );
+
     }
+
     return ListView(
-      children: [Search(), TitleHasil(), Isi()],
+      children: [
+        Search(),
+        TitleHasil(),
+        CardHasil()
+      ],
     );
   }
 }

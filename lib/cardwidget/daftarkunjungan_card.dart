@@ -9,7 +9,7 @@ class DaftarKunjungan extends StatelessWidget {
   final String pantinya;
 
   const DaftarKunjungan({Key? key, required this.waktunya,required this.statusnya
-    , required this.pantinya}) : super(key: key);
+    , required this.pantinya,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,6 @@ class DaftarKunjungan extends StatelessWidget {
           padding:EdgeInsets.all(20),
           child: Column(
             children: [
-
               Row(
                 children: [
 
@@ -52,8 +51,6 @@ class DaftarKunjungan extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w500),)
                 ],
               ),
-
-
             ],
           ),
         ),
