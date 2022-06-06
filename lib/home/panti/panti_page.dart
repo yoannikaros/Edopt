@@ -86,23 +86,7 @@ class _PantiPageState extends State<PantiPage> {
       );
     }
 
-    Widget TitleHasil() {
-      return Container(
-        margin: EdgeInsets.only(left: 46, top: 35),
-        child: Row(
-          children: [
-            Text(
-              '20 ',
-              style: blackTextStyle.copyWith(fontSize: 15, fontWeight: bold),
-            ),
-            Text(
-              'Hasil ditemukan',
-              style: blackTextStyle.copyWith(fontSize: 15, fontWeight: bold),
-            ),
-          ],
-        ),
-      );
-    }
+
 
     Widget CardHasil() {
       return Container(
@@ -180,8 +164,7 @@ class _PantiPageState extends State<PantiPage> {
 
     return ListView(
       children: [
-        Search(),
-        TitleHasil(),
+
         CardHasil()
       ],
     );

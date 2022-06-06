@@ -75,20 +75,62 @@ class _ListAnakState extends State<ListAnak> {
                                     CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        '${data?[index].name}',
+                                        '${data?[index].name!}',
                                         style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.w600),
                                       ),
                                       SizedBox(height: 10),
-                                      Text(
-                                        '${data?[index].gender}',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Gender:',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+
+                                          SizedBox(width: 10),
+
+                                          Text(
+                                            '${data?[index].gender}',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
                                       ),
+
+                                      SizedBox(height: 10),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Age:',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+
+                                          SizedBox(width: 10),
+
+                                          Text(
+                                            '${data?[index].age}',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+
+                                        ],
+                                      )
+
                                     ])
                               ],
                             ),
