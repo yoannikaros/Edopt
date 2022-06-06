@@ -1,10 +1,23 @@
+import 'package:adopt/models/v3/childModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme.dart';
 
 class DetailAnak extends StatelessWidget {
-  const DetailAnak({Key? key}) : super(key: key);
+  final String name;
+  final String orphanageName;
+  final String gender;
+  final String age;
+
+  //DetailAnak(this.anakan);
+
+  const DetailAnak({Key? key,
+    required this.name,
+    required this.orphanageName,
+    required this.gender,
+    required this.age
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +32,7 @@ class DetailAnak extends StatelessWidget {
               },
               child: Image.asset('aset/icon_kembali.png', width: 25),
             ),
-            SizedBox(
-              width: 270,
-            ),
-            Image.asset('aset/icon_save.png', width: 25),
+
           ],
         ),
       );
@@ -31,7 +41,7 @@ class DetailAnak extends StatelessWidget {
     Widget NameChild() {
       return Container(
         margin: EdgeInsets.only(top: 29),
-        child: Text('Rian Maulana',
+        child: Text( name,
             style: blackTextStyle.copyWith(
                 fontSize: 30, fontWeight: FontWeight.bold)),
       );
@@ -53,10 +63,11 @@ class DetailAnak extends StatelessWidget {
                   width: 7,
                 ),
                 Text(
-                  'Laki Laki',
+                  gender,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
-                )
+                ),
+
               ],
             ),
             SizedBox(
@@ -73,7 +84,15 @@ class DetailAnak extends StatelessWidget {
                   width: 7,
                 ),
                 Text(
-                  '7 Tahun',
+                  age,
+                  style: subtitleTextStyle.copyWith(
+                      fontSize: 13, fontWeight: medium),
+                ),
+                SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  'Th',
                   style: subtitleTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
                 )
@@ -93,7 +112,7 @@ class DetailAnak extends StatelessWidget {
                   width: 7,
                 ),
                 Text(
-                  'Panti Asuhan Sejahtera',
+                  orphanageName,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
                 )
@@ -116,8 +135,8 @@ class DetailAnak extends StatelessWidget {
       return Container(
         margin: EdgeInsets.only(top: 17),
         child: Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper tortor ut volutpat sit eu egestas ac pharetra mauris. Eleifend iaculis consequat nibh ut mi, cursus at. Egestas tincidunt ut nullam in neque, porttitor. Blandit blandit ut ac ipsum neque, mauris hendrerit. Id lobortis dignissim porta ut commodo tortor condimentum massa. Nulla accumsan pulvinar sed maecenas et cum. Risus vel diam fringilla pellentesque. Platea vel vestibulum enim ultrices eu, dignissim. Rhoncus morbi sed arcu morbi magna quisque nunc orci venenatis. Vestibulum.',
-            style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
+            'detaill'
+        ,style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
       );
     }
 

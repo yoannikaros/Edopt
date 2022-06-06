@@ -1,26 +1,42 @@
+import 'package:adopt/home/panti/detail_panti.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
 class ResultPantiCard extends StatelessWidget {
   final String name;
+  final String imageUrl;
+  final String province;
+  final String regency;
   final String district;
+  final String address;
   final String openingHours;
   final String closingHours;
 
   const ResultPantiCard ({
     Key? key,
     required this.name,
+    required this.imageUrl,
+    required this.province,
     required this.district,
+    required this.regency,
+    required this.address,
     required this.openingHours,
-    required this.closingHours,
+    required this.closingHours
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
    return GestureDetector(
-     onTap: (){
-       Navigator.pushNamed(context, '/detail-panti');
+
+       onTap: (){
+         Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) =>
+               DetailPanti(name: '$name', regency: '$regency', district: '$district', province: '$province', openingHours: '$openingHours', imageUrl: '$imageUrl', address: '$address', closingHours: '$closingHours'),
+         ),
+         );
+
      },
      child: Card(
 

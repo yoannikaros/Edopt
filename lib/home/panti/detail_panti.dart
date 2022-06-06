@@ -1,10 +1,31 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../theme.dart';
 
 class DetailPanti extends StatelessWidget {
-  const DetailPanti({Key? key}) : super(key: key);
+  final String name;
+  final String imageUrl;
+  final String province;
+  final String regency;
+  final String district;
+  final String address;
+  final String openingHours;
+  final String closingHours;
+
+  const DetailPanti({Key? key,
+    required this.name,
+    required this.imageUrl,
+    required this.province,
+    required this.district,
+    required this.regency,
+    required this.address,
+    required this.openingHours,
+    required this.closingHours
+
+
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +62,12 @@ class DetailPanti extends StatelessWidget {
 
     Widget gambar() {
       return Container(
-        width: 320,
-        height: 202,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('aset/images_backgroundfirst.png'))),
+       // child: CachedNetworkImage(
+       //   imageUrl: imageUrl,
+       //   width: 289,
+       //   height: 134,
+       //   fit: BoxFit.cover,
+       // ),
       );
     }
 
@@ -56,7 +78,7 @@ class DetailPanti extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Yayasan Islam Media Kasih',
+              name,
               style: blackTextStyle.copyWith(
                   fontSize: 16, fontWeight: FontWeight.bold),
             )
@@ -72,17 +94,16 @@ class DetailPanti extends StatelessWidget {
           children: [
             Row(
               children: [
-
                 Image.asset(
-                  'aset/icon_jamabuabu.png',
-                  width: 19,
+                  'aset/icon_jam.png',
+                  width: 18,
                 ),
 
                 SizedBox(
                   width: 10,
                 ),
                 Text(
-                  '07:00 - 15:00',
+                  '$openingHours - $closingHours',
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
@@ -118,7 +139,7 @@ class DetailPanti extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Alamat Panti',
+              address,
               style: blackTextStyle.copyWith(
                   fontSize: 16, fontWeight: FontWeight.w600),
             )
@@ -143,7 +164,7 @@ class DetailPanti extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  'CIREBON',
+                  district,
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
@@ -160,7 +181,7 @@ class DetailPanti extends StatelessWidget {
                   width: 47,
                 ),
                 Text(
-                  'JAWA BARAT',
+                  province,
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),

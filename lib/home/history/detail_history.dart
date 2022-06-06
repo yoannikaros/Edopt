@@ -8,7 +8,20 @@ import '../../network/api_service.dart';
 import '../../theme.dart';
 
 class DetailHistory extends StatefulWidget {
-  // const DetailHistory({Key? key}) : super(key: key);
+
+  final String time;
+  final String status;
+  final String orphanage;
+
+
+   const DetailHistory({Key? key,
+
+     required this.time,
+     required this.status,
+     required this.orphanage,
+
+
+   }) : super(key: key);
   @override
   State<DetailHistory> createState() => _DetailHistoryPageState();
 }

@@ -82,9 +82,12 @@ class _RiwayatPageState extends State<RiwayatPage> {
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate(
         itemBuilder: (context, item, index) => DaftarKunjungan(
-          waktunya : item.time,
-          statusnya  : item.status,
-          pantinya: item.orphanage,
+          time : item.time,
+          status  : item.status,
+          orphanage: item.orphanage,
+
+
+
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),

@@ -108,7 +108,7 @@ class _PantiPageState extends State<PantiPage> {
                       name: item.name,
                       district: item.district,
                       openingHours: item.openingHours,
-                      closingHours: item.closingHours,
+                      closingHours: item.closingHours, imageUrl: '', regency: '', address: '', province: '',
                     ),
                   ),
                   separatorBuilder: (context, index) => const SizedBox(height: 8),
@@ -121,44 +121,6 @@ class _PantiPageState extends State<PantiPage> {
         ),
       );
 
-      // return PagedGridView<int, Panti>(
-      //     pagingController: _pagingController,
-      //     builderDelegate: PagedChildBuilderDelegate(
-      //       itemBuilder: (context, item, index) => ResultPantiCard(
-      //         name: item.name,
-      //         district: item.district,
-      //         openingHours: item.openingHours,
-      //         closingHours: item.closingHours,
-      //       ),
-      //     ),
-      //     gridDelegate: gridDelegate);
-
-//       return Container(
-//         margin: EdgeInsets.only(top: 10, left: 10),
-//         child: GridView(
-//           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-//           children: [
-// ListView(
-//   children: [
-//     PagedListView<int, Panti>.separated(
-//       shrinkWrap: true,
-//       primary: false,
-//       pagingController: _pagingController,
-//       builderDelegate: PagedChildBuilderDelegate(
-//         itemBuilder: (context, item, index) => ResultPantiCard(
-//           name: item.name,
-//           district: item.district,
-//           openingHours: item.openingHours,
-//           closingHours: item.closingHours,
-//         ),
-//       ),
-//       separatorBuilder: (context, index) => const SizedBox(height: 8),
-//     )
-//   ],
-// )
-//           ],
-//         ),
-//       );
 
     }
 

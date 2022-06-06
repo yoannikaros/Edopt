@@ -1,22 +1,34 @@
+import 'package:adopt/home/history/detail_history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
 class DaftarKunjungan extends StatelessWidget {
-  final String waktunya;
-  final String statusnya;
-  final String pantinya;
 
-  const DaftarKunjungan({Key? key, required this.waktunya,required this.statusnya
-    , required this.pantinya,}) : super(key: key);
+  final String time;
+  final String status;
+  final String orphanage;
+
+  const DaftarKunjungan({Key? key,
+
+
+    required this.time,
+    required this.status,
+    required this.orphanage,
+
+
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-     onTap: (){
-       Navigator.pushNamed(context, '/detail-hsitory');
-     },
+      onTap: (){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) =>  DetailHistory(time: '$time', status: '$status', orphanage: '$orphanage',)),
+      );
+    },
       child: Card(
         child: Container(
           padding:EdgeInsets.all(20),
@@ -26,14 +38,14 @@ class DaftarKunjungan extends StatelessWidget {
                 children: [
 
                   Expanded(
-                    child: Text(pantinya,style: blackTextStyle.copyWith(
+                    child: Text(orphanage,style: blackTextStyle.copyWith(
                         fontSize: 14, fontWeight: FontWeight.w500),),
                   ),
 
 
                   SizedBox(width: 48,),
 
-                  Text(waktunya,style: blackTextStyle.copyWith(
+                  Text(time,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),)
 
                 ],
@@ -41,7 +53,7 @@ class DaftarKunjungan extends StatelessWidget {
 
               Row(
                 children: [
-                  Text(statusnya,style: blackTextStyle.copyWith(
+                  Text(status,style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w500),),
 
 

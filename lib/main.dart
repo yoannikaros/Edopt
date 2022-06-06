@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
 
             //Menu Search
             '/search': (context) => ListAnak(),
-            '/detail-anak': (context) => DetailAnak(),
+            //'/detail-anak': (context) => DetailAnak(),
             '/HomePage': (context) => HomePage(),
             '/detail_date': (context) => DetailDate(),
 
@@ -76,10 +76,10 @@ class MyApp extends StatelessWidget {
             '/detail-akun': (context) => DetailAkun(),
 
             //Menu Panti asuhan
-            '/detail-panti': (context) => DetailPanti(),
+            //'/detail-panti': (context) => DetailPanti(),
 
             //Menu history
-            '/detail-hsitory': (context) => DetailHistory(),
+            //'/detail-hsitory': (context) => DetailHistory(),
           },
 
         ),
