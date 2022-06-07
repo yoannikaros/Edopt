@@ -1,3 +1,4 @@
+import 'package:adopt/cardwidget/date/datetime_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -216,19 +217,20 @@ class DetailDate extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(
-                  '16 Juni 2022, 13:00 WIB',
-                  style: subtitleTextStyle.copyWith(
-                      fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 101,
-                ),
-                Image.asset(
-                  'aset/icon_jam.png',
-                  width: 15,
-                  height: 15,
-                ),
+                // Text(
+                //   '16 Juni 2022, 13:00 WIB',
+                //   style: subtitleTextStyle.copyWith(
+                //       fontSize: 15, fontWeight: FontWeight.bold),
+                // ),
+                // SizedBox(
+                //   width: 101,
+                // ),
+                // Image.asset(
+                //   'aset/icon_jam.png',
+                //   width: 15,
+                //   height: 15,
+                // ),
+                DatetimePickerWidget()
               ],
             ),
           ],

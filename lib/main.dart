@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
             '/search': (context) => ListAnak(),
             //'/detail-anak': (context) => DetailAnak(),
             '/HomePage': (context) => HomePage(),
-            '/detail_date': (context) => DetailDate(),
+           // '/detail_date': (context) => DetailDate(),
 
             //Menu Akun
             '/profile': (context) => AkunPage(),
