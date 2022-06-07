@@ -41,7 +41,16 @@ abstract class ApiService {
   @GET('/api/appointments/{id}')
   Future<Appointment> getAppointment(@Path() int id);
 
-  // @POST('/api/appointments')
+  @POST('/api/appointments')
+  Future<Appointment> postAppointment(@Body()
+  @Query('id') int id,
+  @Query('time') String date,
+  @Query('status') String status,
+  @Query('orphanage') String orphanage,
+  @Query('child') String child,
+  @Query('latitude')  double latitude,
+  @Query('longtitude') double longtitude,
+  );
 
   //Child
   @GET('/api/children')

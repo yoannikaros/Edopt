@@ -1,8 +1,7 @@
 import 'package:adopt/cardwidget/date/datetime_picker_widget.dart';
+import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import '../../cardwidget/date/button_widget.dart';
 import '../../theme.dart';
 
 class DetailDate extends StatefulWidget {
@@ -11,28 +10,19 @@ class DetailDate extends StatefulWidget {
   final String gender;
   final String age;
 
-  const DetailDate(
-      {Key? key,
-      required this.name,
-      required this.orphanageName,
-      required this.gender,
-      required this.age})
-      : super(key: key);
+  const DetailDate({Key? key,
+    required this.name,
+    required this.orphanageName,
+    required this.gender,
+    required this.age
+  }) : super(key: key);
 
   @override
   State<DetailDate> createState() => _DetailDateState();
+
 }
 
 class _DetailDateState extends State<DetailDate> {
-  late DateTime dateTime;
-
-  String getText() {
-    if (dateTime == null) {
-      return 'Select DateTime';
-    } else {
-      return DateFormat('MM/dd/yyyy HH:mm').format(dateTime);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +58,7 @@ class _DetailDateState extends State<DetailDate> {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
+
             Row(
               children: [
                 Image.asset(
@@ -85,6 +76,7 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
+
             Row(
               children: [
                 Image.asset(
@@ -102,6 +94,8 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
+
+
             Row(
               children: [
                 Image.asset(
@@ -119,6 +113,7 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
+
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: Row(
@@ -132,7 +127,7 @@ class _DetailDateState extends State<DetailDate> {
                     width: 11,
                   ),
                   Text(
-                    widget.age,
+                   widget.age,
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -211,52 +206,6 @@ class _DetailDateState extends State<DetailDate> {
       );
     }
 
-    Future<DateTime?> pickDate(BuildContext context) async {
-      final initialDate = DateTime.now();
-      final newDate = await showDatePicker(
-        context: context,
-        initialDate: dateTime,
-        firstDate: DateTime(DateTime.now().year - 5),
-        lastDate: DateTime(DateTime.now().year + 5),
-      );
-
-      if (newDate == null) return null;
-
-      return newDate;
-    }
-
-    Future<TimeOfDay?> pickTime(BuildContext context) async {
-      final initialTime = TimeOfDay(hour: 9, minute: 0);
-      final newTime = await showTimePicker(
-        context: context,
-        initialTime: dateTime != null
-            ? TimeOfDay(hour: dateTime.hour, minute: dateTime.minute)
-            : initialTime,
-      );
-
-      if (newTime == null) return null;
-
-      return newTime;
-    }
-
-    Future pickDateTime(BuildContext context) async {
-      final date = await pickDate(context);
-      if (date == null) return;
-
-      final time = await pickTime(context);
-      if (time == null) return;
-
-      setState(() {
-        dateTime = DateTime(
-          date.year,
-          date.month,
-          date.day,
-          time.hour,
-          time.minute,
-        );
-      });
-    }
-
     Widget TitleJadwal() {
       return Container(
         margin: EdgeInsets.only(left: 12, top: 15),
@@ -266,6 +215,8 @@ class _DetailDateState extends State<DetailDate> {
       );
     }
 
+
+
     Widget jadwal() {
       return Container(
         margin: EdgeInsets.only(top: 8),
@@ -273,15 +224,25 @@ class _DetailDateState extends State<DetailDate> {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
-            ButtonHeaderWidget(
-              title: 'DateTime',
-              text: getText(),
-              onClicked: () => pickDateTime(context),
-            )
+
+        DateTimePicker(
+        initialValue: '',
+          firstDate: DateTime(2008),
+          lastDate: DateTime(2022),
+          dateLabelText: 'Date',
+          onChanged: (val) => print(val),
+          validator: (val) {
+            print(val);
+            return null;
+          },
+          onSaved: (val) => print(val),
+        )
+
           ],
         ),
       );
     }
+
 
     Widget AdopsiButtom() {
       return Container(
@@ -303,6 +264,7 @@ class _DetailDateState extends State<DetailDate> {
         ),
       );
     }
+
 
     return Scaffold(
       resizeToAvoidBottomInset: false,

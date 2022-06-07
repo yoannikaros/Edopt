@@ -121,6 +121,31 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<Appointment> postAppointment(
+      id, date, status, orphanage, child, latitude, longtitude) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'id': id,
+      r'time': date,
+      r'status': status,
+      r'orphanage': orphanage,
+      r'child': child,
+      r'latitude': latitude,
+      r'longtitude': longtitude
+    };
+    final _headers = <String, dynamic>{};
+    final _data = id;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Appointment>(
+            Options(method: 'POST', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/api/appointments',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Appointment.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<ChildList> getChildList({page = 1, perPage = 10}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
