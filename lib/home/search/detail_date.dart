@@ -225,11 +225,11 @@ class _DetailDateState extends State<DetailDate> {
         child: Column(
           children: [
 
-        DateTimePicker(
-        initialValue: '',
-          firstDate: DateTime(2008),
-          lastDate: DateTime(2022),
-          dateLabelText: 'Date',
+          DateTimePicker(
+          initialValue: '',
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2100),
+          dateLabelText: 'Jadwal',
           onChanged: (val) => print(val),
           validator: (val) {
             print(val);
