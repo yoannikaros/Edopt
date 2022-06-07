@@ -1,21 +1,38 @@
 import 'package:adopt/cardwidget/date/datetime_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
+import '../../cardwidget/date/button_widget.dart';
 import '../../theme.dart';
 
-class DetailDate extends StatelessWidget {
+class DetailDate extends StatefulWidget {
   final String name;
   final String orphanageName;
   final String gender;
   final String age;
 
-  const DetailDate({Key? key,
-    required this.name,
-    required this.orphanageName,
-    required this.gender,
-    required this.age
-  }) : super(key: key);
+  const DetailDate(
+      {Key? key,
+      required this.name,
+      required this.orphanageName,
+      required this.gender,
+      required this.age})
+      : super(key: key);
+
+  @override
+  State<DetailDate> createState() => _DetailDateState();
+}
+
+class _DetailDateState extends State<DetailDate> {
+  late DateTime dateTime;
+
+  String getText() {
+    if (dateTime == null) {
+      return 'Select DateTime';
+    } else {
+      return DateFormat('MM/dd/yyyy HH:mm').format(dateTime);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +68,6 @@ class DetailDate extends StatelessWidget {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
-          
             Row(
               children: [
                 Image.asset(
@@ -63,13 +79,12 @@ class DetailDate extends StatelessWidget {
                   width: 11,
                 ),
                 Text(
-                  name,
+                  widget.name,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: medium),
                 )
               ],
             ),
-
             Row(
               children: [
                 Image.asset(
@@ -81,14 +96,12 @@ class DetailDate extends StatelessWidget {
                   width: 11,
                 ),
                 Text(
-                  orphanageName,
+                  widget.orphanageName,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: medium),
                 )
               ],
             ),
-
-            
             Row(
               children: [
                 Image.asset(
@@ -100,13 +113,12 @@ class DetailDate extends StatelessWidget {
                   width: 11,
                 ),
                 Text(
-                  gender,
+                  widget.gender,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: medium),
                 )
               ],
             ),
-
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: Row(
@@ -120,7 +132,7 @@ class DetailDate extends StatelessWidget {
                     width: 11,
                   ),
                   Text(
-                   age,
+                    widget.age,
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -151,7 +163,7 @@ class DetailDate extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  name,
+                  widget.name,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: FontWeight.bold),
                 )
@@ -199,6 +211,52 @@ class DetailDate extends StatelessWidget {
       );
     }
 
+    Future<DateTime?> pickDate(BuildContext context) async {
+      final initialDate = DateTime.now();
+      final newDate = await showDatePicker(
+        context: context,
+        initialDate: dateTime,
+        firstDate: DateTime(DateTime.now().year - 5),
+        lastDate: DateTime(DateTime.now().year + 5),
+      );
+
+      if (newDate == null) return null;
+
+      return newDate;
+    }
+
+    Future<TimeOfDay?> pickTime(BuildContext context) async {
+      final initialTime = TimeOfDay(hour: 9, minute: 0);
+      final newTime = await showTimePicker(
+        context: context,
+        initialTime: dateTime != null
+            ? TimeOfDay(hour: dateTime.hour, minute: dateTime.minute)
+            : initialTime,
+      );
+
+      if (newTime == null) return null;
+
+      return newTime;
+    }
+
+    Future pickDateTime(BuildContext context) async {
+      final date = await pickDate(context);
+      if (date == null) return;
+
+      final time = await pickTime(context);
+      if (time == null) return;
+
+      setState(() {
+        dateTime = DateTime(
+          date.year,
+          date.month,
+          date.day,
+          time.hour,
+          time.minute,
+        );
+      });
+    }
+
     Widget TitleJadwal() {
       return Container(
         margin: EdgeInsets.only(left: 12, top: 15),
@@ -215,29 +273,15 @@ class DetailDate extends StatelessWidget {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
-            Row(
-              children: [
-                // Text(
-                //   '16 Juni 2022, 13:00 WIB',
-                //   style: subtitleTextStyle.copyWith(
-                //       fontSize: 15, fontWeight: FontWeight.bold),
-                // ),
-                // SizedBox(
-                //   width: 101,
-                // ),
-                // Image.asset(
-                //   'aset/icon_jam.png',
-                //   width: 15,
-                //   height: 15,
-                // ),
-                DatetimePickerWidget()
-              ],
-            ),
+            ButtonHeaderWidget(
+              title: 'DateTime',
+              text: getText(),
+              onClicked: () => pickDateTime(context),
+            )
           ],
         ),
       );
     }
-
 
     Widget AdopsiButtom() {
       return Container(
@@ -259,7 +303,6 @@ class DetailDate extends StatelessWidget {
         ),
       );
     }
-
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
