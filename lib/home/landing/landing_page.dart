@@ -1,14 +1,9 @@
 import 'dart:ffi';
-
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/cardwidget/login_card.dart';
 import 'package:adopt/home/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-void main() {
-  runApp(const LandingPage()); //untuk menjalankan app
-}
 
 //landing page
 class LandingPage extends StatelessWidget {
@@ -141,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
         onPressed: () async {
           Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => MainPage()),
+            MaterialPageRoute(builder: (context) => SignInPage()),
           );
         },
       ) 
