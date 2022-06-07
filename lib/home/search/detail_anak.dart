@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../theme.dart';
 
 class DetailAnak extends StatelessWidget {
+  final String id;
   final String name;
   final String orphanageName;
   final String gender;
@@ -15,6 +16,7 @@ class DetailAnak extends StatelessWidget {
 
   const DetailAnak(
       {Key? key,
+        required this.id,
       required this.name,
       required this.orphanageName,
       required this.gender,
@@ -154,6 +156,7 @@ class DetailAnak extends StatelessWidget {
                         orphanageName: '$orphanageName',
                         gender: '$gender',
                         age: '$age',
+                       id: '$id',
                       )),
             );
           },

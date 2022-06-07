@@ -1,28 +1,37 @@
-
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../service/appoinment_post.dart';
 import '../../theme.dart';
+import 'package:intl/intl.dart';
 
 class DetailDate extends StatefulWidget {
+  final String id;
   final String name;
   final String orphanageName;
   final String gender;
   final String age;
 
-  const DetailDate({Key? key,
-    required this.name,
-    required this.orphanageName,
-    required this.gender,
-    required this.age
-  }) : super(key: key);
+  const DetailDate(
+      {Key? key,
+      required this.id,
+      required this.name,
+      required this.orphanageName,
+      required this.gender,
+      required this.age})
+      : super(key: key);
 
   @override
   State<DetailDate> createState() => _DetailDateState();
-
 }
 
 class _DetailDateState extends State<DetailDate> {
+  repository Repo = repository();
+  TextEditingController dateinput = TextEditingController();
+  void initState() {
+    dateinput.text = ""; //set the initial value of text field
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +67,6 @@ class _DetailDateState extends State<DetailDate> {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
-
             Row(
               children: [
                 Image.asset(
@@ -76,7 +84,6 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
-
             Row(
               children: [
                 Image.asset(
@@ -94,8 +101,6 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
-
-
             Row(
               children: [
                 Image.asset(
@@ -113,7 +118,6 @@ class _DetailDateState extends State<DetailDate> {
                 )
               ],
             ),
-
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: Row(
@@ -127,7 +131,7 @@ class _DetailDateState extends State<DetailDate> {
                     width: 11,
                   ),
                   Text(
-                   widget.age,
+                    widget.age,
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -194,7 +198,7 @@ class _DetailDateState extends State<DetailDate> {
                     width: 11,
                   ),
                   Text(
-                    '085388886660',
+                    '2',
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -215,8 +219,6 @@ class _DetailDateState extends State<DetailDate> {
       );
     }
 
-
-
     Widget jadwal() {
       return Container(
         margin: EdgeInsets.only(top: 8),
@@ -224,34 +226,70 @@ class _DetailDateState extends State<DetailDate> {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
+            TextField(
+              controller: dateinput,
+              decoration: InputDecoration(
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Enter Date" //label text of field
+                  ),
+              readOnly: true,
+              onTap: () async {
+                DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2000),
+                    lastDate: DateTime(2100));
+                if (pickedDate != null) {
+                  print(
+                      pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                  String formattedDate =
+                      DateFormat('yyyy/MM/dd').format(pickedDate);
+                  print(
+                      formattedDate); //formatted date output using intl package =>  2021-03-16
+                  //you can implement different kind of Date Format here according to your requirement
 
-          DateTimePicker(
-          initialValue: '',
-          firstDate: DateTime(2000),
-          lastDate: DateTime(2100),
-          dateLabelText: 'Jadwal',
-          onChanged: (val) => print(val),
-          validator: (val) {
-            print(val);
-            return null;
-          },
-          onSaved: (val) => print(val),
-        )
+                  setState(() {
+                    dateinput.text =
+                        formattedDate; //set output date to TextField value.
+                  });
+                } else {
+                  print("Date is not selected");
+                }
+              },
+            )
 
+            //   DateTimePicker(
+            //     dateMask: 'yyyy/MM/dd',
+            //     type: DateTimePickerType.dateTimeSeparate,
+            //   initialValue: '',
+            //   firstDate: DateTime(2000),
+            //   lastDate: DateTime(2100),
+            //   dateLabelText: 'Jadwal',
+            //   onChanged: (val) => print(val),
+            //   validator: (val) {
+            //     print(val);
+            //     return null;
+            //   },
+            //   onSaved: (val) => print(val),
+            // )
           ],
         ),
       );
     }
-
 
     Widget AdopsiButtom() {
       return Container(
         height: 50,
         width: double.infinity,
         margin: EdgeInsets.all(30),
-        child: TextButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/main');
+        child: ElevatedButton(
+          onPressed: () async {
+            bool response = await Repo.postData(dateinput.text, widget.id);
+            if (response) {
+              Navigator.of(context).popAndPushNamed('/main');
+            } else {
+              print('GAGAL');
+            }
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
@@ -264,7 +302,6 @@ class _DetailDateState extends State<DetailDate> {
         ),
       );
     }
-
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
