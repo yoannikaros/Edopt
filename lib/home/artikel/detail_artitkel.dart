@@ -5,7 +5,14 @@ import 'package:flutter/painting.dart';
 import '../../theme.dart';
 
 class DetailNews extends StatelessWidget {
-  const DetailNews({Key? key}) : super(key: key);
+  final String previewText;
+  final String imageUrl;
+
+  const DetailNews({
+    Key? key,
+    required this.previewText,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +91,7 @@ class DetailNews extends StatelessWidget {
             ),
             SizedBox(height: 20,),
 
-            Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet non egestas eget aliquam in vitae lobortis urna. Eu sit in viverra at. Lectus id in augue vel vel. Magna auctor fringilla convallis nisi. Euismod ultricies quis purus tincidunt posuere iaculis. Lacus, eget massa maecenas arcu sit tempor, at pellentesque magnis. Elementum nisl consequat platea eleifend eu ut interdum blandit. Luctus vitae, consectetur eu ornare est faucibus est in dolor.',
-              style: blackTextStyle.copyWith(
+            Text(previewText,style: blackTextStyle.copyWith(
                   fontSize: 17, fontWeight: FontWeight.w500),
             ),
           ],

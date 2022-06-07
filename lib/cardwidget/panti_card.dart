@@ -84,7 +84,7 @@ class ResultPantiCard extends StatelessWidget {
 
                  SizedBox(width: 7,),
 
-                 Text(openingHours + closingHours,style: blackTextStyle.copyWith(
+                 Text('$openingHours - $closingHours',style: blackTextStyle.copyWith(
                      fontSize: 14, fontWeight: FontWeight.w500),),
 
 

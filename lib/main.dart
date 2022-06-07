@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
 
             //Artikel
             '/list-news': (context) => ListNews(),
-            '/detailberita': (context) => DetailNews(),
+           // '/detailberita': (context) => DetailNews(),
 
             //Menu Search
             '/search': (context) => ListAnak(),

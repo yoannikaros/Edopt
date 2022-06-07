@@ -1,6 +1,8 @@
+import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../home/search/detail_anak.dart';
 import '../theme.dart';
 
 class ArticleCard extends StatelessWidget {
@@ -23,7 +25,10 @@ class ArticleCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(30), color: primaryTextColor),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/detailberita');
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) =>  DetailNews(previewText: previewText, imageUrl: imageUrl),)
+          );
         },
         child: Stack(
           children: [
