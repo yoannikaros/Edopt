@@ -1,3 +1,4 @@
+import 'package:adopt/home/search/detail_date.dart';
 import 'package:adopt/models/v3/childModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,14 @@ class DetailAnak extends StatelessWidget {
 
   //DetailAnak(this.anakan);
 
-  const DetailAnak({Key? key,
-    required this.name,
-    required this.orphanageName,
-    required this.gender,
-    required this.age
-  }) : super(key: key);
-
+  const DetailAnak(
+      {Key? key,
+      required this.name,
+      required this.orphanageName,
+      required this.gender,
+      required this.age})
+      : super(key: key);
+//
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -32,7 +34,6 @@ class DetailAnak extends StatelessWidget {
               },
               child: Image.asset('aset/icon_kembali.png', width: 25),
             ),
-
           ],
         ),
       );
@@ -41,7 +42,7 @@ class DetailAnak extends StatelessWidget {
     Widget NameChild() {
       return Container(
         margin: EdgeInsets.only(top: 29),
-        child: Text( name,
+        child: Text(name,
             style: blackTextStyle.copyWith(
                 fontSize: 30, fontWeight: FontWeight.bold)),
       );
@@ -67,7 +68,6 @@ class DetailAnak extends StatelessWidget {
                   style: subtitleTextStyle.copyWith(
                       fontSize: 13, fontWeight: medium),
                 ),
-
               ],
             ),
             SizedBox(
@@ -134,9 +134,8 @@ class DetailAnak extends StatelessWidget {
     Widget IsiBio() {
       return Container(
         margin: EdgeInsets.only(top: 17),
-        child: Text(
-            'detaill'
-        ,style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
+        child: Text('detaill',
+            style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
       );
     }
 
@@ -147,7 +146,16 @@ class DetailAnak extends StatelessWidget {
         margin: EdgeInsets.all(30),
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/detail_date');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DetailDate(
+                        name: '$name',
+                        orphanageName: '$orphanageName',
+                        gender: '$gender',
+                        age: '$age',
+                      )),
+            );
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,

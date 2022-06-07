@@ -4,6 +4,18 @@ import 'package:flutter/material.dart';
 import '../../theme.dart';
 
 class DetailDate extends StatelessWidget {
+  final String name;
+  final String orphanageName;
+  final String gender;
+  final String age;
+
+  const DetailDate({Key? key,
+    required this.name,
+    required this.orphanageName,
+    required this.gender,
+    required this.age
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -25,7 +37,7 @@ class DetailDate extends StatelessWidget {
     Widget TitleDetail1() {
       return Container(
         margin: EdgeInsets.only(left: 12, top: 20),
-        child: Text('Detail Panti Asuhan',
+        child: Text('Detail Adopsi',
             style: blackTextStyle.copyWith(
                 fontSize: 15, fontWeight: FontWeight.bold)),
       );
@@ -38,10 +50,11 @@ class DetailDate extends StatelessWidget {
         decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
         child: Column(
           children: [
+          
             Row(
               children: [
                 Image.asset(
-                  'aset/icon_lokasi.png',
+                  'aset/icon_pengguna.png',
                   width: 19,
                   height: 19,
                 ),
@@ -49,16 +62,17 @@ class DetailDate extends StatelessWidget {
                   width: 11,
                 ),
                 Text(
-                  'Cirebon',
+                  name,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: medium),
                 )
               ],
             ),
+
             Row(
               children: [
                 Image.asset(
-                  'aset/icon_jam.png',
+                  'aset/icon_rumah.png',
                   width: 15,
                   height: 15,
                 ),
@@ -66,18 +80,38 @@ class DetailDate extends StatelessWidget {
                   width: 11,
                 ),
                 Text(
-                  '07:00 - 15:00',
+                  orphanageName,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: medium),
                 )
               ],
             ),
+
+            
+            Row(
+              children: [
+                Image.asset(
+                  'aset/icon_gender.png',
+                  width: 15,
+                  height: 15,
+                ),
+                SizedBox(
+                  width: 11,
+                ),
+                Text(
+                  gender,
+                  style: subtitleTextStyle.copyWith(
+                      fontSize: 15, fontWeight: medium),
+                )
+              ],
+            ),
+
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: Row(
                 children: [
                   Image.asset(
-                    'aset/icon_telepon.png',
+                    'aset/icon_pengguna.png',
                     width: 19,
                     height: 19,
                   ),
@@ -85,7 +119,7 @@ class DetailDate extends StatelessWidget {
                     width: 11,
                   ),
                   Text(
-                    '085388886660',
+                   age,
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -116,7 +150,7 @@ class DetailDate extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Rian Maulana',
+                  name,
                   style: subtitleTextStyle.copyWith(
                       fontSize: 15, fontWeight: FontWeight.bold),
                 )
@@ -237,8 +271,8 @@ class DetailDate extends StatelessWidget {
               header(),
               TitleDetail1(),
               Detail1(),
-              TitleDetailAnak(),
-              Detailanak(),
+              // TitleDetailAnak(),
+              // Detailanak(),
               TitleJadwal(),
               jadwal(),
               AdopsiButtom()
