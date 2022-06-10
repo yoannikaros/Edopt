@@ -9,9 +9,9 @@ import '../../theme.dart';
 
 class PantiPage extends StatefulWidget {
   const PantiPage({Key? key}) : super(key: key);
-
   @override
   State<PantiPage> createState() => _PantiPageState();
+
 }
 
 class _PantiPageState extends State<PantiPage> {

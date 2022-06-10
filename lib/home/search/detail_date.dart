@@ -257,21 +257,6 @@ class _DetailDateState extends State<DetailDate> {
                 }
               },
             )
-
-            //   DateTimePicker(
-            //     dateMask: 'yyyy/MM/dd',
-            //     type: DateTimePickerType.dateTimeSeparate,
-            //   initialValue: '',
-            //   firstDate: DateTime(2000),
-            //   lastDate: DateTime(2100),
-            //   dateLabelText: 'Jadwal',
-            //   onChanged: (val) => print(val),
-            //   validator: (val) {
-            //     print(val);
-            //     return null;
-            //   },
-            //   onSaved: (val) => print(val),
-            // )
           ],
         ),
       );

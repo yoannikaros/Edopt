@@ -2,6 +2,7 @@ import 'package:adopt/home/search/detail_date.dart';
 import 'package:adopt/models/v3/childModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../../theme.dart';
 
@@ -134,9 +135,11 @@ class DetailAnak extends StatelessWidget {
     }
 
     Widget IsiBio() {
+      String text = lorem(paragraphs: 2, words: 60);
+
       return Container(
         margin: EdgeInsets.only(top: 17),
-        child: Text('detaill',
+        child: Text('$text',
             style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
       );
     }

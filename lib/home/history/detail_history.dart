@@ -84,25 +84,10 @@ class DetailHistory extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-                  RichText(
-                      text: TextSpan(
-                          children: [
-                            TextSpan(
-                                text: "To learn more "
-                            ),
-                            TextSpan(
-                                text: "Click here",
-                                recognizer: TapGestureRecognizer()..onTap =  () async{
-                                  var url = "https://www.youtube.com/channel/UCwxiHP2Ryd-aR0SWKjYguxw?view_as=subscriber";
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
-                                  } else {
-                                    throw 'Could not launch $url';
-                                  }
-                                }
-                            ),
-                          ]
-                      ))
+                  Text('Yoan Nikaros',
+                      style: blackTextStyle.copyWith(
+                          fontSize: 15, fontWeight: FontWeight.bold)),
+
             ]),
           ),
         ),

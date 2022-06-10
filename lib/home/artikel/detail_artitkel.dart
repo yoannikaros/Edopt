@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../../theme.dart';
 import '../../util.dart';
@@ -68,7 +69,7 @@ class DetailNews extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(left: 30),
                   child: Text(
-                    'Dari Edopt, untuk anak Indonesia  ',
+                    '$previewText',
                     style: primaryTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
@@ -106,6 +107,7 @@ class DetailNews extends StatelessWidget {
     }
 
     Widget isi2(){
+      String text = lorem(paragraphs: 3, words: 60);
       return Container(
         margin: EdgeInsets.only(top: 20,left: 20),
         child: Column(
@@ -113,7 +115,7 @@ class DetailNews extends StatelessWidget {
           children: [
             SizedBox(height: 5,),
 
-            Text( previewText,style: blackTextStyle.copyWith(
+            Text( text,style: blackTextStyle.copyWith(
                   fontSize: 17, fontWeight: FontWeight.w500),
             ),
           ],
