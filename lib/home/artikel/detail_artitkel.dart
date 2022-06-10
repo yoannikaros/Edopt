@@ -1,17 +1,30 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 import '../../theme.dart';
+import '../../util.dart';
 
 class DetailNews extends StatelessWidget {
   final String previewText;
   final String imageUrl;
+  final String title;
+  final String adminName;
+  final String content;
+  final String createdAt;
+  final String updatedAt;
+
 
   const DetailNews({
     Key? key,
     required this.previewText,
     required this.imageUrl,
+    required this.createdAt,
+    required this.adminName,
+    required this.content,
+    required this.title,
+    required this.updatedAt
   }) : super(key: key);
 
   @override
@@ -22,7 +35,20 @@ class DetailNews extends StatelessWidget {
     Widget isiberita(){
       return Stack(
         children: [
-          Image.asset('aset/images_isiberita.png', width: 400),
+         // Image.asset('aset/images_isiberita.png', width: 400),
+
+          ColorFiltered(
+            colorFilter: const ColorFilter.mode(
+              Colors.brown,
+              BlendMode.modulate,
+            ),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              width: double.infinity,
+              height: 260,
+              fit: BoxFit.cover,
+            ),
+          ),
 
           Container(
            padding: EdgeInsets.only(top: 20),
@@ -57,19 +83,20 @@ class DetailNews extends StatelessWidget {
                 margin: EdgeInsets.only(left: 20),
                 child: Image.asset('aset/icon_user.png', width: 20)),
                     Text(
-                      'Dani',
+                      adminName,
                       style: primaryTextStyle.copyWith(
                           fontSize: 14, fontWeight: FontWeight.w700),
                     ),
-                    SizedBox(width: 165,),
+                    SizedBox(width: 50,),
                     Text(
-                      '3 hari yang lalu',
+                      Util.toReadableTime(DateTime.parse(createdAt)),
                       style: primaryTextStyle.copyWith(
                           fontSize: 14, fontWeight: FontWeight.w700),
                     ),
 
                   ],
-                )
+                ),
+
               ],
             ),
           ),
@@ -84,14 +111,9 @@ class DetailNews extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '3 hari yang lalu',
-              style: blackTextStyle.copyWith(
-                  fontSize: 17, fontWeight: FontWeight.w700),
-            ),
-            SizedBox(height: 20,),
+            SizedBox(height: 5,),
 
-            Text(previewText,style: blackTextStyle.copyWith(
+            Text( previewText,style: blackTextStyle.copyWith(
                   fontSize: 17, fontWeight: FontWeight.w500),
             ),
           ],

@@ -3,7 +3,6 @@ import 'package:adopt/models/appointment/appointment_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-
 import '../../network/api_service.dart';
 import '../../theme.dart';
 
@@ -85,27 +84,15 @@ class _RiwayatPageState extends State<RiwayatPage> {
           time : item.time,
           status  : item.status,
           orphanage: item.orphanage,
-
-
-
+          longitude: '',
+          latitude: '',
+          child: '',
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),
       );
     }
 
-    // return Scaffold(
-    //   resizeToAvoidBottomInset: false,
-    //   backgroundColor: Colors.white,
-    //   body: Container(
-    //     margin: EdgeInsets.only(right: 20,left: 20),
-    //     child: ListView(
-    //         primary: true, children: [
-    //         header(context),
-    //         Container(child: DaftarKunjunganku(),)
-    //       ],
-    //     ),
-    //   )
-    // );
+
   }
 

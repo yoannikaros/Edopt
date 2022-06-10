@@ -272,7 +272,7 @@ class DetailPanti extends StatelessWidget {
               Detailatas(),
               juduldetail(),
               Detailyayasan(),
-              ButtomLokasi()
+             // ButtomLokasi()
             ],
           ),
         ),

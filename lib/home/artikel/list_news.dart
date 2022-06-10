@@ -57,7 +57,7 @@ class _ListNewsState extends State<ListNews> {
 
   Widget header(context) {
     return Container(
-      margin: EdgeInsets.only(top: 30, bottom: 18, left: 40),
+      margin: EdgeInsets.only(top: 30, bottom: 18, left: 50),
       child: Column(
         children: [
           Row(
@@ -66,7 +66,8 @@ class _ListNewsState extends State<ListNews> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Image.asset(
+                child:
+                Image.asset(
                   'aset/icon_kembali.png',
                   width: 25,
                 ),
@@ -93,12 +94,14 @@ class _ListNewsState extends State<ListNews> {
       primary: false,
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate(
-        itemBuilder: (context, item, index) => CardNews(
-          admin: item.adminName,
-          title: 'Title',
-          previewText: item.previewText,
-          createdAt: item.createdAt,
-          imageUrl: item.imageUrl,
+        itemBuilder: (context, item, index) => GestureDetector(
+          child: CardNews(
+            admin: item.adminName,
+            title: 'Title',
+            previewText: item.previewText,
+            createdAt: item.createdAt,
+            imageUrl: item.imageUrl,
+          ),
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),

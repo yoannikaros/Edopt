@@ -48,8 +48,8 @@ abstract class ApiService {
   @Query('status') String status,
   @Query('orphanage') String orphanage,
   @Query('child') String child,
-  @Query('latitude')  double latitude,
-  @Query('longtitude') double longtitude,
+  @Query('latitude')  String latitude,
+  @Query('longtitude') String longtitude,
   );
 
   //Child

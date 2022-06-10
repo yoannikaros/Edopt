@@ -1,66 +1,32 @@
-// import 'package:adopt/cardwidget/detailkunjungan_card.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-
-import '../../models/appointment/appointment_model.dart';
-import '../../network/api_service.dart';
 import '../../theme.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
-class DetailHistory extends StatefulWidget {
-
+class DetailHistory extends StatelessWidget {
   final String time;
   final String status;
   final String orphanage;
+  final String child;
+  final String longitude;
+  final String latitude;
 
-
-   const DetailHistory({Key? key,
-
-     required this.time,
-     required this.status,
-     required this.orphanage,
-
-
-   }) : super(key: key);
-  @override
-  State<DetailHistory> createState() => _DetailHistoryPageState();
-}
-
-class _DetailHistoryPageState extends State<DetailHistory>{
-
-  final PagingController<int, Appointment> _pagingController =
-  PagingController(firstPageKey: 1);
-
-  @override
-  void initState() {
-    _pagingController.addPageRequestListener((pageKey) {
-      _fetchPage(pageKey);
-    });
-    super.initState();
-  }
-
-  Future<void> _fetchPage(int pageKey) async {
-    try {
-      final newItems = await ApiService.create().getAppointmentList(page: pageKey);
-      final isLastPage = newItems.meta.currentPage == newItems.meta.lastPage;
-      if (isLastPage) {
-        // Gati
-        _pagingController.appendLastPage(newItems.data);
-      } else {
-        final nextPageKey = pageKey + 1;
-        // Ganti
-        _pagingController.appendPage(newItems.data, nextPageKey);
-      }
-    } catch (error) {
-      _pagingController.error = error;
-    }
-  }
+  const DetailHistory({
+    Key? key,
+    required this.time,
+    required this.status,
+    required this.orphanage,
+    required this.child,
+    required this.longitude,
+    required this.latitude,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(top: 40,left: 40),
+        margin: EdgeInsets.only(top: 40, left: 40),
         child: Row(
           children: [
             GestureDetector(
@@ -74,79 +40,75 @@ class _DetailHistoryPageState extends State<DetailHistory>{
       );
     }
 
-    Widget detail1(){
+    Widget detail1() {
       return Container(
-        margin: EdgeInsets.only(left: 40,top: 20),
+        margin: EdgeInsets.only(left: 40, top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('09:45',
+            Text(orphanage,
                 style: blackTextStyle.copyWith(
-                    fontSize: 30, fontWeight: FontWeight.bold)),
-            Text('2022-01-22',
+                    fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(time,
                 style: blackTextStyle.copyWith(
                     fontSize: 15, fontWeight: FontWeight.w500)),
           ],
         ),
       );
     }
-    Widget CardDetail(){
+
+    Widget CardDetail() {
       return Container(
         padding: EdgeInsets.all(20),
-
         child: Card(
-
           child: Container(
             padding: EdgeInsets.all(20),
             //margin: EdgeInsets.only(left: 60),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Alamat Panti',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 15, fontWeight: FontWeight.bold)),
-
-                Text('Panti Asuhan Sejahtera Jl. Patimura No. 5 Bondowoso',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 15, fontWeight: FontWeight.w500)),
-                SizedBox(height: 20,),
-
-                Text('Nama Anak',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 15, fontWeight: FontWeight.bold)),
-
-                Text('Raihan ',
-                    style: blackTextStyle.copyWith(
-                        fontSize: 15, fontWeight: FontWeight.w500)),
-                SizedBox(height: 20,),
-                GestureDetector(
-                  onTap: (){
-
-                  },
-                  child: Text('Cek Lokasi ',
-                      style: primaryku.copyWith(
-                          fontSize: 15, fontWeight: FontWeight.w500)),
-                ),
-              ],
-            ),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('Alamat Panti',
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.bold)),
+              Text('Panti Asuhan Sejahtera Jl. Patimura No. 5 Bondowoso',
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.w500)),
+              SizedBox(
+                height: 20,
+              ),
+              Text('Nama Anak',
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(child,
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.w500)),
+              SizedBox(
+                height: 20,
+              ),
+                  RichText(
+                      text: TextSpan(
+                          children: [
+                            TextSpan(
+                                text: "To learn more "
+                            ),
+                            TextSpan(
+                                text: "Click here",
+                                recognizer: TapGestureRecognizer()..onTap =  () async{
+                                  var url = "https://www.youtube.com/channel/UCwxiHP2Ryd-aR0SWKjYguxw?view_as=subscriber";
+                                  if (await canLaunch(url)) {
+                                    await launch(url);
+                                  } else {
+                                    throw 'Could not launch $url';
+                                  }
+                                }
+                            ),
+                          ]
+                      ))
+            ]),
           ),
         ),
       );
-      // return PagedListView<int, Appointment>.separated(
-      //   shrinkWrap: true,
-      //   primary: false,
-      //   pagingController: _pagingController,
-      //   builderDelegate: PagedChildBuilderDelegate(
-      //     itemBuilder: (context, item, index) => DetailKunjungan(
-      //       waktunya : item.time,
-      //       statusnya  : item.status,
-      //       pantinya: item.orphanage,
-      //       anaknya: item.child,
-      //     ),
-      //   ),
-      //   separatorBuilder: (context, index) => const SizedBox(height: 8),
-      // );
     }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,

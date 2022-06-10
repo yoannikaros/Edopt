@@ -108,7 +108,7 @@ class _PantiPageState extends State<PantiPage> {
                       name: item.name,
                       district: item.district,
                       openingHours: item.openingHours,
-                      closingHours: item.closingHours, imageUrl: '', regency: '', address: '', province: '',
+                      closingHours: item.closingHours, imageUrl: '', regency: '', address: '', province: '', longitude: '', latitude: '',
                     ),
                   ),
                   separatorBuilder: (context, index) => const SizedBox(height: 8),

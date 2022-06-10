@@ -2,7 +2,7 @@ import 'package:adopt/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+//
 import '../../auth/provider/google_sign_in.dart';
 
 class AkunPage extends StatelessWidget {
@@ -13,64 +13,64 @@ class AkunPage extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
-        child: Row(
-          children: [
-            Container(
-              width: 87,
-              height: 87,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(user.photoURL!),
+          margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
+          child: Row(
+            children: [
+              Container(
+                width: 87,
+                height: 87,
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: NetworkImage(user.photoURL!),
+                ),
               ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Expanded(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  user.displayName!,
-                  style: blackTextStyle.copyWith(
-                      fontSize: 16, fontWeight: semiBold),
-                ),
-                SizedBox(height: 5,),
-                Row(
-                  children: [
-                    Image.asset(
-                      'aset/icon_telepon.png',
-                      width: 19,
-                    ),
-                    SizedBox(width: 7,),
-                    Text(
-                      '082230634412',
-                      style: subtitleTextStyle.copyWith(fontSize: 13),
-                    ),
-                  ],
-                ),
+              SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    user.displayName!,
+                    style: blackTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semiBold),
+                  ),
+                  SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'aset/icon_telepon.png',
+                        width: 19,
+                      ),
+                      SizedBox(width: 7,),
+                      Text(
+                        '082230634412',
+                        style: subtitleTextStyle.copyWith(fontSize: 13),
+                      ),
+                    ],
+                  ),
 
-                SizedBox(height: 5,),
+                  SizedBox(height: 5,),
 
-                Row(
-                  children: [
-                    Image.asset(
-                      'aset/icon_email.png',
-                      width: 19,
-                    ),
-                    SizedBox(width: 7,),
-                    Text(
-                      user.email!,
-                      style: subtitleTextStyle.copyWith(fontSize: 13),
-                    ),
-                  ],
-                )
-              ],
-            ))
-          ],
-        ),
-      );
+                  Row(
+                    children: [
+                      Image.asset(
+                        'aset/icon_email.png',
+                        width: 19,
+                      ),
+                      SizedBox(width: 7,),
+                      Text(
+                        user.email!,
+                        style: subtitleTextStyle.copyWith(fontSize: 13),
+                      ),
+                    ],
+                  )
+                ],
+              ))
+            ],
+          ),
+        );
     }
 
     Widget umumTitle(){

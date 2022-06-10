@@ -1,4 +1,6 @@
+import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/util.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../theme.dart';
@@ -19,22 +21,46 @@ class CardNews extends StatelessWidget {
     required this.imageUrl,
   }) : super(key: key);
 
-  //iNI LIST BERITA YANG DITULISAN LAINNYA
+  //INI LIST BERITA YANG DITULISAN LAINNYA
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24)
+      ),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/detailberita');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailNews(
+                  previewText: previewText, imageUrl: imageUrl,
+                  adminName: admin,
+                  updatedAt: '',
+                  createdAt: createdAt,
+                  title: title,
+                  content: '',
+                )),
+          );
         },
         child: Stack(
           children: [
-            CachedNetworkImage(
-              imageUrl: imageUrl,
-              width: double.infinity,
-              fit: BoxFit.cover,
+
+            ColorFiltered(
+              colorFilter: const ColorFilter.mode(
+                Colors.brown,
+                BlendMode.modulate,
+              ),
+
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                height: 240,
+              ),
             ),
+
             SizedBox(
               height: 18,
             ),
@@ -47,7 +73,7 @@ class CardNews extends StatelessWidget {
                     width: 15,
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 3,
                   ),
                   Text(
                     admin,
@@ -55,7 +81,7 @@ class CardNews extends StatelessWidget {
                         fontSize: 13, fontWeight: semiBold),
                   ),
                   SizedBox(
-                    width: 120,
+                    width: 70,
                   ),
                   Text(
                     Util.toReadableTime(DateTime.parse(createdAt)),
@@ -71,7 +97,7 @@ class CardNews extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 150,
+                    height: 130,
                   ),
                   Text(
                     title,

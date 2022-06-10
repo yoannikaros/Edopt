@@ -9,6 +9,9 @@ class DaftarKunjungan extends StatelessWidget {
   final String time;
   final String status;
   final String orphanage;
+  final String child;
+  final String longitude;
+  final String latitude;
 
   const DaftarKunjungan({Key? key,
 
@@ -16,6 +19,9 @@ class DaftarKunjungan extends StatelessWidget {
     required this.time,
     required this.status,
     required this.orphanage,
+    required this.child,
+    required this.longitude,
+    required this.latitude,
 
 
   }) : super(key: key);
@@ -26,7 +32,14 @@ class DaftarKunjungan extends StatelessWidget {
       onTap: (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) =>  DetailHistory(time: '$time', status: '$status', orphanage: '$orphanage',)),
+        MaterialPageRoute(builder: (context) =>  DetailHistory(
+          status: status,
+          orphanage: orphanage,
+          time: time,
+          longitude: longitude,
+          latitude: latitude,
+          child: child,
+        )),
       );
     },
       child: Card(
@@ -59,8 +72,8 @@ class DaftarKunjungan extends StatelessWidget {
 
                   SizedBox(width: 160,),
 
-                  Text("2022-01-22",style: blackTextStyle.copyWith(
-                      fontSize: 14, fontWeight: FontWeight.w500),)
+                  // Text("2022-01-22",style: blackTextStyle.copyWith(
+                  //     fontSize: 14, fontWeight: FontWeight.w500),)
                 ],
               ),
             ],

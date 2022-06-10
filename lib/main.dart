@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: LoginAkun(),
           routes: {
-            '/landing': (context) => LandingPage(),
+           // '/landing': (context) => LandingPage(),
             //Auth
             '/sign-in': (context) => SignInPage(),
             '/sign-up': (context) => SignUpPage(),

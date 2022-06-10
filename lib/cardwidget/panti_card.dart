@@ -12,6 +12,8 @@ class ResultPantiCard extends StatelessWidget {
   final String address;
   final String openingHours;
   final String closingHours;
+  final String longitude;
+  final String latitude;
 
   const ResultPantiCard ({
     Key? key,
@@ -22,7 +24,9 @@ class ResultPantiCard extends StatelessWidget {
     required this.regency,
     required this.address,
     required this.openingHours,
-    required this.closingHours
+    required this.closingHours,
+    required this.longitude,
+    required this.latitude
   }) : super(key: key);
 
   @override

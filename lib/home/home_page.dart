@@ -160,6 +160,12 @@ class HomePage extends StatelessWidget {
                 return ArticleCard(
                   previewText: articles[index].previewText,
                   imageUrl: articles[index].imageUrl,
+                  createdAt: articles[index].createdAt,
+                  updatedAt: articles[index].updatedAt,
+                  content: '',
+                  adminName: articles[index].adminName,
+                  title: '',
+
                 );
               },
             );
