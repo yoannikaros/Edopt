@@ -84,9 +84,10 @@ class _RiwayatPageState extends State<RiwayatPage> {
           time : item.time,
           status  : item.status,
           orphanage: item.orphanage,
-          longitude: '',
+          child: item.child,
+          longtitude: '',
           latitude: '',
-          child: '',
+
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),

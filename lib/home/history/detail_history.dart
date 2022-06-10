@@ -8,9 +8,9 @@ class DetailHistory extends StatelessWidget {
   final String time;
   final String status;
   final String orphanage;
-  final String child;
-  final String longitude;
-  final String latitude;
+  final String? child;
+  final String? longtitude;
+  final String? latitude;
 
   const DetailHistory({
     Key? key,
@@ -18,7 +18,7 @@ class DetailHistory extends StatelessWidget {
     required this.status,
     required this.orphanage,
     required this.child,
-    required this.longitude,
+    required this.longtitude,
     required this.latitude,
   }) : super(key: key);
 
@@ -66,27 +66,23 @@ class DetailHistory extends StatelessWidget {
             //margin: EdgeInsets.only(left: 60),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('Alamat Panti',
-                  style: blackTextStyle.copyWith(
-                      fontSize: 15, fontWeight: FontWeight.bold)),
-              Text('Panti Asuhan Sejahtera Jl. Patimura No. 5 Bondowoso',
-                  style: blackTextStyle.copyWith(
-                      fontSize: 15, fontWeight: FontWeight.w500)),
-              SizedBox(
-                height: 20,
-              ),
-              Text('Nama Anak',
-                  style: blackTextStyle.copyWith(
-                      fontSize: 15, fontWeight: FontWeight.bold)),
-              Text(child,
-                  style: blackTextStyle.copyWith(
-                      fontSize: 15, fontWeight: FontWeight.w500)),
-              SizedBox(
-                height: 20,
-              ),
-                  Text('Yoan Nikaros',
+                  Text('Nama Anak',
                       style: blackTextStyle.copyWith(
                           fontSize: 15, fontWeight: FontWeight.bold)),
+                  Text(child!,
+                      style: blackTextStyle.copyWith(
+                          fontSize: 15, fontWeight: FontWeight.w500)),
+                  SizedBox(
+                    height: 20,
+                  ),
+              Text('Status',
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(status,
+                  style: blackTextStyle.copyWith(
+                      fontSize: 15, fontWeight: FontWeight.w500)),
+
+
 
             ]),
           ),

@@ -9,9 +9,9 @@ class DaftarKunjungan extends StatelessWidget {
   final String time;
   final String status;
   final String orphanage;
-  final String child;
-  final String longitude;
-  final String latitude;
+  final String? child;
+  final String? longtitude;
+  final String? latitude;
 
   const DaftarKunjungan({Key? key,
 
@@ -20,7 +20,7 @@ class DaftarKunjungan extends StatelessWidget {
     required this.status,
     required this.orphanage,
     required this.child,
-    required this.longitude,
+    required this.longtitude,
     required this.latitude,
 
 
@@ -36,9 +36,9 @@ class DaftarKunjungan extends StatelessWidget {
           status: status,
           orphanage: orphanage,
           time: time,
-          longitude: longitude,
-          latitude: latitude,
-          child: child,
+          longtitude: longtitude!,
+          latitude: latitude!,
+          child: child!,
         )),
       );
     },
@@ -70,10 +70,6 @@ class DaftarKunjungan extends StatelessWidget {
                       fontSize: 14, fontWeight: FontWeight.w500),),
 
 
-                  SizedBox(width: 160,),
-
-                  // Text("2022-01-22",style: blackTextStyle.copyWith(
-                  //     fontSize: 14, fontWeight: FontWeight.w500),)
                 ],
               ),
             ],
