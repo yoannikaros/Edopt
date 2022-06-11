@@ -2,8 +2,11 @@ import 'package:adopt/auth/forgetPW/change.dart';
 import 'package:adopt/auth/forgetPW/input_recovery.dart';
 import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:adopt/cardwidget/login_card.dart';
+import 'package:adopt/home/akun/about.dart';
 import 'package:adopt/home/akun/akun_page.dart';
 import 'package:adopt/home/akun/detail_akun.dart';
+import 'package:adopt/home/akun/kebijakan.dart';
+import 'package:adopt/home/akun/lisensi.dart';
 import 'package:adopt/home/artikel/detail_artitkel.dart';
 import 'package:adopt/home/artikel/list_news.dart';
 import 'package:adopt/home/history/detail_history.dart';
@@ -17,6 +20,7 @@ import 'package:adopt/auth/forgetPW/sendmail.dart';
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/auth/sign_up_page.dart';
 import 'package:adopt/home/search/list_anak.dart';
+import 'package:adopt/home/search/success.dart';
 import 'package:adopt/provider/child_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -46,7 +50,7 @@ class MyApp extends StatelessWidget {
         create: (context) => GoogleSignInProvider(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginAkun(),
+          home: LandingPage(),
           routes: {
            // '/landing': (context) => LandingPage(),
             //Auth
@@ -74,12 +78,16 @@ class MyApp extends StatelessWidget {
             //Menu Akun
             '/profile': (context) => AkunPage(),
             '/detail-akun': (context) => DetailAkun(),
+            '/kebijakan': (context) => Kebijakan(),
+            '/lisensi': (context) => Lisensi(),
+            '/about': (context) => About(),
+            '/success': (context) => Success(),
 
             //Menu Panti asuhan
             //'/detail-panti': (context) => DetailPanti(),
 
             //Menu history
-            //'/detail-hsitory': (context) => DetailHistory(),
+           // '/detail-hsitory': (context) => DetailHistory(),
           },
 
         ),

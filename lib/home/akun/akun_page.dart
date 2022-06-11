@@ -37,29 +37,15 @@ class AkunPage extends StatelessWidget {
                         fontSize: 16, fontWeight: semiBold),
                   ),
                   SizedBox(height: 5,),
-                  Row(
-                    children: [
-                      Image.asset(
-                        'aset/icon_telepon.png',
-                        width: 19,
-                      ),
-                      SizedBox(width: 7,),
-                      Text(
-                        '082230634412',
-                        style: subtitleTextStyle.copyWith(fontSize: 13),
-                      ),
-                    ],
-                  ),
 
-                  SizedBox(height: 5,),
 
                   Row(
                     children: [
-                      Image.asset(
-                        'aset/icon_email.png',
-                        width: 19,
-                      ),
-                      SizedBox(width: 7,),
+                      // Image.asset(
+                      //   'aset/icon_email.png',
+                      //   width: 19,
+                      // ),
+                      // SizedBox(width: 7,),
                       Text(
                         user.email!,
                         style: subtitleTextStyle.copyWith(fontSize: 13),
@@ -91,10 +77,10 @@ class AkunPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 30,bottom: 14),
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, '/detail-akun');
+                  Navigator.pushNamed(context, '/kebijakan');
                 },
                 child: Text(
-                  'Preferensi Akun',
+                  'Kebijakan',
                   style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w400),
                 ),
               ),
@@ -108,27 +94,30 @@ class AkunPage extends StatelessWidget {
               ),
             ),
 
+
             Container(
               margin: EdgeInsets.only(left: 30,bottom: 11),
-              child: Text(
-                'Mode Malam',
-                style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/about');
+                },
+                child: Text(
+                  'Tentang Edopt',
+                  style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+                ),
               ),
             ),
 
             Container(
               margin: EdgeInsets.only(left: 30,bottom: 11),
-              child: Text(
-                'Tentang Edopt',
-                style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
-              ),
-            ),
-
-            Container(
-              margin: EdgeInsets.only(left: 30,bottom: 11),
-              child: Text(
-                'Lisensi',
-                style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/lisensi');
+                },
+                child: Text(
+                  'Lisensi',
+                  style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+                ),
               ),
             ),
 

@@ -1,33 +1,36 @@
+import 'dart:async';
+
 import 'package:adopt/theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DetailAkun extends StatelessWidget {
+class DetailAkun extends StatefulWidget {
+  @override
+  State<DetailAkun> createState() => _DetailAkunState();
+}
+
+class _DetailAkunState extends State<DetailAkun> {
+  void initState() {
+    // TODO: implement initState
+    Timer(Duration(seconds: 1), () => Navigator.pushNamed(context, '/main'));
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
       return Container(
         child: Row(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                margin: EdgeInsets.only(left: 5),
-                child: Image.asset(
-                  'aset/icon_kembali.png',
-                  width: 24,
-                ),
-              ),
-            ),
             Container(
-              margin: EdgeInsets.only(left: 90, top: 30),
+              margin: EdgeInsets.only(left: 125,top: 100),
               width: 87,
               height: 87,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: AssetImage('aset/image_profile.png'))),
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: NetworkImage(user.photoURL!),
+              ),
             ),
           ],
         ),
@@ -67,7 +70,8 @@ class DetailAkun extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
-                        style: primaryTextStyle,
+                        initialValue: user.displayName!,
+                        style: blackTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: 'Masukan Nama',
                             hintStyle: subtitleTextStyle),
@@ -114,8 +118,9 @@ class DetailAkun extends StatelessWidget {
                     ),
                     Expanded(
                       child: TextFormField(
+                        initialValue: user.email!,
                         keyboardType: TextInputType.emailAddress,
-                        style: primaryTextStyle,
+                        style: blackTextStyle,
                         decoration: InputDecoration.collapsed(
                             hintText: 'Masukan Email',
                             hintStyle: subtitleTextStyle),
@@ -209,8 +214,8 @@ class DetailAkun extends StatelessWidget {
               header(),
               NameInput(),
               emailInput(),
-              PhoneInput(),
-              SimpanButton()
+              //PhoneInput(),
+             // SimpanButton()
             ],
           ),
         ),

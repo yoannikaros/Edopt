@@ -271,7 +271,7 @@ class _DetailDateState extends State<DetailDate> {
           onPressed: () async {
             bool response = await Repo.postData(dateinput.text, widget.id);
             if (response) {
-              Navigator.of(context).popAndPushNamed('/main');
+              Navigator.of(context).popAndPushNamed('/success');
             } else {
               print('GAGAL');
             }
