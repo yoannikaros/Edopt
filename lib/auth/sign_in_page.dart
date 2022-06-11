@@ -38,41 +38,12 @@ class SignInPage extends StatelessWidget {
       );
     }
 
-    Widget Gmail() {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 48,
-            width: 318,
-            //color: Colors.blue,
-            margin: EdgeInsets.only(top: 30),
-            child: ElevatedButton(
-              onPressed: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.googleLogin();
-              },
-              style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(28))),
-              child: Text(
-                'Masuk dengan google',
-                style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: medium),
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
     Widget CariButton() {
       return Container(
 
         height: 50,
         width: double.infinity,
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.only(top: 590, left:70, right: 50),
         child: TextButton(
           onPressed: () async{
             // await Provider.of<ChildProvider>(context, listen: false).getProducts(1);
@@ -106,143 +77,25 @@ class SignInPage extends StatelessWidget {
         ),
       );
     }
-    Widget nomorInput() {
-      return Container(
-        margin: EdgeInsets.only(top: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 50,
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                  color: backgroundColor2,
-                  borderRadius: BorderRadius.circular(12)),
-              child: Center(
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'aset/icon_telepon.png',
-                      width: 17,
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    Expanded(
-                      child: TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        style: primaryTextStyle,
-                        decoration: InputDecoration.collapsed(
-                            hintText: 'Nomor Telepon',
-                            hintStyle: subtitleTextStyle),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      );
-    }
 
-    Widget signInButton() {
-      return Container(
-        height: 50,
-        width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
-        child: Row(
-          children: [
-            Container(
-              width: 150,
-              height: 46,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/sign-up');
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: backgroundColor6,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28))),
-                child: Text(
-                  'DAFTAR',
-                  style: primaryku.copyWith(fontSize: 16, fontWeight: medium),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 21,
-            ),
-            Container(
-              width: 150,
-              height: 46,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/main');
-                },
-                style: TextButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28))),
-                child: Text(
-                  'MASUK',
-                  style: primaryTextStyle.copyWith(
-                      fontSize: 16, fontWeight: medium),
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
-    Widget footer() {
-      return Container(
-        margin: EdgeInsets.only(top: 12),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Saya lupa kata sandi',
-              style: subtitleTextStyle.copyWith(fontSize: 12),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/masukk');
-              },
-              child: Image.asset(
-                'aset/icon_panahkanan.png',
-                width: 17,
-              ),
-            )
-          ],
-        ),
-      );
-    }
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor6,
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("aset/image_login.png"),
+                fit: BoxFit.cover,
+            ),
+          ),
+          //margin: EdgeInsets.symmetric(horizontal: defaultMargin),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+             // header(),
+             CariButton()
 
-              //route
-              header(),
-              //nomorInput(),
-              //Gmail(),
-              CariButton()
-              //passwordInput(),
-              //signInButton(),
-              //Spacer(),
-              //footer(),
             ],
           ),
         ),

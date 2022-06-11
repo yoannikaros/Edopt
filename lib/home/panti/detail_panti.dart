@@ -2,8 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:random_string/random_string.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:math' show Random;
 import '../../theme.dart';
+
 
 class DetailPanti extends StatefulWidget {
   final String name;
@@ -97,7 +99,7 @@ class _DetailPantiState extends State<DetailPanti> {
       ];
 
       int gambarnya() {
-        var gambarnya = Random().nextInt(3) + 1;
+        var gambarnya = Random().nextInt(2) + 1;
         return gambarnya;
       }
       return Container(
@@ -274,27 +276,26 @@ class _DetailPantiState extends State<DetailPanti> {
 
     Widget ButtomLokasi() {
       List<String> lokasi = [
-        'Ajung',
-        'Ambulu',
-        'Arjasa',
-        'Bangsalsari',
-        'Balung',
-        'Jelbuk',
-        'Jenggawah',
-        'Sumbersari',
+        'https://www.google.com/maps/place/Yayasan+Panti+Asuhan+Attafakur/data=!4m6!3m5!1s0x2dd696698967a9e7:0xd194edd6259a3ff0!8m2!3d-8.1711609!4d113.7274144!16s%2Fg%2F11c7136qcj?authuser=0&hl=id&rclk=1',
+        'https://www.google.com/maps/place/Panti+Asuhan+Attafakur+Putri/data=!4m6!3m5!1s0x2dd6979552b76471:0xf19b5c74aa842a10!8m2!3d-8.181627!4d113.7184444!16s%2Fg%2F11hdg12l88?authuser=0&hl=id&rclk=1',
+        'https://www.google.com/maps/place/Panti+Asuhan+Putra+Muhammadiyah+Jember/data=!4m6!3m5!1s0x2dd69681f69db889:0xbf867b6f1a5cd56!8m2!3d-8.1825317!4d113.7109006!16s%2Fg%2F11bw7v3y7m?authuser=0&hl=id&rclk=1',
+        'https://www.google.com/maps/place/Panti+Asuhan+NURUL+HUSNA/data=!4m6!3m5!1s0x2dd6944e69643fe7:0xaa6491438a3f5fcd!8m2!3d-8.1567727!4d113.7070232!16s%2Fg%2F11b6jjqjt9?authuser=0&hl=id&rclk=1',
+        'https://www.google.com/maps/place/Panti+Yatim+Mambaul+Ulum/data=!4m6!3m5!1s0x2dd6969b14ee819f:0x734358586c7f2f6b!8m2!3d-8.1888157!4d113.7017292!16s%2Fg%2F12q4tlg4v?authuser=0&hl=id&rclk=1',
+        'https://www.google.com/maps/place/Panti+Asuhan+Attafakur+Putra/data=!4m6!3m5!1s0x2dd6966b9929b817:0xeb352bea46a069f6!8m2!3d-8.1976808!4d113.7350931!16s%2Fg%2F11c717srjd?authuser=0&hl=id&rclk=1',
       ];
 
       int location() {
-        var location = Random().nextInt(8) + 1;
+        var location = Random().nextInt(5) + 1;
         return location;
       }
+
       return Container(
         height: 50,
         width: double.infinity,
         margin: EdgeInsets.all(30),
         child: TextButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/');
+          onPressed: ()  {
+
           },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
@@ -304,12 +305,14 @@ class _DetailPantiState extends State<DetailPanti> {
             children: [
 
               Container(
-                margin: EdgeInsets.only(left: 84),
-                child: Text(
-                  'CEK LOKASI',
-                  style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                margin: EdgeInsets.only(left: 94),
+                child: InkWell(
+                    child: new Text('Cek Lokasi', style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),),
+                    onTap: () => launch(lokasi[location()])
                 ),
               ),
+
+
             ],
           ),
         ),
