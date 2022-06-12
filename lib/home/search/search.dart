@@ -3,6 +3,7 @@ import 'package:adopt/network/apisearch.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/v3/childModel.dart';
+import 'detail_anak.dart';
 
 
 class SearchUser extends SearchDelegate {
@@ -44,46 +45,54 @@ class SearchUser extends SearchDelegate {
               itemCount: data?.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Row(
-                    children: [
-                      Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurpleAccent,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '${data?[index].id}',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                            overflow: TextOverflow.clip,
+                  title: GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  DetailAnak(name: '${data?[index].name}', orphanageName: '${data?[index].orphanageName}', gender: '${data?[index].gender}', age: '${data?[index].age}', id: '${data?[index].id}',)),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurpleAccent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${data?[index].id}',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                              overflow: TextOverflow.clip,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 20),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '${data?[index].name}',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              '${data?[index].gender}',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
+                        SizedBox(width: 20),
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${data?[index].name}',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.w600),
                               ),
-                            ),
-                          ])
-                    ],
+                              SizedBox(height: 10),
+                              Text(
+                                '${data?[index].gender}',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ])
+                      ],
+                    ),
                   ),
                 );
               });
@@ -93,7 +102,7 @@ class SearchUser extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     return Center(
-      child: Text('Search Child'),
+      child: Text('Search Gender Child'),
     );
   }
 }

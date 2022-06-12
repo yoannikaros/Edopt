@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:adopt/home/main_page.dart';
 import 'package:adopt/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,7 +14,9 @@ class DetailAkun extends StatefulWidget {
 class _DetailAkunState extends State<DetailAkun> {
   void initState() {
     // TODO: implement initState
-    Timer(Duration(seconds: 1), () => Navigator.pushNamed(context, '/main'));
+    Timer(Duration(seconds: 1), () => Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => MainPage()),
+    ));
     super.initState();
   }
   @override

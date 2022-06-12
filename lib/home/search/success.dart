@@ -15,7 +15,7 @@ class Success extends StatefulWidget {
 class _SuccessState extends State<Success> {
   void initState() {
     // TODO: implement initState
-    Timer(Duration(seconds: 5), () => Navigator.of(context).push(
+    Timer(Duration(seconds: 5), () => Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (context) => MainPage()),
     ));
     super.initState();
