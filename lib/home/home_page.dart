@@ -1,5 +1,8 @@
 import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:adopt/cardwidget/article_card.dart';
+import 'package:adopt/home/akun/detail_akun.dart';
+import 'package:adopt/home/artikel/list_news.dart';
+import 'package:adopt/home/search/list_anak.dart';
 import 'package:adopt/models/article.dart';
 import 'package:adopt/network/api_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -55,7 +58,9 @@ class HomePage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/detail-akun');
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => DetailAkun()),
+              );
             },
             child: Container(
               width: 70,
@@ -78,7 +83,10 @@ class HomePage extends StatelessWidget {
       margin: EdgeInsets.all(30),
       child: TextButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/search');
+          // Navigator.pushNamed(context, '/search');
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => ListAnak()),
+          );
         },
         style: TextButton.styleFrom(
             backgroundColor: primaryColor,
@@ -118,29 +126,32 @@ class HomePage extends StatelessWidget {
             style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
           ),
           SizedBox(
-            width: 90,
+            width: 95,
           ),
+
           GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/list-news');
+            onTap: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ListNews()),
+              );
             },
-            child: Text(
-              'Lainnya',
-              style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
+            child: Row(
+              children: [
+                Text(
+                  'Lainnya',
+                  style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Image.asset(
+                  'aset/icon_panahkananbiru.png',
+                  width: 23,
+                ),
+              ],
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/list-news');
-            },
-            child: Image.asset(
-              'aset/icon_panahkananbiru.png',
-              width: 23,
-            ),
-          ),
+          )
+
         ],
       ),
     );
@@ -165,7 +176,6 @@ class HomePage extends StatelessWidget {
                   content: '',
                   adminName: articles[index].adminName,
                   title: '',
-
                 );
               },
             );

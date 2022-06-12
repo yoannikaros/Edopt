@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:adopt/home/history/history_page.dart';
+import 'package:adopt/home/main_page.dart';
 import 'package:adopt/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,7 +15,9 @@ class Success extends StatefulWidget {
 class _SuccessState extends State<Success> {
   void initState() {
     // TODO: implement initState
-    Timer(Duration(seconds: 5), () => Navigator.pushNamed(context, '/main'));
+    Timer(Duration(seconds: 5), () => Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => MainPage()),
+    ));
     super.initState();
   }
 //

@@ -1,5 +1,3 @@
-import 'package:adopt/auth/forgetPW/change.dart';
-import 'package:adopt/auth/forgetPW/input_recovery.dart';
 import 'package:adopt/auth/provider/google_sign_in.dart';
 import 'package:adopt/cardwidget/login_card.dart';
 import 'package:adopt/home/akun/about.dart';
@@ -16,7 +14,6 @@ import 'package:adopt/home/search/detail_anak.dart';
 import 'package:adopt/home/search/detail_date.dart';
 import 'package:adopt/home/home_page.dart';
 import 'package:adopt/home/main_page.dart';
-import 'package:adopt/auth/forgetPW/sendmail.dart';
 import 'package:adopt/auth/sign_in_page.dart';
 import 'package:adopt/auth/sign_up_page.dart';
 import 'package:adopt/home/search/list_anak.dart';
@@ -57,10 +54,6 @@ class MyApp extends StatelessWidget {
             '/sign-in': (context) => SignInPage(),
             '/sign-up': (context) => SignUpPage(),
 
-            //Recovery
-            '/forget': (context) => SendMail(),
-            '/input-recovery': (context) => InputRecovery(),
-            '/ganti-pw': (context) => gantiPw(),
 
             //Main Page
             '/main': (context) => MainPage(),

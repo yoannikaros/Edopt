@@ -135,7 +135,7 @@ class DetailAnak extends StatelessWidget {
     }
 
     Widget IsiBio() {
-      String text = lorem(paragraphs: 2, words: 60);
+      String text = lorem(paragraphs: 2, words: 50);
 
       return Container(
         margin: EdgeInsets.only(top: 17),

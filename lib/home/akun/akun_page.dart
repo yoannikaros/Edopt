@@ -1,3 +1,6 @@
+import 'package:adopt/home/akun/about.dart';
+import 'package:adopt/home/akun/kebijakan.dart';
+import 'package:adopt/home/akun/lisensi.dart';
 import 'package:adopt/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +80,9 @@ class AkunPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 30,bottom: 14),
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, '/kebijakan');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Kebijakan()),
+                  );
                 },
                 child: Text(
                   'Kebijakan',
@@ -99,7 +104,9 @@ class AkunPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 30,bottom: 11),
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, '/about');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => About()),
+                  );
                 },
                 child: Text(
                   'Tentang Edopt',
@@ -112,7 +119,9 @@ class AkunPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 30,bottom: 11),
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, '/lisensi');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Lisensi()),
+                  );
                 },
                 child: Text(
                   'Lisensi',
