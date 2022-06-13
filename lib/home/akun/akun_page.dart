@@ -15,51 +15,53 @@ class AkunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
-      return Container(
-          margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
-          child: Row(
-            children: [
-              Container(
-                width: 87,
-                height: 87,
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: NetworkImage(user.photoURL!),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    user.displayName!,
-                    style: blackTextStyle.copyWith(
-                        fontSize: 16, fontWeight: semiBold),
+      return Flexible(
+        child: Container(
+            margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
+            child: Row(
+              children: [
+                Container(
+                  width: 87,
+                  height: 87,
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: NetworkImage(user.photoURL!),
                   ),
-                  SizedBox(height: 5,),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      user.displayName!,
+                      style: blackTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semiBold),
+                    ),
+                    SizedBox(height: 5,),
 
 
-                  Row(
-                    children: [
-                      // Image.asset(
-                      //   'aset/icon_email.png',
-                      //   width: 19,
-                      // ),
-                      // SizedBox(width: 7,),
-                      Text(
-                        user.email!,
-                        style: subtitleTextStyle.copyWith(fontSize: 13),
-                      ),
-                    ],
-                  )
-                ],
-              ))
-            ],
+                    Row(
+                      children: [
+                        // Image.asset(
+                        //   'aset/icon_email.png',
+                        //   width: 19,
+                        // ),
+                        // SizedBox(width: 7,),
+                        Text(
+                          user.email!,
+                          style: subtitleTextStyle.copyWith(fontSize: 13),
+                        ),
+                      ],
+                    )
+                  ],
+                ))
+              ],
+            ),
           ),
-        );
+      );
     }
 
     Widget umumTitle(){
@@ -77,6 +79,31 @@ class AkunPage extends StatelessWidget {
             ),
 
             Container(
+              margin: EdgeInsets.only(left: 30,bottom: 11),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => About()),
+                  );
+                },
+                child: Text(
+                  'Tentang Edopt',
+                  style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(left: 12,bottom: 20),
+              child: Text(
+                'LAINNNYA',
+                style: subtitleTextStyle.copyWith(fontSize: 14,fontWeight: FontWeight.w700),
+              ),
+            ),
+
+
+
+            Container(
               margin: EdgeInsets.only(left: 30,bottom: 14),
               child: GestureDetector(
                 onTap: (){
@@ -91,29 +118,6 @@ class AkunPage extends StatelessWidget {
               ),
             ),
 
-            Container(
-              margin: EdgeInsets.only(left: 12,bottom: 20),
-              child: Text(
-                'LAINNNYA',
-                style: subtitleTextStyle.copyWith(fontSize: 14,fontWeight: FontWeight.w700),
-              ),
-            ),
-
-
-            Container(
-              margin: EdgeInsets.only(left: 30,bottom: 11),
-              child: GestureDetector(
-                onTap: (){
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => About()),
-                  );
-                },
-                child: Text(
-                  'Tentang Edopt',
-                  style: subtitleTextStyle.copyWith(fontSize: 15,fontWeight: FontWeight.w500),
-                ),
-              ),
-            ),
 
             Container(
               margin: EdgeInsets.only(left: 30,bottom: 11),

@@ -34,79 +34,42 @@ class HomePage extends StatelessWidget {
   }
 
   Widget header(context, User user) {
-    return Container(
-      margin: EdgeInsets.only(
-          top: defaultMargin, left: defaultMargin, right: defaultMargin),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              //colum dibungkis expanded
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Hello,' + user.displayName!,
-                  style: blackTextStyle.copyWith(
-                      fontSize: 24, fontWeight: semiBold),
-                ),
-                Text(
-                  user.email!,
-                  style: subtitleTextStyle.copyWith(fontSize: 16),
-                )
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => DetailAkun()),
-              );
-            },
-            child: Container(
-              width: 70,
-              height: 70,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(user.photoURL!),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget CariButton(context) {
-    return Container(
-      height: 50,
-      width: double.infinity,
-      margin: EdgeInsets.all(30),
-      child: TextButton(
-        onPressed: () {
-          // Navigator.pushNamed(context, '/search');
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => ListAnak()),
-          );
-        },
-        style: TextButton.styleFrom(
-            backgroundColor: primaryColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(47))),
+    return Flexible(
+      child: Container(
+        margin: EdgeInsets.only(
+            top: defaultMargin, left: defaultMargin, right: defaultMargin),
         child: Row(
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 20),
-              child: Image.asset(
-                'aset/icon_search.png',
-                width: 24,
+            Expanded(
+              child: Column(
+                //colum dibungkis expanded
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hello,' + user.displayName!,
+                    style: blackTextStyle.copyWith(
+                        fontSize: 24, fontWeight: semiBold),
+                  ),
+                  Text(
+                    user.email!,
+                    style: subtitleTextStyle.copyWith(fontSize: 16),
+                  )
+                ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(left: 80, right: 112),
-              child: Text(
-                'CARI ANAK',
-                style:
-                    primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => DetailAkun()),
+                );
+              },
+              child: Container(
+                width: 70,
+                height: 70,
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: NetworkImage(user.photoURL!),
+                ),
               ),
             ),
           ],
@@ -115,44 +78,90 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget CariButton(context) {
+    return Flexible(
+      flex: 1,
+      child: Container(
+
+        height: 50,
+        width: double.infinity,
+        margin: EdgeInsets.all(30),
+        child: TextButton(
+          onPressed: () {
+            // Navigator.pushNamed(context, '/search');
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => ListAnak()),
+            );
+          },
+          style: TextButton.styleFrom(
+              backgroundColor: primaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(47))),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Image.asset(
+                  'aset/icon_search.png',
+                  width: 24,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 80, right: 112),
+                child: Text(
+                  'CARI ANAK',
+                  style:
+                      primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget articleTitle(context) {
-    return Container(
-      margin: EdgeInsets.only(
-          top: defaultMargin, left: defaultMargin, right: defaultMargin),
-      child: Row(
-        children: [
-          Text(
-            'Artikel terbaru',
-            style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
-          ),
-          SizedBox(
-            width: 95,
-          ),
+    return Flexible(
+      child: Container(
+        margin: EdgeInsets.only(
+            top: defaultMargin, left: defaultMargin, right: defaultMargin),
+        child: Row(
+          children: [
+            Text(
 
-          GestureDetector(
-            onTap: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => ListNews()),
-              );
-            },
-            child: Row(
-              children: [
-                Text(
-                  'Lainnya',
-                  style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Image.asset(
-                  'aset/icon_panahkananbiru.png',
-                  width: 23,
-                ),
-              ],
+              'Artikel terbaru',
+              style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
             ),
-          )
+            SizedBox(
+              width: 95,
+            ),
 
-        ],
+            GestureDetector(
+              onTap: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ListNews()),
+                );
+              },
+              child: Row(
+                children: [
+                  Text(
+                    'Lainnya',
+                    style: primaryku.copyWith(fontSize: 13, fontWeight: semiBold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Image.asset(
+                    'aset/icon_panahkananbiru.png',
+                    width: 23,
+                  ),
+                ],
+              ),
+            )
+
+          ],
+        ),
       ),
     );
   }

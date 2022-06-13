@@ -5,6 +5,7 @@ import 'package:adopt/network/apisearch.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adopt/cardwidget/listanak_card.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:provider/provider.dart';
 
 //import '../../models/v2/child_model.dart';
@@ -51,7 +52,7 @@ class _ListAnakState extends State<ListAnak> {
                         return Center(child: CircularProgressIndicator());
                       }
 
-                      return GestureDetector(
+                      return Bounceable(
                         onTap: (){
                           Navigator.push(
                             context,
