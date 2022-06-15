@@ -12,6 +12,7 @@ class DetailAnak extends StatelessWidget {
   final String orphanageName;
   final String gender;
   final String age;
+  final String additionalInfo;
 
   //DetailAnak(this.anakan);
 
@@ -21,7 +22,9 @@ class DetailAnak extends StatelessWidget {
       required this.name,
       required this.orphanageName,
       required this.gender,
-      required this.age})
+      required this.age,
+        required this.additionalInfo
+      })
       : super(key: key);
 //
   @override
@@ -139,7 +142,7 @@ class DetailAnak extends StatelessWidget {
 
       return Container(
         margin: EdgeInsets.only(top: 17),
-        child: Text('$text',
+        child: Text('$additionalInfo',
             style: blackTextStyle.copyWith(fontSize: 15, fontWeight: regular)),
       );
     }
@@ -160,6 +163,7 @@ class DetailAnak extends StatelessWidget {
                         gender: '$gender',
                         age: '$age',
                        id: '$id',
+                    additional_info: '$additionalInfo',
                       )),
             );
           },
@@ -181,8 +185,9 @@ class DetailAnak extends StatelessWidget {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            scrollDirection: Axis.vertical,
             children: [
               header(),
               NameChild(),

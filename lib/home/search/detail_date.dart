@@ -1,10 +1,17 @@
+import 'dart:async';
+
 import 'package:adopt/home/search/success.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import '../../service/appoinment_post.dart';
 import '../../theme.dart';
 import 'package:intl/intl.dart';
+
+import '../main_page.dart';
 
 class DetailDate extends StatefulWidget {
   final String id;
@@ -12,6 +19,7 @@ class DetailDate extends StatefulWidget {
   final String orphanageName;
   final String gender;
   final String age;
+  final String additional_info;
 
   const DetailDate(
       {Key? key,
@@ -19,7 +27,10 @@ class DetailDate extends StatefulWidget {
       required this.name,
       required this.orphanageName,
       required this.gender,
-      required this.age})
+      required this.age,
+        required this.additional_info
+
+      })
       : super(key: key);
 
   @override
@@ -27,6 +38,12 @@ class DetailDate extends StatefulWidget {
 }
 
 class _DetailDateState extends State<DetailDate> {
+  final RoundedLoadingButtonController _btnController = RoundedLoadingButtonController();
+  void _doSomething() async {
+    Timer(Duration(seconds: 3), () {
+      _btnController.success();
+    });
+  }
   repository Repo = repository();
   TextEditingController dateinput = TextEditingController();
   void initState() {
@@ -132,7 +149,7 @@ class _DetailDateState extends State<DetailDate> {
                     width: 11,
                   ),
                   Text(
-                    widget.age,
+                    widget.age + ' th',
                     style: subtitleTextStyle.copyWith(
                         fontSize: 15, fontWeight: medium),
                   )
@@ -268,22 +285,28 @@ class _DetailDateState extends State<DetailDate> {
         height: 50,
         width: double.infinity,
         margin: EdgeInsets.all(30),
-        child: ElevatedButton(
+        child: RoundedLoadingButton(
           onPressed: () async {
             bool response = await Repo.postData(dateinput.text, widget.id);
             if (response) {
-              // Navigator.of(context).popAndPushNamed('/success');
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => Success()),
+              showTopSnackBar(
+                context,
+                CustomSnackBar.success(
+                  message:
+                  "Good job, your release is successful. Have a nice day",
+                ),
               );
+
+              Timer(Duration(seconds: 5), () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MainPage()),
+
+              ));
             } else {
               print('GAGAL');
             }
           },
-          style: TextButton.styleFrom(
-              backgroundColor: primaryColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(47))),
+
+          controller: _btnController,
           child: Text(
             'JADWALKAN',
             style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),

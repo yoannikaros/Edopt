@@ -49,7 +49,7 @@ class SearchUser extends SearchDelegate {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  DetailAnak(name: '${data?[index].name}', orphanageName: '${data?[index].orphanageName}', gender: '${data?[index].gender}', age: '${data?[index].age}', id: '${data?[index].id}',)),
+                        MaterialPageRoute(builder: (context) =>  DetailAnak(name: '${data?[index].name}', orphanageName: '${data?[index].orphanageName}', gender: '${data?[index].gender}', age: '${data?[index].age}', id: '${data?[index].id}', additionalInfo: '${data?[index].additionalInfo}',)),
                       );
                     },
                     child: Row(

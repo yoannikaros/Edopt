@@ -1,9 +1,9 @@
-class ChildModel2 {
+class childmodel {
   List<Data>? data;
 
-  ChildModel2({this.data});
+  childmodel({this.data});
 
-  ChildModel2.fromJson(Map<String, dynamic> json) {
+  childmodel.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
       data = <Data>[];
       json['data'].forEach((v) {
@@ -27,8 +27,15 @@ class Data {
   String? orphanageName;
   String? gender;
   int? age;
+  String? additionalInfo;
 
-  Data({this.id, this.name, this.orphanageName, this.gender, this.age});
+  Data(
+      {this.id,
+        this.name,
+        this.orphanageName,
+        this.gender,
+        this.age,
+        this.additionalInfo});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -36,6 +43,7 @@ class Data {
     orphanageName = json['orphanage_name'];
     gender = json['gender'];
     age = json['age'];
+    additionalInfo = json['additional_info'];
   }
 
   Map<String, dynamic> toJson() {
@@ -45,6 +53,7 @@ class Data {
     data['orphanage_name'] = this.orphanageName;
     data['gender'] = this.gender;
     data['age'] = this.age;
+    data['additional_info'] = this.additionalInfo;
     return data;
   }
 }
