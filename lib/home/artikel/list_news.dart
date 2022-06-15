@@ -97,7 +97,7 @@ class _ListNewsState extends State<ListNews> {
         itemBuilder: (context, item, index) => GestureDetector(
           child: CardNews(
             admin: item.adminName,
-            title: 'Title',
+            title: item.title!,
             previewText: item.previewText,
             createdAt: item.createdAt,
             imageUrl: item.imageUrl,

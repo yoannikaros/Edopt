@@ -6,20 +6,18 @@ class Panti {
   final int id;
   final String name;
 
-  @JsonKey(name: 'image_url')
-  final String? imageUrl;
 
   @JsonKey(name: 'province')
-  final String? province;
+  final String province;
 
   @JsonKey(name: 'regency')
-  final String? regency;
+  final String regency;
 
   @JsonKey(name: 'district')
   final String district;
 
   @JsonKey(name: 'address')
-  final String? address;
+  final String address;
 
   @JsonKey(name: 'opening_hours')
   final String openingHours;
@@ -30,7 +28,6 @@ class Panti {
   Panti(
     this.id,
     this.name,
-    this.imageUrl,
     this.province,
     this.regency,
     this.district,

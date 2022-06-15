@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                   updatedAt: articles[index].updatedAt,
                   content: '',
                   adminName: articles[index].adminName,
-                  title: '',
+                  title: articles[index].title!,
                 );
               },
             );

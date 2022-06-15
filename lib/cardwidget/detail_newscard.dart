@@ -9,7 +9,7 @@ import '../theme.dart';
 
 class CardNews extends StatelessWidget {
   final String admin;
-  final String title;
+  final String? title;
   final String previewText;
   final String createdAt;
   final String imageUrl;
@@ -41,7 +41,7 @@ class CardNews extends StatelessWidget {
                     adminName: admin,
                     updatedAt: '',
                     createdAt: createdAt,
-                    title: title,
+                    title: title!,
                     content: '',
                   )),
             );
@@ -106,7 +106,7 @@ class CardNews extends StatelessWidget {
                       height: 130,
                     ),
                     Text(
-                      title,
+                      title!,
                       style: primaryTextStyle.copyWith(
                           fontSize: 13, fontWeight: semiBold),
                     ),

@@ -9,11 +9,10 @@ part of 'panti_model.dart';
 Panti _$PantiFromJson(Map<String, dynamic> json) => Panti(
       json['id'] as int,
       json['name'] as String,
-      json['image_url'] as String?,
-      json['province'] as String?,
-      json['regency'] as String?,
+      json['province'] as String,
+      json['regency'] as String,
       json['district'] as String,
-      json['address'] as String?,
+      json['address'] as String,
       json['opening_hours'] as String,
       json['closing_hours'] as String,
     );
@@ -21,7 +20,6 @@ Panti _$PantiFromJson(Map<String, dynamic> json) => Panti(
 Map<String, dynamic> _$PantiToJson(Panti instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'image_url': instance.imageUrl,
       'province': instance.province,
       'regency': instance.regency,
       'district': instance.district,

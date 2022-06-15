@@ -11,13 +11,12 @@ class PantiPage extends StatefulWidget {
   const PantiPage({Key? key}) : super(key: key);
   @override
   State<PantiPage> createState() => _PantiPageState();
-
 }
 
 class _PantiPageState extends State<PantiPage> {
   // Ganti ke model mu
   final PagingController<int, Panti> _pagingController =
-  PagingController(firstPageKey: 1);
+      PagingController(firstPageKey: 1);
 
   @override
   void initState() {
@@ -46,7 +45,6 @@ class _PantiPageState extends State<PantiPage> {
 
   @override
   Widget build(BuildContext contexrt) {
-
     Widget Search() {
       return Container(
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -86,8 +84,6 @@ class _PantiPageState extends State<PantiPage> {
       );
     }
 
-
-
     Widget CardHasil() {
       return Container(
         margin: EdgeInsets.only(top: 10, left: 10),
@@ -99,20 +95,25 @@ class _PantiPageState extends State<PantiPage> {
               child: SafeArea(
                 child: Column(
                   children: [
-                  PagedListView<int, Panti>.separated(
-                  shrinkWrap: true,
-                  primary: false,
-                  pagingController: _pagingController,
-                  builderDelegate: PagedChildBuilderDelegate(
-                    itemBuilder: (context, item, index) => ResultPantiCard(
-                      name: item.name,
-                      district: item.district,
-                      openingHours: item.openingHours,
-                      closingHours: item.closingHours, imageUrl: '', regency: '', address: '', province: '', longitude: '', latitude: '',
+                    PagedListView<int, Panti>.separated(
+                      shrinkWrap: true,
+                      primary: false,
+                      pagingController: _pagingController,
+                      builderDelegate: PagedChildBuilderDelegate(
+                        itemBuilder: (context, item, index) => ResultPantiCard(
+                          name: item.name,
+                          district: item.district,
+                          openingHours: item.openingHours,
+                          closingHours: item.closingHours,
+                         // imageUrl: '',
+                          regency: item.regency,
+                          address: item.address,
+                          province: item.province,
+                        ),
+                      ),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 8),
                     ),
-                  ),
-                  separatorBuilder: (context, index) => const SizedBox(height: 8),
-                ),
                   ],
                 ),
               ),
@@ -120,15 +121,10 @@ class _PantiPageState extends State<PantiPage> {
           ],
         ),
       );
-
-
     }
 
     return ListView(
-      children: [
-
-        CardHasil()
-      ],
+      children: [CardHasil()],
     );
   }
 }

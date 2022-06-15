@@ -69,7 +69,7 @@ class DetailNews extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(left: 30),
                   child: Text(
-                    '$previewText',
+                    '$title',
                     style: primaryTextStyle.copyWith(
                         fontSize: 24, fontWeight: semiBold),
                   ),
@@ -115,7 +115,7 @@ class DetailNews extends StatelessWidget {
           children: [
             SizedBox(height: 5,),
 
-            Text( text,style: blackTextStyle.copyWith(
+            Text( previewText,style: blackTextStyle.copyWith(
                   fontSize: 17, fontWeight: FontWeight.w500),
             ),
           ],

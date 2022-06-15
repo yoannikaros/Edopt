@@ -9,22 +9,22 @@ import '../theme.dart';
 class ArticleCard extends StatelessWidget {
   final String previewText;
   final String imageUrl;
-  final String title;
+  final String? title;
   final String adminName;
   final String content;
   final String createdAt;
   final String updatedAt;
 
-  const ArticleCard({
-    Key? key,
-    required this.previewText,
-    required this.imageUrl,
-    required this.createdAt,
-    required this.adminName,
-    required this.content,
-    required this.title,
-    required this.updatedAt
-  }) : super(key: key);
+  const ArticleCard(
+      {Key? key,
+      required this.previewText,
+      required this.imageUrl,
+      required this.createdAt,
+      required this.adminName,
+      required this.content,
+      required this.title,
+      required this.updatedAt})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,17 @@ class ArticleCard extends StatelessWidget {
           onTap: () {
             Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  DetailNews(previewText: previewText, imageUrl: imageUrl, adminName: adminName, updatedAt: updatedAt, createdAt: createdAt, title: title, content: content,),)
-            );
+                MaterialPageRoute(
+                  builder: (context) => DetailNews(
+                    previewText: previewText,
+                    imageUrl: imageUrl,
+                    adminName: adminName,
+                    updatedAt: updatedAt,
+                    createdAt: createdAt,
+                    title: title!,
+                    content: '',
+                  ),
+                ));
           },
           child: Stack(
             children: [
@@ -64,8 +73,8 @@ class ArticleCard extends StatelessWidget {
                 child: Expanded(
                   child: Text(
                     previewText,
-                    style:
-                        primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                    style: primaryTextStyle.copyWith(
+                        fontSize: 15, fontWeight: bold),
                   ),
                 ),
               ),
