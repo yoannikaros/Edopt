@@ -5,7 +5,7 @@ import '../theme.dart';
 
 class ResultPantiCard extends StatelessWidget {
   final String name;
-  final String imageUrl;
+  final String? imageUrl;
   final String province;
   final String regency;
   final String district;
@@ -32,12 +32,12 @@ class ResultPantiCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return GestureDetector(
-
+//
        onTap: (){
          Navigator.push(
            context,
            MaterialPageRoute(builder: (context) =>
-               DetailPanti(name: '$name', regency: '$regency', district: '$district', province: '$province', openingHours: '$openingHours', imageUrl: '$imageUrl', address: '$address', closingHours: '$closingHours'),
+               DetailPanti(name: '$name', regency: '$regency', district: '$district', province: '$province', openingHours: '$openingHours', imageUrl: imageUrl!, address: '$address', closingHours: '$closingHours'),
          ),
          );
 

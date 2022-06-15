@@ -107,7 +107,7 @@ class _DetailPantiState extends State<DetailPanti> {
          child:
 
         CachedNetworkImage(
-          imageUrl: gambar[gambarnya()],
+          imageUrl: widget.imageUrl!,
           width: 289,
           height: 134,
           fit: BoxFit.cover,
@@ -184,7 +184,7 @@ class _DetailPantiState extends State<DetailPanti> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              widget.address,
+             'Detail Panti',
               style: blackTextStyle.copyWith(
                   fontSize: 16, fontWeight: FontWeight.w600),
             )
@@ -210,7 +210,7 @@ class _DetailPantiState extends State<DetailPanti> {
                   width: 30,
                 ),
                 Text(
-                  'Jember',
+                  widget.regency,
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
@@ -227,7 +227,7 @@ class _DetailPantiState extends State<DetailPanti> {
                   width: 47,
                 ),
                 Text(
-                  'Jawa Timur',
+                  widget.province,
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
@@ -244,7 +244,7 @@ class _DetailPantiState extends State<DetailPanti> {
                   width: 27,
                 ),
                 Text(
-                  text[kabupatenku()],
+                  widget.district,
                   style: blackTextStyle.copyWith(
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
@@ -262,7 +262,7 @@ class _DetailPantiState extends State<DetailPanti> {
                 ),
                 Expanded(
                   child: Text(
-                    widget.district,
+                   widget.address,
                     style: blackTextStyle.copyWith(
                         fontSize: 14, fontWeight: FontWeight.w400),
                   ),
