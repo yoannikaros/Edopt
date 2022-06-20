@@ -9,17 +9,17 @@ import '../../theme.dart';
 
 class DetailPanti extends StatefulWidget {
   final String name;
-  //final String imageUrl;
   final String province;
   final String regency;
   final String address;
   final String district;
   final String openingHours;
   final String closingHours;
+  final String image_url;
 
   const DetailPanti({Key? key,
     required this.name,
-    //required this.imageUrl,
+    required this.image_url,
     required this.province,
     required this.district,
     required this.regency,
@@ -90,30 +90,30 @@ class _DetailPantiState extends State<DetailPanti> {
       );
     }
 
-    // Widget gambar() {
-    //   List<String> gambar = [
-    //     'https://i0.wp.com/www.pammalang.or.id/wp-content/uploads/2016/05/cropped-logo-panti.png',
-    //     'https://darulaitamalfaruq.or.id/wp-content/uploads/2019/01/img-20190128-wa0009-1331851895.jpg',
-    //     'https://sribu-sg.s3.amazonaws.com/assets/media/contest_detail/2012/6/logo-for-social-responsibility-4fdd89173c0aa138dd00009f/4dacb88a7c.jpg',
-    //     'https://sribu-sg.s3.amazonaws.com/assets/media/contest_detail/2012/6/logo-for-social-responsibility-4fdd89173c0aa138dd00009f/f09eb3e081.jpg',
-    //   ];
-    //
-    //   int gambarnya() {
-    //     var gambarnya = Random().nextInt(2) + 1;
-    //     return gambarnya;
-    //   }
-    //   return Container(
-    //     margin: EdgeInsets.only(left: 40),
-    //      child:
-    //
-    //     CachedNetworkImage(
-    //       imageUrl: gambarnya(),
-    //       width: 289,
-    //       height: 134,
-    //       fit: BoxFit.cover,
-    //     ),
-    //   );
-    // }
+    Widget gambar() {
+      // List<String> gambar = [
+      //   'https://i0.wp.com/www.pammalang.or.id/wp-content/uploads/2016/05/cropped-logo-panti.png',
+      //   'https://darulaitamalfaruq.or.id/wp-content/uploads/2019/01/img-20190128-wa0009-1331851895.jpg',
+      //   'https://sribu-sg.s3.amazonaws.com/assets/media/contest_detail/2012/6/logo-for-social-responsibility-4fdd89173c0aa138dd00009f/4dacb88a7c.jpg',
+      //   'https://sribu-sg.s3.amazonaws.com/assets/media/contest_detail/2012/6/logo-for-social-responsibility-4fdd89173c0aa138dd00009f/f09eb3e081.jpg',
+      // ];
+      //
+      // int gambarnya() {
+      //   var gambarnya = Random().nextInt(2) + 1;
+      //   return gambarnya;
+      // }
+      return Container(
+        margin: EdgeInsets.only(left: 40),
+         child:
+
+        CachedNetworkImage(
+          imageUrl: widget.image_url,
+          width: 289,
+          height: 134,
+          fit: BoxFit.cover,
+        ),
+      );
+    }
 
     Widget namayayasan() {
       return Container(
@@ -329,7 +329,7 @@ class _DetailPantiState extends State<DetailPanti> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               header(),
-              //gambar(),
+              gambar(),
               namayayasan(),
               Detailatas(),
               juduldetail(),

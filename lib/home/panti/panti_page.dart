@@ -109,6 +109,7 @@ class _PantiPageState extends State<PantiPage> {
                           regency: item.regency,
                           address: item.address,
                           province: item.province,
+                          image_url: item.image_url,
                         ),
                       ),
                       separatorBuilder: (context, index) =>

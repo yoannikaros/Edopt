@@ -15,6 +15,8 @@ Panti _$PantiFromJson(Map<String, dynamic> json) => Panti(
       json['address'] as String,
       json['opening_hours'] as String,
       json['closing_hours'] as String,
+    json['image_url'] as String
+
     );
 
 Map<String, dynamic> _$PantiToJson(Panti instance) => <String, dynamic>{
@@ -26,6 +28,7 @@ Map<String, dynamic> _$PantiToJson(Panti instance) => <String, dynamic>{
       'address': instance.address,
       'opening_hours': instance.openingHours,
       'closing_hours': instance.closingHours,
+  'image_url': instance.image_url,
     };
 
 PantiList _$PantiListFromJson(Map<String, dynamic> json) => PantiList(

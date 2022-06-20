@@ -5,7 +5,7 @@ import '../theme.dart';
 
 class ResultPantiCard extends StatelessWidget {
   final String name;
-  //final String imageUrl;
+  final String image_url;
   final String province;
   final String regency;
   final String address;
@@ -16,7 +16,7 @@ class ResultPantiCard extends StatelessWidget {
   const ResultPantiCard({
     Key? key,
     required this.name,
-   // required this.imageUrl,
+   required this.image_url,
     required this.province,
     required this.district,
     required this.regency,
@@ -43,7 +43,8 @@ class ResultPantiCard extends StatelessWidget {
                 openingHours: '$openingHours',
                // imageUrl: '',
                 address: '$address',
-                closingHours: '$closingHours'),
+                closingHours: '$closingHours',
+              image_url: image_url,),
           ),
         );
       },

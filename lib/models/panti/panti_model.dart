@@ -7,6 +7,7 @@ class Panti {
   final String name;
 
 
+
   @JsonKey(name: 'province')
   final String province;
 
@@ -25,6 +26,9 @@ class Panti {
   @JsonKey(name: 'closing_hours')
   final String closingHours;
 
+  @JsonKey(name: 'image_url')
+  final String image_url;
+
   Panti(
     this.id,
     this.name,
@@ -34,6 +38,7 @@ class Panti {
     this.address,
     this.openingHours,
     this.closingHours,
+      this.image_url
   );
 
   factory Panti.fromJson(Map<String, dynamic> json) => _$PantiFromJson(json);
