@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           primary: Colors.white,
           backgroundColor: Color.fromARGB(255, 16, 73, 102),
-          //minimumSize: const Size.fromHeight(80)
+            minimumSize: const Size.fromHeight(80)
         ),
         child: const Text('Get Started', style: TextStyle(fontSize: 24),
       ),

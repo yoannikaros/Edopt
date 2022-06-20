@@ -9,10 +9,18 @@
       "client_info": {
         "mobilesdk_app_id": "1:598254031805:android:71bb782cc6a384c659b8d4",
         "android_client_info": {
-          "package_name": "com.polije.adopt"
+          "package_name": "com.example.adopt"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "598254031805-3n6sv4mrte430al69mr3ehgu3t2c639s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adopt",
+            "certificate_hash": "003cfa0b1317ac4def90bd0e893923eaad8e8fc4"
+          }
+        },
         {
           "client_id": "598254031805-7u6fvc6fqfg1o52v80jqbb7d2r8lf34f.apps.googleusercontent.com",
           "client_type": 3
