@@ -72,11 +72,11 @@ class _DetailPantiState extends State<DetailPanti> {
                   },
                   child: Image.asset(
                     'aset/icon_kembali.png',
-                    width: 25,
+                    width: 20,
                   ),
                 ),
                 SizedBox(
-                  width: 97,
+                  width: 84,
                 ),
                 Text(
                   'Panti Asuhan',
@@ -103,7 +103,7 @@ class _DetailPantiState extends State<DetailPanti> {
       //   return gambarnya;
       // }
       return Container(
-        margin: EdgeInsets.only(left: 40),
+        margin: EdgeInsets.only(left: 10),
          child:
 
         CachedNetworkImage(
@@ -224,7 +224,7 @@ class _DetailPantiState extends State<DetailPanti> {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 47,
+                  width: 46,
                 ),
                 Text(
                   widget.province,
@@ -241,7 +241,7 @@ class _DetailPantiState extends State<DetailPanti> {
                       fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 27,
+                  width: 25,
                 ),
                 Text(
                   widget.district,
@@ -302,10 +302,10 @@ class _DetailPantiState extends State<DetailPanti> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(47))),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Container(
-                margin: EdgeInsets.only(left: 94),
+               // margin: EdgeInsets.only(left: 94),
                 child: InkWell(
                     child: new Text('Cek Lokasi', style: primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),),
                     onTap: () => launch(lokasi[location()])

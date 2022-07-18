@@ -42,40 +42,39 @@ class DaftarKunjungan extends StatelessWidget {
         )),
       );
     },
-      child: Card(
+      child:  Card(
+        margin: EdgeInsets.only(top: 10, left: 20,right: 20),
         child: Container(
-          padding:EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Row(
-                children: [
+            padding:EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Row(
+                  children: [
 
-                  Expanded(
-                    child: Text(orphanage,style: blackTextStyle.copyWith(
+                    Expanded(
+                      child: Text(orphanage,style: blackTextStyle.copyWith(
+                          fontSize: 14, fontWeight: FontWeight.bold),),
+                    ),
+
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Text(status,style: blackTextStyle.copyWith(
                         fontSize: 14, fontWeight: FontWeight.w500),),
-                  ),
 
+                    SizedBox(width: 52,),
 
-                  SizedBox(width: 48,),
-
-                  Text(time,style: blackTextStyle.copyWith(
-                      fontSize: 14, fontWeight: FontWeight.w500),)
-
-                ],
-              ),
-
-              Row(
-                children: [
-                  Text(status,style: blackTextStyle.copyWith(
-                      fontSize: 14, fontWeight: FontWeight.w500),),
-
-
-                ],
-              ),
-            ],
+                    Text(time,style: blackTextStyle.copyWith(
+                        fontSize: 14, fontWeight: FontWeight.w500),)
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
       ),
+
     );
   }
 }

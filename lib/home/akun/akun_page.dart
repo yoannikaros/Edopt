@@ -15,8 +15,7 @@ class AkunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
     Widget header() {
-      return Flexible(
-        child: Container(
+      return  Container(
             margin: EdgeInsets.only(top: 29,left: 28,bottom: 61),
             child: Row(
               children: [
@@ -60,7 +59,7 @@ class AkunPage extends StatelessWidget {
                 ))
               ],
             ),
-          ),
+
       );
     }
 

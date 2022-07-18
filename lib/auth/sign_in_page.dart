@@ -69,7 +69,7 @@ class SignInPage extends StatelessWidget {
                 child: Text(
                   'Masuk dengan Google',
                   style:
-                  blackTextStyle.copyWith(fontSize: 15, fontWeight: semiBold),
+                  blackTextStyle.copyWith(fontSize: 14, fontWeight: semiBold),
                 ),
               ),
             ],

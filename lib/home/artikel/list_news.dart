@@ -1,6 +1,7 @@
 import 'package:adopt/cardwidget/detail_newscard.dart';
 import 'package:adopt/models/article.dart';
 import 'package:adopt/network/api_service.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -57,8 +58,9 @@ class _ListNewsState extends State<ListNews> {
 
   Widget header(context) {
     return Container(
-      margin: EdgeInsets.only(top: 30, bottom: 18, left: 50),
+      margin: EdgeInsets.only(top: 30, bottom: 18,left: 30),
       child: Column(
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             children: [
@@ -73,7 +75,7 @@ class _ListNewsState extends State<ListNews> {
                 ),
               ),
               const SizedBox(
-                width: 100,
+                width: 94,
               ),
               Text(
                 'Berita',

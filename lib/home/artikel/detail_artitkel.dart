@@ -46,7 +46,7 @@ class DetailNews extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: imageUrl,
               width: double.infinity,
-              height: 260,
+              height: 210,
               fit: BoxFit.cover,
             ),
           ),
@@ -62,7 +62,7 @@ class DetailNews extends StatelessWidget {
                   },
                   child: Container(
                     margin: EdgeInsets.only(left: 20),
-                      child: Image.asset('aset/icon_arahkiriputih.png', width: 25)),
+                      child: Image.asset('aset/icon_arahkiriputih.png', width: 20)),
                 ),
 
                 SizedBox(height: 45,),
@@ -71,7 +71,7 @@ class DetailNews extends StatelessWidget {
                   child: Text(
                     '$title',
                     style: primaryTextStyle.copyWith(
-                        fontSize: 24, fontWeight: semiBold),
+                        fontSize: 12, fontWeight: semiBold),
                   ),
                 ),
 
@@ -86,13 +86,13 @@ class DetailNews extends StatelessWidget {
                     Text(
                       adminName,
                       style: primaryTextStyle.copyWith(
-                          fontSize: 14, fontWeight: FontWeight.w700),
+                          fontSize: 10, fontWeight: FontWeight.w700),
                     ),
                     SizedBox(width: 50,),
                     Text(
                       Util.toReadableTime(DateTime.parse(createdAt)),
                       style: primaryTextStyle.copyWith(
-                          fontSize: 14, fontWeight: FontWeight.w700),
+                          fontSize: 10, fontWeight: FontWeight.w700),
                     ),
 
                   ],
@@ -109,14 +109,14 @@ class DetailNews extends StatelessWidget {
     Widget isi2(){
       String text = lorem(paragraphs: 3, words: 60);
       return Container(
-        margin: EdgeInsets.only(top: 20,left: 20),
+        margin: EdgeInsets.only(top: 20,left: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 5,),
 
             Text( previewText,style: blackTextStyle.copyWith(
-                  fontSize: 17, fontWeight: FontWeight.w500),
+                  fontSize: 10, fontWeight: FontWeight.w500),
             ),
           ],
         ),

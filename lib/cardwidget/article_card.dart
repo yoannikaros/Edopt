@@ -28,58 +28,71 @@ class ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        width: 289,
-        height: 134,
-        margin: EdgeInsets.only(left: 20),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30), color: primaryTextColor),
-        child: Bounceable(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailNews(
-                    previewText: previewText,
-                    imageUrl: imageUrl,
-                    adminName: adminName,
-                    updatedAt: updatedAt,
-                    createdAt: createdAt,
-                    title: title!,
-                    content: '',
-                  ),
-                ));
-          },
-          child: Stack(
-            children: [
-              ColorFiltered(
-                colorFilter: const ColorFilter.mode(
-                  Colors.brown,
-                  BlendMode.modulate,
+    return Container(
+      width: 269,
+      height: 114,
+      margin: EdgeInsets.only(left: 20),
+      // decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.circular(30), color: primaryTextColor),
+      child: Bounceable(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailNews(
+                  previewText: previewText,
+                  imageUrl: imageUrl,
+                  adminName: adminName,
+                  updatedAt: updatedAt,
+                  createdAt: createdAt,
+                  title: title!,
+                  content: '',
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl,
-                    width: 289,
-                    height: 134,
-                    fit: BoxFit.cover,
-                  ),
+              ));
+        },
+        child: Stack(
+          children: [
+            ColorFiltered(
+              colorFilter: const ColorFilter.mode(
+                Colors.brown,
+                BlendMode.modulate,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  width: 269,
+                  height: 114,
+                  fit: BoxFit.cover,
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 80, left: 10),
-                child: Expanded(
-                  child: Text(
+            ),
+
+            SizedBox(height: 41,),
+
+            Container(
+                margin: EdgeInsets.only(top: 50, left: 10),
+              child: Column(
+                children: [
+                  Text(
                     previewText,
-                    style: primaryTextStyle.copyWith(
-                        fontSize: 15, fontWeight: bold),
+                    style: primaryTextStyle.copyWith(fontSize: 10, fontWeight: bold),
                   ),
-                ),
-              ),
-            ],
-          ),
+                ],
+              )
+            ),
+
+            // Container(
+            //   margin: EdgeInsets.only(top: 30, left: 10),
+            //   child: Expanded(
+            //     child: Text(
+            //       previewText,
+            //       style: primaryTextStyle.copyWith(
+            //           fontSize: 12, fontWeight: bold),
+            //     ),
+            //   ),
+            // ),
+          ],
         ),
       ),
     );

@@ -34,8 +34,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget header(context, User user) {
-    return Flexible(
-      child: Container(
+    return Container(
         margin: EdgeInsets.only(
             top: defaultMargin, left: defaultMargin, right: defaultMargin),
         child: Row(
@@ -48,11 +47,11 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Hello,' + user.displayName!,
                     style: blackTextStyle.copyWith(
-                        fontSize: 24, fontWeight: semiBold),
+                        fontSize: 15, fontWeight: semiBold),
                   ),
                   Text(
                     user.email!,
-                    style: subtitleTextStyle.copyWith(fontSize: 16),
+                    style: subtitleTextStyle.copyWith(fontSize: 13),
                   )
                 ],
               ),
@@ -74,16 +73,13 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 
   Widget CariButton(context) {
-    return Flexible(
-      flex: 1,
-      child: Container(
+    return Container(
 
-        height: 50,
+        height: 40,
         width: double.infinity,
         margin: EdgeInsets.all(30),
         child: TextButton(
@@ -103,35 +99,32 @@ class HomePage extends StatelessWidget {
                 margin: EdgeInsets.only(left: 20),
                 child: Image.asset(
                   'aset/icon_search.png',
-                  width: 24,
+                  width: 19,
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 80, right: 112),
+                margin: EdgeInsets.only(left: 70, right: 112),
                 child: Text(
                   'CARI ANAK',
                   style:
-                      primaryTextStyle.copyWith(fontSize: 15, fontWeight: bold),
+                      primaryTextStyle.copyWith(fontSize: 13, fontWeight: bold),
                 ),
               ),
             ],
           ),
         ),
-      ),
     );
   }
 
   Widget articleTitle(context) {
-    return Flexible(
-      child: Container(
+    return  Container(
         margin: EdgeInsets.only(
-            top: defaultMargin, left: defaultMargin, right: defaultMargin),
+            top: defaultMargin, left: defaultMargin, right: defaultMargin,bottom: 20),
         child: Row(
           children: [
             Text(
-
               'Artikel terbaru',
-              style: blackTextStyle.copyWith(fontSize: 22, fontWeight: semiBold),
+              style: blackTextStyle.copyWith(fontSize: 15, fontWeight: semiBold),
             ),
             SizedBox(
               width: 95,
@@ -162,7 +155,6 @@ class HomePage extends StatelessWidget {
 
           ],
         ),
-      ),
     );
   }
 

@@ -141,8 +141,8 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ) 
       : Container(
-        padding: const EdgeInsets.symmetric(horizontal: 170),
-        height: 150,
+        padding: const EdgeInsets.symmetric(horizontal: 150),
+        height: 130,
         color: Colors.blue,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -61,7 +61,7 @@ class CardNews extends StatelessWidget {
                     imageUrl: imageUrl,
                     width: double.infinity,
                     fit: BoxFit.cover,
-                    height: 240,
+                    height: 220,
                   ),
                 ),
               ),
@@ -103,12 +103,12 @@ class CardNews extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 130,
+                      height: 110,
                     ),
                     Text(
                       title!,
                       style: primaryTextStyle.copyWith(
-                          fontSize: 13, fontWeight: semiBold),
+                          fontSize: 10, fontWeight: semiBold),
                     ),
                     SizedBox(
                       height: 10,
@@ -116,7 +116,7 @@ class CardNews extends StatelessWidget {
                     Text(
                       previewText,
                       style: primaryTextStyle.copyWith(
-                          fontSize: 13, fontWeight: semiBold),
+                          fontSize: 10, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
